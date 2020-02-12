@@ -89,7 +89,7 @@ body{
   margin-top:-27%;
   color:white;
   font-family: 'Fredoka One', cursive;
-  font-size: 2vw;
+  font-size: 1.3vw;
 }
 
 @media only screen and (max-width: 600px){
@@ -110,6 +110,6 @@ body{
   margin-top:10%;
   color:white;
   font-family: 'Fredoka One', cursive;
-  font-size: 8vw;
+  font-size: 4vw;
 }
 }
