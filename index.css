@@ -59,42 +59,57 @@ body{
 .content{
   text-align: center;
 }
-.logo{
+.logologo{
   text-align: center;
 }
-#logo-bw {
-  max-width: 40%;
+.logotype{
+  text-align: center;
+}
+#logologo {
+  max-width: 20%;
   text-align: center;
   display: inline-block;
-  margin-top:13%;
+  margin-top:5%;
   -webkit-transition: -webkit-transform .8s ease-in-out;
         transition:         transform .8s ease-in-out;
 }
-#logo-bw:hover {
+#logologo:hover {
   -webkit-transform: rotate(360deg);
           transform: rotate(360deg);
 }
+#logotype {
+  index:1;
+  max-width: 30%;
+  text-align: center;
+  display: inline-block;
+}
 
 .text{
   text-align: center;
-  margin-top:7%;
+  margin-top:-27%;
   color:white;
   font-family: 'Fredoka One', cursive;
-  font-size: 5vw;
+  font-size: 2vw;
 }
 
 @media only screen and (max-width: 600px){
-  #logo-bw {
+  #logologo {
     max-width: 60%;
     text-align: center;
     display: inline-block;
-    margin-top:50%;
+    margin-top:20%;
+}
+#logotype {
+  index:1;
+  max-width: 50%;
+  text-align: center;
+  display: inline-block;
 }
 .text{
   text-align: center;
-  margin-top:15%;
+  margin-top:10%;
   color:white;
   font-family: 'Fredoka One', cursive;
-  font-size: 12vw;
+  font-size: 8vw;
 }
 }
