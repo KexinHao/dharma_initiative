@@ -88,7 +88,7 @@ body{
   text-align: center;
   margin-top:-27%;
   color:white;
-  font-family: 'Fredoka One', cursive;
+  font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
   font-size: 1.3vw;
 }
 
@@ -109,7 +109,7 @@ body{
   text-align: center;
   margin-top:10%;
   color:white;
-  font-family: 'Fredoka One', cursive;
+  font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
   font-size: 4vw;
 }
 }
