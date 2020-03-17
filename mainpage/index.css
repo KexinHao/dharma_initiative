@@ -154,6 +154,7 @@ p3{
       background-repeat: no-repeat;
   }
   .bottombar {
+    display: block;
     font-size:0.2em;
     width:100%;
     position: fixed;
@@ -161,12 +162,9 @@ p3{
     background-color: white;
     text-align: center;
     z-index: 9999;
-    display: grid;
-    grid-template-columns: 1fr 4fr 1fr;
   }
   .bottombar>img{
-    margin-top:1em;
-    width:100%;
+    display: none;
   }
   .container{
       display:block;
@@ -207,21 +205,6 @@ p3{
   #italicpoem{
     font-style: italic;
   }
-  .icons{
-    display: flex;
-    justify-content: space-around;
-  }
-  .icons > div{
-    text-align: center;
-    flex:1;
-    font-size: 2em;
-    margin-bottom: 0px;
-  }
-  .icons > div:hover{
-    cursor:pointer;
-    /* transform: scale(1.2); */
-    text-shadow: 0 0 4px #fff, 0 0 4px #fff, 0 0 4px #cff2ff, 0 0 4px #cff2ff, 0 0 4px #cff2ff, 0 0 4px #cff2ff, 0 0 4px #cff2ff;
-    }
   .frame >iframe{
       width: 100%;
     }
