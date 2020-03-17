@@ -241,6 +241,7 @@ img {
     margin: auto;
   }
   .bottombar {
+    display: block;
     font-size:0.2em;
     width:100%;
     position: fixed;
@@ -248,12 +249,9 @@ img {
     background-color: white;
     text-align: center;
     z-index: 9999;
-    display: grid;
-    grid-template-columns: 1fr 4fr 1fr;
   }
   .bottombar>img{
-    margin-top:1em;
-    width:100%;
+    display: none;
   }
   .container{
       display:block;
