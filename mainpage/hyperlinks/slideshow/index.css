@@ -7,6 +7,13 @@ body{
     background-image: url("image/bg.png");
     background-size: cover;
 }
+nav::-webkit-scrollbar{
+  display: none;
+}
+.tunnelwhite::-webkit-scrollbar{
+  display: none;
+}
+
 .container{
     z-index: 2;
     font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
@@ -135,9 +142,12 @@ p2{
 }
 
 
-
-.mySlides {display: none}
-img {vertical-align: middle;}
+.mySlides {
+  display: none;
+}
+img {
+  vertical-align: middle;
+}
 /* Slideshow container */
 .slideshow-container {
   max-width: 800px;
@@ -218,7 +228,7 @@ img {vertical-align: middle;}
 
 @media only screen and (max-width: 700px) {
   body{
-      background-image: url("image/bgcopy.png");
+      background-image: url("image/bgcopy.jpg");
       background-size: cover;
       background-repeat: no-repeat;
   }

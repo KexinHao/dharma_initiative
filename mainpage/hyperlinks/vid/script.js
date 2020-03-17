@@ -63,6 +63,6 @@ $(document).ready(function(){
     location.href = "../slideshow/index.html";
   });
   $("#backHome").click(function(){
-    location.href = "../../../index.html";
+    location.href = "../../index.html";
   });
 });
