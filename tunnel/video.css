@@ -1,0 +1,256 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-image: url("image/bg.png");
+    background-size: cover;
+}
+nav::-webkit-scrollbar{
+  display: none;
+}
+.tunnelwhite::-webkit-scrollbar{
+  display: none;
+}
+
+.container{
+    z-index: 2;
+    font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-size: cover;
+}
+
+
+a:link, a:visited, a:active{
+  text-decoration: none;
+  color:white;
+}
+a:hover{
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+.bottombar {
+  font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+  width:100%;
+  position: fixed;
+  bottom: -1vw;
+  background-color: white;
+  text-align: center;
+  z-index: 9999;
+  display: grid;
+  grid-template-columns: 0.6fr 6fr 0.6fr;
+}
+.bottombar>img{
+  width:100%;
+}
+
+p1{
+  padding:1vh;
+  color:black;
+  font-size: 1vw;
+}
+p1>a:link, a:visited, a:active{
+  text-decoration: none;
+  color:black;
+}
+p1>a:hover{
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+
+nav{
+  padding-left: 2%;
+  padding-right: 0;
+  padding-top: 2%;
+  flex:1;
+  flex-basis: 20%;
+  overflow: scroll;
+}
+
+nav > ul.catalog {
+  list-style-type: none;
+}
+li{
+  text-decoration: underline;
+  color:white;
+  font-size: 3.5vh;
+}
+li:hover {
+  text-decoration: underline;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+#title{
+  font-style: italic;
+}
+#textholder{
+  margin-left:1vw;
+  background: rgb(255,255,255);
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(253,253,255,0) 100%);
+}
+p2{
+  display:inline-block;
+  margin-left:2vh;
+  margin-top:2vh;
+  margin-bottom:2vh;
+  color:black;
+  font-size: 1vw;
+}
+#italicpoem{
+  font-style: italic;
+}
+
+
+.content{
+  padding-top: 5vh;
+  flex:1;
+  flex-basis: 40%;
+}
+
+.icons{
+  display: flex;
+  justify-content: space-around;
+}
+.icons > div{
+  text-align: center;
+  flex:1;
+  font-size: 3vw;
+  transition: transform .2s;
+  margin-bottom: 1vh;
+}
+.icons > div:hover{
+  cursor:pointer;
+  /* transform: scale(1.2); */
+  text-shadow: 0 0 4px #fff, 0 0 4px #fff, 0 0 4px #cff2ff, 0 0 4px #cff2ff, 0 0 4px #cff2ff, 0 0 4px #cff2ff, 0 0 4px #cff2ff;
+  }
+
+
+.tunnelwhite{
+  flex:1;
+  flex-basis: 40%;
+  /* display: flex;
+  justify-content: space-between;
+  align-items: flex-start; */
+  overflow: scroll;
+  height: 120vh;
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+}
+
+#holdervideo > iframe{
+  width:50vw;
+  height:30vw;
+}
+
+#holderinfo{
+  margin-left: 0vw;
+}
+p3{
+  font-size: 1vw;
+  color:white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+
+@media only screen and (max-width: 700px) {
+  body{
+      background-image: url("image/bgcopy.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+  }
+  .bottombar {
+    display: block;
+    font-size:0.1em;
+    width:100%;
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+    text-align: center;
+    z-index: 9999;
+  }
+  .bottombar>img{
+    display: none;
+  }
+  p1{
+    color:black;
+    font-size: 1em;
+  }
+  .container{
+      display:block;
+      background-size: cover;
+  }
+  ul{
+    float:left;
+    font-size:1em;
+    padding-left: 2%;
+    padding-right: 5%;
+    padding-top: 5%;
+    width: 90%;
+    height:200px;
+  }
+  nav:after{
+    content:"";
+    display:table;
+    clear:both;
+  }
+  .content{
+    display:block;
+    width: 100%;
+    padding-top: 1vw;
+  }
+  .tunnelwhite{
+    display: none;
+  }
+  #title{
+    font-style: italic;
+  }
+  #textholder{
+     margin-left:-4em;
+  }
+  p2{
+    display:inline-block;
+    margin-left:5em;
+    color:black;
+    font-size: 1em;
+  }
+  #italicpoem{
+    font-style: italic;
+  }
+  .icons{
+    display: flex;
+    justify-content: space-around;
+  }
+  .icons > div{
+    text-align: center;
+    flex:1;
+    font-size: 2em;
+  }
+  .icons > div:hover{
+    cursor:pointer;
+    /* transform: scale(1.2); */
+    text-shadow: 0 0 4px #fff, 0 0 4px #fff, 0 0 4px #cff2ff, 0 0 4px #cff2ff, 0 0 4px #cff2ff, 0 0 4px #cff2ff, 0 0 4px #cff2ff;
+    }
+  #holdervideo > iframe{
+      width:100%;
+      height:30vh;
+    }
+  #holderinfo{
+      margin-left: 1em;
+      margin-right: 1em;
+    }
+  p3{
+    font-size: 1em;
+    color:white;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+  }
+
+
+}

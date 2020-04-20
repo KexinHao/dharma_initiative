@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dharma initiatives</title>
+
+  <!-- include stylesheets here -->
+  <link rel="stylesheet" href="video.css" />
+  <script src="video.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Cabin|Lora|Neuton&display=swap" rel="stylesheet">
+
+<script>
+ $(document).ready(function(){
+
+
+   $(function(){
+     $('.icon').click(function(){
+       $('#holder' + $(this).attr('id')).show();
+       $('.holder > div').not('#holder' + $(this).attr('id')).hide();
+       window.location.hash = $(this).attr('id');
+     });
+
+     if(window.location.hash) {
+       var hash = window.location.hash.substring(1);
+       // alert (hash);
+       $('#holder' + hash).show();
+       $('.holder > div').not('#holder' + hash).hide();
+     };
+
+     $("#showPics").click(function(){
+       location.href = "photo.html";
+     });
+     $("#backHome").click(function(){
+       location.href = "tunnel.html";
+     });
+   });
+
+
+ });
+
+
+</script>
+
+</head>
+<body>
+
+
+
+  <div class="bottombar">
+    <img src="image/DHARAMA TYPENEW.png">
+    <p1>
+      <a href="https://www.instagram.com/dharma_initiatives/">@dharma_initiatives</a> is a collective curatorial project situated between the offline and the online. Join our narrative and experience its full evolution on our website.
+    </p1>
+    <img src="image/DHARAMA TYPENEW.png">
+  </div>
+
+  <div class="container">
+    <nav>
+      <ul class="catalog">
+          <li>Episode 1 <span id='title'> Tunnel</span></li>
+          <div id="textholder">
+            <p2>
+              <span id='italicpoem'>
+              " tunnelling vision
+              <br />
+              beneath the train tracks<br />
+              lies|,| our anonymous truth<br />
+              <br />
+              knick-knack humanoids,<br />
+              we cross the border<br />
+              <br />
+              wet tissues seethe with july sweat,<br />
+              plush, porcelain & other materials with which we can make objects likeable<br />
+              <br />
+              knick-knack humanoids<br />
+              which have been molded,<br />
+              formed<br />
+              & cast away<br />
+              <br />
+              knick-knack humanoids,<br />
+              we lunge on the stairs<br />
+              breaking our selves<br />
+              so that |mostly| everyone<br />
+              can grab a piece<br />
+              <br />
+              the walls are closing in<br />
+              *sounds of intense breathing* "<br />
+              <br />
+              </span>
+           text by Marc Solomon
+         </p2>
+          </div>
+          <li>Episode 2 <span id='title'> Dunes</span></li>
+          <!-- <li>Episode 3 <span id='title'> ...</span></li>
+          <li>Episode 4 <span id='title'> ...</span></li>
+          <li>Episode 5 <span id='title'> ...</span></li>
+          <li>Episode 6 <span id='title'> ...</span></li>
+          <li>Episode 7 <span id='title'> ...</span></li>
+          <li>Episode 8 <span id='title'> ...</span></li>
+          <li>Episode 9 <span id='title'> ...</span></li>
+          <li>Episode 10 <span id='title'> ...</span></li> -->
+      </ul>
+    </nav>
+    <div class="content">
+       <div class="icons">
+         <div class="icon" id="info">🗂️</div>
+         <div id="showPics">📷</div>
+         <div class="icon" id="video">📹</div>
+         <div id="backHome">🏠</div>
+       </div>
+
+        <div class-"holder">
+
+          <div id="holdervideo" >
+           <iframe src="https://www.youtube.com/embed/bihBNc1pGVg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+
+          <div id="holderinfo" style="display:none">
+            <p3>
+              <!-- <span id="infotitle">EPISODE 1: “Tunnel”</span> -->
+             <!-- <br /><br /> -->
+             Directed by Dharma Initiatives<br />
+             Edited by Marc Solomon<br />
+             Sound by Christian Thomsen (@fjorsk) <br />
+             Documentation by Dharma Initiatives & Amber H2o<br />
+             Design by Matas Buckus, Kexin Hao and Emir Karyo<br />
+             Curated by Christian Roncea<br />
+             <br />
+             with contributions from Anca Bârjovanu, Amber H2o,Tudor Ciurescu, Christian Thomsen (FJORSK), Max van Olffen, Liza Houben, Christian Roncea, Stefan Tanase, Matas Buckus, Andrei Selaru, Milogu Official and an unknown artist.
+             <br /><br /><br /><br /> 
+            </p3>
+          </div>
+        </div>
+
+   </div>
+
+
+    <div class="tunnelwhite">
+         <img src="image/TUNNELwhite.png">
+    </div>
+  </div>
+</body>
+</html>
