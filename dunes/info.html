@@ -6,13 +6,13 @@
   <title>dharma initiatives</title>
 
   <!-- include stylesheets here -->
-  <link rel="stylesheet" href="video.css" />
+  <link rel="stylesheet" href="info.css" />
 
   <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Cabin|Lora|Neuton&display=swap" rel="stylesheet">
-  <script src="video.js"></script>
+  <script src="info.js"></script>
 
 </head>
 <body>
@@ -44,20 +44,43 @@
     </nav>
     <div class="content">
        <div class="icons">
-         <div  id="showinfo">🗂️</div>
+         <div id="showinfo">🗂️</div>
          <div id="showpics">📷</div>
-         <div  id="showvideo">📹</div>
+         <div id="showvideo">📹</div>
          <div id="backhome">🏠</div>
        </div>
-
-        <div class-"holder">
-
-          <div id="holdervideo" >
-           <iframe width="560" height="315" src="https://www.youtube.com/embed/8olZXRmrbU0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+       <div class="imagebox">
+           <img src="instructions/Scan1.jpeg"/>
+           <img src="instructions/Scan3.jpeg"/>
+           <img src="instructions/Scan4.jpeg"/>
+       </div>
           </div>
-        </div>
+
 
    </div>
   </div>
+  <script>
+  var slideIndex = 1;
+  showSlides(slideIndex);
+
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slides[slideIndex-1].style.display = "block";
+  }
+  </script>
 </body>
 </html>
