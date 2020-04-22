@@ -2,6 +2,9 @@ $(document).ready(function(){
   $('.content>img').click(function(){
     location.href = "video.html";
   });
+  $('.instructions').click(function(){
+    location.href = "info.html";
+  });
   $("#episode1").click(function(){
     location.href = "../tunnel/video.html";
   });

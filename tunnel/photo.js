@@ -11,4 +11,10 @@ $(document).ready(function(){
   $("#backHome").click(function(){
     location.href = "tunnel.html";
   });
+  $("#episode1").click(function(){
+    location.href = "tunnel.html";
+  });
+  $("#episode2").click(function(){
+    location.href = "../dunes/dunes.html";
+  });
 });

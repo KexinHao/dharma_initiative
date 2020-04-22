@@ -41,6 +41,11 @@ nav::-webkit-scrollbar{
 .bottombar>img{
   width:100%;
 }
+audio{
+  position: fixed;
+  top: 5vh;
+  right:0;
+}
 
 p-bottom{
   margin:10px;
@@ -113,6 +118,12 @@ li:hover {
       height:100vh;
       background-size: cover;
       background-repeat: no-repeat;
+  }
+  audio{
+    display:none;
+    position: fixed;
+    top: 5vh;
+    right:0;
   }
   .bottombar {
     display: block;

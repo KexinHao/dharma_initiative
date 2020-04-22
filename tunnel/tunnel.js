@@ -146,4 +146,7 @@ $(document).ready(function(){
   $("#episode1").click(function(){
     location.href = "video.html";
   });
+  $("#episode2").click(function(){
+    location.href = "../dunes/dunes.html";
+  });
 });
