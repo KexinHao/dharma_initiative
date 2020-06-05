@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>dharma initiatives</title>
+  <!-- include stylesheets here -->
+  <link rel="stylesheet" href="birdsong.css" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,615;1,400;1,615&family=Fredoka+One&family=Oxygen:wght@300;400;700&family=Varela+Round&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="birdsong.js"></script>
+<script>
+
+$(function(){
+  $('.topbar').click(function(){
+      $('#navbar').toggle();
+        // window.location.hash = target;
+      });
+// $(function(){
+   $('.title').click(function(){
+       $('#main' + $(this).attr('id')).show();
+       $('.mainbox > div').not('#main' + $(this).attr('id')).hide();
+       window.location.hash = $(this).attr('id');
+      });
+
+      if(window.location.hash) {
+        var hash = window.location.hash.substring(1);
+        // alert (hash);
+        $("#main" + hash).show();
+        $('.mainbox > div').not("#main" + hash).hide();
+      };
+   })
+  </script>
+</head>
+<body>
+
+  <div class="topbar">
+    list
+  </div>
+
+
+  <ul class="episodes">
+      <li id="episode1">E1: Tunnel</li>
+      <li id="episode2">E2: Dunes</li>
+      <li id="episode3">E3: Birdsong</li>
+  </ul>
+
+
+   <div class="content">
+
+     <ul id="menu">
+         <li class="title" id="text">text</li>
+         <li class="title" id="video">video</li>
+         <li class="title" id="photos">photos</li>
+         <li class="external" id="instagram">Instagram</li>
+         <li class="external" id="soundcloud">SoundCloud</li>
+         <li class="external" id="home">home</li>
+     </ul>
+
+      <div class="mainbox">
+        <div id="maintext" style="display:none;">
+          <div id="infoabout">
+            EPISODE 3: “Bird Song” by Christian Thomsen (Fjorsk)<br />
+            Filmed &amp; Documented by Christian Thomsen (Fjorsk) &amp; Vito Willems<br />
+            Video-Editing by Marc Solomon<br />
+            Web Design by Kexin Hao<br />
+            3D Animation by Jan Wojda &amp; Emir Karyo<br />
+            Sound Design and Composition by in.finit &amp; Fjorsk<br />
+            Sound Fx by in.finit<br />
+          </div>
+        </div>
+        <div id="mainvideo">
+          <iframe src="https://www.youtube.com/embed/EBDq4JClJOo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div id="mainphotos"style="display:none;">
+          <img src="bsimage/allpic/1.jpg" />
+          <img src="bsimage/allpic/2.jpg" />
+          <img src="bsimage/allpic/3.jpg" />
+          <img src="bsimage/allpic/4.jpg" />
+          <img src="bsimage/allpic/5.jpg" />
+          <img src="bsimage/allpic/6.jpg" />
+          <img src="bsimage/allpic/7.jpg" />
+          <img src="bsimage/allpic/8.jpg" />
+          <img src="bsimage/allpic/9.jpg" />
+          <img src="bsimage/allpic/10.jpg" />
+          <img src="bsimage/allpic/11.jpg" />
+          <img src="bsimage/allpic/12.jpg" />
+          <img src="bsimage/allpic/13.jpg" />
+          <img src="bsimage/allpic/14.jpg" />
+          <img src="bsimage/allpic/15.jpg" />
+          <img src="bsimage/allpic/16.jpg" />
+          <img src="bsimage/allpic/17.jpg" />
+          <img src="bsimage/allpic/19.jpg" />
+          <img src="bsimage/allpic/20.jpg" />
+          <img src="bsimage/allpic/21.jpg" />
+        </div>
+      </div>
+
+     </div>
+</body>
+
+</html>
