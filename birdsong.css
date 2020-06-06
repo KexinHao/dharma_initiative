@@ -96,15 +96,21 @@ ul#menu >.external{
   font-style: italic;
 }
 #mainabout > #aboutus{
-  -webkit-column-count: 3;
-  -moz-column-count: 3;
-  column-count: 3;
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
   font-size:2vh;
   font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
-  padding:5vw;
+  padding-left:5vw;
+  padding-right:5vw;
+  padding-top:2vw;
+  padding-bottom:5vw;
   -moz-box-shadow:    inset 0 0 10px #000000;
   -webkit-box-shadow: inset 0 0 10px #000000;
   box-shadow:         inset 0 0 10px #000000;
+}
+#mainabout iframe{
+  display:block;
 }
 
 
