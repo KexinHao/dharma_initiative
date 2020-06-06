@@ -11,4 +11,7 @@ $(document).ready(function(){
   $("#episode2").click(function(){
     location.href = "video.html";
   });
+  $("#episode3").click(function(){
+    location.href = "../birdsong.html";
+  });
 });

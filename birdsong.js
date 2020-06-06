@@ -9,10 +9,10 @@ $(document).ready(function(){
     location.href = "https://soundcloud.com/dharmainitiatives";
   });
   $("#episode1").click(function(){
-    location.href = "../tunnel/tunnel.html";
+    location.href = "tunnel/tunnel.html";
   });
   $("#episode2").click(function(){
-    location.href = "../dunes/dunes.html";
+    location.href = "dunes/dunes.html";
   });
   $("#episode3").click(function(){
     location.href = "birdsong.html";

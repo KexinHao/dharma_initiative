@@ -12,43 +12,24 @@ body{
     justify-content: flex-start;
 }
 
-
-.topbar{
-  display: none;
-  position: fixed;
-  top:0;
-  left:0;
-  margin-bottom: -2vh;
-  color:white;
-  font-family: 'Work Sans', sans-serif;
-  font-size: 4vh;
-  text-align: center;
-  box-shadow:inset 0px 0px 2vh 0.3vh #607596;
-  background:linear-gradient(to right, #e4e4e4 2%, #757575 70%);
-  background-color:#faf4be;
-  border-radius:50vh;
-  padding:1.2vh 1.2vh;
-  text-decoration:none;
+#mobilebutton{
+  display:none;
 }
-.topbar:hover {
-  background:linear-gradient(to bottom, #7ee6e6 5%, #fabefa 100%);
-  background-color:#7ee6e6;
-}
-
 
 ul.episodes {
   order:1;
   flex-basis:8vw;
   flex:1;
-  height: 100vh;
   list-style-type: none;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
 }
 ul.episodes >li{
   -moz-box-shadow:    inset 0 0 10px #000000;
   -webkit-box-shadow: inset 0 0 10px #000000;
   box-shadow:         inset 0 0 10px #000000;
-  font-size: 2vw;
-  height:33.333vh;
+  font-size: 4vh;
+  padding-top:10vh;
 }
 ul.episodes >li:hover{
   font-style: italic;
@@ -77,6 +58,7 @@ ul#menu {
 ul#menu > li{
   height:100%;
   padding:1vw;
+  font-size: 4vh;
 }
 ul#menu >li:hover {
   font-style: italic;
@@ -85,12 +67,9 @@ ul#menu >li:hover {
   cursor: pointer;
 }
 ul#menu >.title{
-
-  font-size: 2vw;
   float: left;
 }
 ul#menu >.external{
-  font-size: 2vw;
   float: right;
 }
 
@@ -99,8 +78,55 @@ ul#menu >.external{
   flex-basis:95vh;
   overflow: scroll;
   width: 100%;
-  font-size: 2vh;
 }
+
+#mainabout img{
+  display: block;
+  width: 100%;
+  margin-bottom: -10vh;
+}
+#mainabout > #abouttx{
+  font-size:4vh;
+  font-family: 'Libre Baskerville', serif;
+  padding-left:5vw;
+  padding-right:5vw;
+}
+#mainabout > #abouttx > #italic{
+  font-family: 'Libre Baskerville', serif;
+  font-style: italic;
+}
+#mainabout > #aboutus{
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+  font-size:2vh;
+  font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+  padding:5vw;
+  -moz-box-shadow:    inset 0 0 10px #000000;
+  -webkit-box-shadow: inset 0 0 10px #000000;
+  box-shadow:         inset 0 0 10px #000000;
+}
+
+
+#maintext img{
+  display: block;
+  width: 95%;
+  padding-left: 4vw;
+  margin-bottom: -10vh;
+}
+#maintext > #poem{
+  font-size:3vh;
+  font-family: 'Libre Baskerville', serif;
+  font-style: italic;
+  padding-left:5vw;
+  padding-right:5vw;
+}
+#maintext > #credit{
+  font-size:4vh;
+  font-family: 'Libre Baskerville', serif;
+  padding-left:5vw;
+}
+
 #mainvideo iframe{
   padding-top:-20vh;
   display:block;
@@ -114,40 +140,57 @@ ul#menu >.external{
 
 
 @media only screen and (max-width: 800px) {
-  .maintextbox{
-    height: 100vh;
-    width: 72%;
-  }
-  .maintextbox div:last-of-type{
-    margin-bottom:30vh;
-  }
-  nav{
-    z-index:998;
-    display: none;
-    position:fixed;
-    padding-top:5vh;
-    background: rgb(255,255,255);
-    background: linear-gradient(90deg, rgba(255,255,255,1) 60%, rgba(254,254,254,0) 100%);
-    left:0;
-    width:40%;
-    height:100vh;
-  }
-  .informationbox {
-    height: 100vh;
-    overflow-y: scroll;
-    margin-right: 0.5vh;
-    margin-left:0.5vh;
-    width: 28%;
-    overflow-x: hidden;
-    line-height: 80%;
-  }
-  .informationbox::-webkit-scrollbar {
-    width: 0 !important
-  }
-
-  .topbar{
+  #mobilebutton{
     display:inline-block;
-    z-index:999;
+    position: fixed;
+    right:0;
+    z-index: 99;
+    top:5vh;
+    font-size: 2vh;
+    background-color: white;
+    border-radius:10%;
+    padding:1vh;
+    -moz-box-shadow:    inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    box-shadow:         inset 0 0 10px #000000;
   }
-
+  ul.episodes {
+    display: none;
+    order:1;
+    flex-basis:8vw;
+    flex:1;
+    list-style-type: none;
+    -moz-box-shadow:    inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    box-shadow:         inset 0 0 10px #000000;
+  }
+  ul.episodes >li{
+    font-size: 2vh;
+    -moz-box-shadow:    inset 0 0 0px #000000;
+    -webkit-box-shadow: inset 0 0 0px #000000;
+    box-shadow:         inset 0 0 0px #000000;
+    padding-top:10vh;
+  }
+  .content{
+    order:2;
+    flex-basis:90vh;
+    display: flex;
+    flex-direction:column;
+    justify-content: flex-start;
+  }
+  ul#menu >li{
+    height:100%;
+    font-size: 2vh;
+  }
+  #mainabout > #aboutus{
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+  }
+  #mainabout img{
+    margin-bottom: 0;
+  }
+  #maintext img{
+    margin-bottom: 0;
+  }
 }

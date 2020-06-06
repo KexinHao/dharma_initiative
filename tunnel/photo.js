@@ -17,4 +17,7 @@ $(document).ready(function(){
   $("#episode2").click(function(){
     location.href = "../dunes/dunes.html";
   });
+  $("#episode3").click(function(){
+    location.href = "../birdsong.html";
+  });
 });

@@ -7,16 +7,16 @@
   <!-- include stylesheets here -->
   <link rel="stylesheet" href="birdsong.css" />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,615;1,400;1,615&family=Fredoka+One&family=Oxygen:wght@300;400;700&family=Varela+Round&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="birdsong.js"></script>
 <script>
 
 $(function(){
-  $('.topbar').click(function(){
-      $('#navbar').toggle();
-        // window.location.hash = target;
-      });
-// $(function(){
+  $('#mobilebutton').click(function(){
+    $('.episodes').toggle();
+      // window.location.hash = target;
+    });
    $('.title').click(function(){
        $('#main' + $(this).attr('id')).show();
        $('.mainbox > div').not('#main' + $(this).attr('id')).hide();
@@ -34,21 +34,21 @@ $(function(){
 </head>
 <body>
 
-  <div class="topbar">
-    list
+  <div id="mobilebutton">
+    episodes
   </div>
 
-
   <ul class="episodes">
-      <li id="episode1">E1: Tunnel</li>
-      <li id="episode2">E2: Dunes</li>
-      <li id="episode3">E3: Birdsong</li>
+      <li id="episode1">E1<span>: Tunnel</span></li>
+      <li id="episode2">E2<span>: Dunes</span></li>
+      <li id="episode3">E3<span>: Birdsong</span></li>
   </ul>
 
 
    <div class="content">
 
      <ul id="menu">
+         <li class="title" id="about">about</li>
          <li class="title" id="text">text</li>
          <li class="title" id="video">video</li>
          <li class="title" id="photos">photos</li>
@@ -58,19 +58,75 @@ $(function(){
      </ul>
 
       <div class="mainbox">
+        <div id="mainabout" style="display:none;">
+            <img src="bsimage/3dlogo.png" />
+            <div id="abouttx">
+              by <span id="italic">Christian Thomsen (Fjorsk)</span><br /><br /><br /><br />
+              Filmed &amp; Documented by <span id="italic">Christian Thomsen (Fjorsk) &amp; Vito Willems</span><br />
+              Video-Editing by <span id="italic">Marc Solomon</span><br />
+              Web Design by <span id="italic">Kexin Hao</span><br />
+              3D Animation by <span id="italic">Jan Wojda &amp; Emir Karyo</span><br />
+              Sound Design and Composition by <span id="italic">in.finit &amp; Fjorsk</span><br />
+              Sound Fx by <span id="italic">in.finit</span><br />
+              add “dungeon mix” by <span id="italic">Dj Melissa</span><br />
+              Poster &Type-Design by <span id="italic">Don Elektro</span>
+              <br /><br /><br /><br /><br /><br /><br /><br />
+            </div>
+            <div id="aboutus">
+              <p>
+                Dharma Initiatives is a collective experimental project, developed in a decentralized multi-linear exhibition format, online and offline. Born out of playing with the medium of art documentation we are longing for uninhabited/unlived spaces. The aim of the project is to re-think traditional values of exhibiting/experiencing contemporary art and to dismantle hierarchies by mixing curating with Cinematography, Animation, Graphic Design, Photography and Sound. Our name comes from “The Dharma Initiative”, also written DHARMA (Department of Heuristics and Research on Material Applications),a fictional research project featured in the tv series “Lost”.
+              </p>
+              <br />
+              <p>
+                “Dharma Initiatives” is a group of occult scientists researching “atemporal electromagnetic image-leaks”. The anomaly of “image-leaks” was caused while attempting to contact a Dharma member from the past through a portal, where images started leaking. The Dharma Initiatives Group is engaging in experiments meant to unlock the powers of mysterious portals which give access to alternate realities. The exposure to ”image-leaks” (known to have unique powers) has physical and psychological consequences causing the images or people’s memories to teleport, disappear and multiply.
+              </p>
+              <br />
+              <p>
+                Our team is: Christian Roncea (Founder), Marc Solomon (Video-Editing), Kexin Hao (Web Design), Christian Thomsen (Sound Design) & in.finit (Sound Design & FX), Emir Karyo (Graphic Design & VFX), Jan Wojda (VFX), Matas Buckus (Logo Design).
+                <br /><br />
+                For any inquiries, you can reach to us by <a href="mailto:dharmainitiatives815@gmail.com" target="_blank">e-mail</a> or by dm <a href="https://www.instagram.com/dharma_initiatives/" target="_blank">here</a>.
+              </p>
+            </div>
+        </div>
         <div id="maintext" style="display:none;">
-          <div id="infoabout">
-            EPISODE 3: “Bird Song” by Christian Thomsen (Fjorsk)<br />
-            Filmed &amp; Documented by Christian Thomsen (Fjorsk) &amp; Vito Willems<br />
-            Video-Editing by Marc Solomon<br />
-            Web Design by Kexin Hao<br />
-            3D Animation by Jan Wojda &amp; Emir Karyo<br />
-            Sound Design and Composition by in.finit &amp; Fjorsk<br />
-            Sound Fx by in.finit<br />
-          </div>
+           <img src="bsimage/logo.png" />
+           <div id="credit">
+             text by Dharma Initiatives
+           </div>
+           <div id="poem">
+             <br /><br /><br /><br /><br /><br />
+             I find it irksome to give a detailed,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;consecutive account of my wanderings inside that<br />
+             cavernous,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aeon-dead honeycomb of primal masonry. <br />
+             One hears the rustling of wind in&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the leaves,<br /><br />
+
+             forgotten bells sounding, their origin or corporeality impossible to pinpoint and further<br />
+             concealed by the&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;piercing notes made&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;by the hidden birds.<br /><br />
+
+             The idea that learners enter into a liminal state in their attempts to grasp certain concepts in<br />
+             their subjects, presents a powerful way&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;of remembering and learning, involving identity<br />
+             shifts which can&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;entail troublesome, unsafe journeys.<br /><br />
+
+             (he shortly found this process to be dysfunctional)<br /><br />
+
+             Peering through the impenetrable woods, I found transparent glimpses which revealed<br />
+             submerged&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;structures, tightly shuttered by the ground, for the first times in many<br />
+             ages, the face echoed the tread of human feet, lingering&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;in a liminal state, an unstable<br />
+             space in which one may oscillate between old and emergent understandings.<br /><br />
+
+             boosted in the middle of the woods – stranded,<br /><br />
+
+             subsequently gaining the impression that this place had been deliberately closed and<br />
+             deserted, rather&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; than overwhelmed by some sudden calamity or by gradual decay.<br />
+             Image-leaking is permitted - investigate & document,  an inanimate gatekeeper says.<br /><br />
+
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a glacial gust of air came from its’ aperture,<br />
+             the waves didn’t even have to speak with it, they just controlled his pathway from afar
+             <br /><br /><br /><br /><br /><br />
+           </div>
+
         </div>
         <div id="mainvideo">
-          <iframe src="https://www.youtube.com/embed/EBDq4JClJOo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/r3qWdIE6o5s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div id="mainphotos"style="display:none;">
           <img src="bsimage/allpic/1.jpg" />
