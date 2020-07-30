@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>dharma initiatives</title>
+  <!-- include stylesheets here -->
+  <link rel="stylesheet" href="greenhouse.css" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,615;1,400;1,615&family=Fredoka+One&family=Oxygen:wght@300;400;700&family=Varela+Round&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="greenhouse.js"></script>
+<script>
+
+$(function(){
+  $('#mobilebutton').click(function(){
+    $('.episodes').toggle();
+      // window.location.hash = target;
+    });
+   $('.title').click(function(){
+       $('#main' + $(this).attr('id')).show();
+       $('.mainbox > div').not('#main' + $(this).attr('id')).hide();
+       window.location.hash = $(this).attr('id');
+      });
+
+      if(window.location.hash) {
+        var hash = window.location.hash.substring(1);
+        // alert (hash);
+        $("#main" + hash).show();
+        $('.mainbox > div').not("#main" + hash).hide();
+      };
+   })
+  </script>
+</head>
+<body>
+
+  <div id="mobilebutton">
+    episodes
+  </div>
+
+  <ul class="episodes">
+      <li id="episode1">E1<span>: Tunnel</span></li>
+      <li id="episode2">E2<span>: Dunes</span></li>
+      <li id="episode3">E3<span>: Birdsong</span></li>
+      <li id="episode4">E4<span>: Greenhouse</span></li>
+  </ul>
+
+
+   <div class="content">
+
+     <ul id="menu">
+         <li class="title" id="about">about</li>
+         <li class="title" id="text">text</li>
+         <li class="title" id="video">video</li>
+         <li class="title" id="photos">photos</li>
+         <li class="external" id="instagram">Instagram</li>
+         <li class="external" id="soundcloud">SoundCloud</li>
+         <li class="external" id="home">home</li>
+     </ul>
+
+      <div class="mainbox">
+        <div id="mainabout" style="display:none;">
+            <img src="ghimage/ghposter.png" />
+            <div id="abouttx">
+              <br /><br /><br /><br />
+              EPISODE 4: “Greenhouse”, curated by <span id="italic">Light-Harvesting Complex</span> &amp; hosted by<span id="italic"> Dharma Initiatives</span> at Vantaa, Finland<br /><br /><br />
+              Text by <span id="italic">Natalya Serkova</span><br />
+              Photography by <span id="italic">Light-Harvesting Complex (Sara Blosseville & Victor Gogly)</span>
+              With contributions from:
+              <span id="italic">
+                Afra Eisma, Bastian Visch, Bob Demper, Catherine Schwartz, Dimitrie Luca Gora, Ecaterina Vrana, El Pelele, Emir Karyo, Helmi Nieminen, Ian Bruner, Jan Wojda, Johanna Blank, Justin Oritz, Kexin Hao, Luca Florian, Marnix Van Uum, Mattia Papp, Megan Mehta, Mette Rasmussen, Hortensia Mi Kafchin, Nanhee Kim, Nefololo, Philip Hinge, Rosa Zangenberg, Sara Blosseville, Siggi Sekira, Suyoung Yang, Tea Strazicic, Victor Gogly, Vitaly Bezpalov, Zhao Laozhi
+              </span> <br /><br /><br />
+              Credits<br /><br />
+              Video by <span id="italic">Light-Harvesting Complex &amp; Dharma Initiatives</span><br />
+              Cg Animation by <span id="italic">Emir Karyo &amp; Jan Wojda</span><br />
+              Graphic Design by <span id="italic">Matas Buckus</span><br />
+              Sound by <span id="italic">in.finit &amp; MengHan</span><br />
+              Web Design by <span id="italic">Kexin Hao</span><br />
+              Editing by <span id="italic">Christian Roncea &amp; Marc Solomon</span><br />
+              Digital Frame by <span id="italic">Marie Komatsu</span><br />
+              Voices by <span id="italic">smarton &amp; carton</span>
+<br /><br /><br /><br />
+            </div>
+            <div id="aboutus">
+              <p>
+                Dharma Initiatives is a collective experimental project, developed in a decentralized multi-linear exhibition format, online and offline.
+                Born out of playing with the medium of art documentation we are longing for uninhabited/unlived spaces.
+                The aim of the project is to re-think traditional values of exhibiting/experiencing contemporary art and to dismantle hierarchies by mixing curating with Cinematography, Animation, Graphic Design, Photography and Sound.
+                Our name comes from “The Dharma Initiative”, also written DHARMA (Department of Heuristics and Research on Material Applications), a fictional research project featured in the tv series “Lost”.
+              </p>
+              <p>
+                Our team is: Christian Roncea (Founder), Marc Solomon (Video-Editing), Kexin Hao (Web Design), Christian Thomsen (Sound Design) & in.finit (Sound Design & FX), Emir Karyo (Graphic Design & VFX), Jan Wojda (VFX), Matas Buckus (Logo Design).
+                <br /><br />
+                For any inquiries, you can reach to us by <a href="mailto:dharmainitiatives815@gmail.com" target="_blank">e-mail</a> or by dm <a href="https://www.instagram.com/dharma_initiatives/" target="_blank">here</a>.
+              </p>
+            </div>
+        </div>
+        <div id="maintext" style="display:none;">
+           <img src="ghimage/ghtext.png" />
+           <div id="credit">
+             text by Natalya Serkova, designed by Matas Buckus
+           </div>
+           <div id="poem">
+             <br /><br /><br /><br /><br /><br />
+             * / **/ 20**  Day *th of the Experiment
+             <br /><br /><br /><br />
+
+
+             Woke up early today with loud and weird sounds. We had already got used to whistling and whispering during the night (unlike us, they don't need sleep, and they are active at any time of day), but these sounds were different. First we heard some intermittent clapping, then the sound of air jet suction (we call it the suction sound, we've heard it 3 times already, see records from */*, **/* and **/**. All 3 times before this sound appeared only in the afternoon, between 4pm and 8pm). Then we heard something that sounded like screaming, it's hard to describe what it sounded like. To be more precise, the sound resembled something between the screaming of a child and the squealing of a dog, we heard such a sound for the first time. This scream was then repeated 8 times within an hour (at 5:05, 5:15, 5:18, 5:26, 5:43, 5:48, 5:52, 5:55am). Identify a pattern in the frequency of the scream (underlined). When we went outside at 6:10am, we made sure that the leaking occurred in the usual way. However, by 8:45am, the expiries at points 3, 16, 25 and 40 had already increased dramatically (important (underlined): in pairs of 3-25 and 16-40 the points are at the same distance from each other; this may be due to (understand how (underlined)) the situation with pairs of points 8-12, 3-18 and 25-27 that changed their state last week, see record from */**). We observed pairs 3-25 and 16-40 during the day and suspect that they were the ones who made the loudest sounds in the morning. The observation will continue until the points (presumably) change their state.
+              <br /><br />
+             A contact with C. is still not yet established. However, the experiment that has taken us all last week yielded some results. In two places (near points 13 and 33) shallow funnels were formed in the ground, and this morning chicken eggs were found in them. We found that the eggs were fresh and had been laid presumably two days ago. They were removed from the funnels and placed under surveillance. If they are fertilized (not yet clear) and chickens hatch from them, we will take blood and saliva samples. We suggest that this may be a one-way message from C. We plan to try sending a return message in the near future, but it is still unclear what exactly we need to put in the funnels so that the message can be sent and reach the intended recipient (also (underlined): we need to set the time of day, with an accuracy of 5 minutes when the message should be placed in the funnels). Set the observation of points 13 and 33. It is assumed that their characteristics can provide additional information about the funnels (for a detailed table of characteristics of these points, see the tab 12, the table is replenished).
+              <br /><br />
+             Except for the morning sounds, the day passed without any incidents. With **/** we are planning a new experiment under the working title "Horizon" (for a detailed description of the experiment, see records from */*). Today we have discovered that we are lacking several ingredients for it: iron sulphate(II), sunflower grains and a whisk. Tomorrow we plan to follow them to the centre of the village. Also today the infrared camera got trashed, we may have to buy some elements to replace in it. Overall, the mood is cheerful, the weather is good. At night they promise rain with thunderstorms, we will have to cover all the points with plastic (checked the amount of remaining covering, it should be enough).
+
+             <br /><br /><br /><br /><br /><br />
+           </div>
+
+        </div>
+        <div id="mainvideo">
+          <iframe src="https://www.youtube.com/embed/26G3ta5UjTs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div id="mainphotos"style="display:none;">
+          *TBA*
+          <!-- <img src="bsimage/poster-print.png" />
+          <img src="bsimage/allpic/1.jpg" />
+          <img src="bsimage/allpic/2.jpg" />
+          <img src="bsimage/allpic/3.jpg" />
+          <img src="bsimage/allpic/4.jpg" />
+          <img src="bsimage/allpic/5.jpg" />
+          <img src="bsimage/allpic/6.jpg" />
+          <img src="bsimage/allpic/7.jpg" />
+          <img src="bsimage/allpic/8.jpg" />
+          <img src="bsimage/allpic/9.jpg" />
+          <img src="bsimage/allpic/10.jpg" />
+          <img src="bsimage/allpic/11.jpg" />
+          <img src="bsimage/allpic/12.jpg" />
+          <img src="bsimage/allpic/13.jpg" />
+          <img src="bsimage/allpic/14.jpg" />
+          <img src="bsimage/allpic/15.jpg" />
+          <img src="bsimage/allpic/16.jpg" />
+          <img src="bsimage/allpic/17.jpg" />
+          <img src="bsimage/allpic/19.jpg" />
+          <img src="bsimage/allpic/20.jpg" />
+          <img src="bsimage/allpic/21.jpg" /> -->
+        </div>
+      </div>
+
+     </div>
+</body>
+
+</html>

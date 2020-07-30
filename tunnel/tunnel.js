@@ -152,4 +152,7 @@ $(document).ready(function(){
   $("#episode3").click(function(){
     location.href = "../birdsong.html";
   });
+  $("#episode4").click(function(){
+    location.href = "../greenhouse.html";
+  });
 });

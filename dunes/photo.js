@@ -23,4 +23,10 @@ $(document).ready(function(){
   $("#episode2").click(function(){
     location.href = "dunes.html";
   });
+  $("#episode3").click(function(){
+    location.href = "../birdsong.html";
+  });
+  $("#episode4").click(function(){
+    location.href = "../greenhouse.html";
+  });
 });

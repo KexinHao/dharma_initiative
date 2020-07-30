@@ -1,0 +1,202 @@
+*{
+    padding: 0;
+    margin: 0;
+    /* border: 1px solid red; */
+    position: relative;
+    font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction:row;
+    justify-content: flex-start;
+}
+
+#mobilebutton{
+  display:none;
+}
+
+ul.episodes {
+  order:1;
+  flex-basis:8vw;
+  flex:1;
+  list-style-type: none;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+ul.episodes >li{
+  -moz-box-shadow:    inset 0 0 10px #000000;
+  -webkit-box-shadow: inset 0 0 10px #000000;
+  box-shadow:         inset 0 0 10px #000000;
+  font-size: 4vh;
+  padding-top:10vh;
+}
+ul.episodes >li:hover{
+  font-style: italic;
+  cursor:pointer;
+}
+
+
+
+.content{
+  order:2;
+  flex-basis:92vw;
+  display: flex;
+  flex-direction:column;
+  justify-content: flex-start;
+}
+
+ul#menu {
+  width: 100%;
+  list-style-type: none;
+  order:1;
+  flex-basis:5vh;
+  -moz-box-shadow:    inset 0 0 10px #000000;
+  -webkit-box-shadow: inset 0 0 10px #000000;
+  box-shadow:         inset 0 0 10px #000000;
+}
+ul#menu > li{
+  height:100%;
+  padding:1vw;
+  font-size: 4vh;
+}
+ul#menu >li:hover {
+  font-style: italic;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+ul#menu >.title{
+  float: left;
+}
+ul#menu >.external{
+  float: right;
+}
+
+.mainbox{
+  order: 2;
+  flex-basis:95vh;
+  overflow: scroll;
+  width: 100%;
+}
+
+#mainabout img{
+  display: block;
+  width: 100%;
+  margin-bottom: -10vh;
+}
+#mainabout > #abouttx{
+  font-size:4vh;
+  font-family: 'Libre Baskerville', serif;
+  padding-left:5vw;
+  padding-right:5vw;
+}
+#mainabout > #abouttx > #italic{
+  font-family: 'Libre Baskerville', serif;
+  font-style: italic;
+}
+#mainabout > #aboutus{
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+  font-size:2vh;
+  font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+  padding-left:5vw;
+  padding-right:5vw;
+  padding-top:2vw;
+  padding-bottom:5vw;
+  -moz-box-shadow:    inset 0 0 10px #000000;
+  -webkit-box-shadow: inset 0 0 10px #000000;
+  box-shadow:         inset 0 0 10px #000000;
+}
+#mainabout iframe{
+  display:block;
+}
+
+
+#maintext img{
+  display: block;
+  width: 95%;
+  padding-left: 4vw;
+  margin-bottom: -10vh;
+}
+#maintext > #poem{
+  font-size:3vh;
+  font-family: 'Libre Baskerville', serif;
+  font-style: italic;
+  padding-left:5vw;
+  padding-right:5vw;
+}
+#maintext > #credit{
+  font-size:4vh;
+  font-family: 'Libre Baskerville', serif;
+  padding-left:5vw;
+}
+
+#mainvideo iframe{
+  padding-top:-20vh;
+  display:block;
+  height:100vh;
+  width:100%;
+}
+#mainphotos img{
+  display:block;
+  width:100%;
+}
+
+
+@media only screen and (max-width: 800px) {
+  #mobilebutton{
+    display:inline-block;
+    position: fixed;
+    right:0;
+    z-index: 99;
+    top:5vh;
+    font-size: 2vh;
+    background-color: white;
+    border-radius:10%;
+    padding:1vh;
+    -moz-box-shadow:    inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    box-shadow:         inset 0 0 10px #000000;
+  }
+  ul.episodes {
+    display: none;
+    order:1;
+    flex-basis:8vw;
+    flex:1;
+    list-style-type: none;
+    -moz-box-shadow:    inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    box-shadow:         inset 0 0 10px #000000;
+  }
+  ul.episodes >li{
+    font-size: 2vh;
+    -moz-box-shadow:    inset 0 0 0px #000000;
+    -webkit-box-shadow: inset 0 0 0px #000000;
+    box-shadow:         inset 0 0 0px #000000;
+    padding-top:10vh;
+  }
+  .content{
+    order:2;
+    flex-basis:90vh;
+    display: flex;
+    flex-direction:column;
+    justify-content: flex-start;
+  }
+  ul#menu >li{
+    height:100%;
+    font-size: 2vh;
+  }
+  #mainabout > #aboutus{
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+  }
+  #mainabout img{
+    margin-bottom: 0;
+  }
+  #maintext img{
+    margin-bottom: 0;
+  }
+}
