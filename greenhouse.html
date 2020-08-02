@@ -22,12 +22,19 @@ $(function(){
        $('.mainbox > div').not('#main' + $(this).attr('id')).hide();
        window.location.hash = $(this).attr('id');
       });
+   $('.subtitle').click(function(){
+       $('#photos' + $(this).attr('id')).show();
+       $('.photoscontainer > div').not('#photos' + $(this).attr('id')).hide();
+       // window.location.hash = $(this).attr('id');
+      });
 
       if(window.location.hash) {
         var hash = window.location.hash.substring(1);
         // alert (hash);
         $("#main" + hash).show();
         $('.mainbox > div').not("#main" + hash).hide();
+        // $("#photos" + hash).show();
+        // $('.photoscontainer > div').not("#photos" + hash).hide();
       };
    })
   </script>
@@ -63,7 +70,7 @@ $(function(){
             <img src="ghimage/ghposter.png" />
             <div id="abouttx">
               <br /><br /><br /><br />
-              EPISODE 4: “Greenhouse”, curated by <span id="italic">Light-Harvesting Complex</span> &amp; hosted by<span id="italic"> Dharma Initiatives</span> at Vantaa, Finland<br /><br /><br />
+              EPISODE 4: “Greenhouse”, curated by <span id="italic">Dharma Initiatives</span> &amp; hosted by<span id="italic"> Light-Harvesting Complex</span> at Vantaa, Finland<br /><br /><br />
               Text by <span id="italic">Natalya Serkova</span><br />
               Photography by <span id="italic">Light-Harvesting Complex (Sara Blosseville & Victor Gogly)</span>
               With contributions from:
@@ -79,7 +86,7 @@ $(function(){
               Editing by <span id="italic">Christian Roncea &amp; Marc Solomon</span><br />
               Digital Frame by <span id="italic">Marie Komatsu</span><br />
               Voices by <span id="italic">smarton &amp; carton</span>
-<br /><br /><br /><br />
+              <br /><br /><br /><br />
             </div>
             <div id="aboutus">
               <p>
@@ -111,7 +118,7 @@ $(function(){
              A contact with C. is still not yet established. However, the experiment that has taken us all last week yielded some results. In two places (near points 13 and 33) shallow funnels were formed in the ground, and this morning chicken eggs were found in them. We found that the eggs were fresh and had been laid presumably two days ago. They were removed from the funnels and placed under surveillance. If they are fertilized (not yet clear) and chickens hatch from them, we will take blood and saliva samples. We suggest that this may be a one-way message from C. We plan to try sending a return message in the near future, but it is still unclear what exactly we need to put in the funnels so that the message can be sent and reach the intended recipient (also (underlined): we need to set the time of day, with an accuracy of 5 minutes when the message should be placed in the funnels). Set the observation of points 13 and 33. It is assumed that their characteristics can provide additional information about the funnels (for a detailed table of characteristics of these points, see the tab 12, the table is replenished).
               <br /><br />
              Except for the morning sounds, the day passed without any incidents. With **/** we are planning a new experiment under the working title "Horizon" (for a detailed description of the experiment, see records from */*). Today we have discovered that we are lacking several ingredients for it: iron sulphate(II), sunflower grains and a whisk. Tomorrow we plan to follow them to the centre of the village. Also today the infrared camera got trashed, we may have to buy some elements to replace in it. Overall, the mood is cheerful, the weather is good. At night they promise rain with thunderstorms, we will have to cover all the points with plastic (checked the amount of remaining covering, it should be enough).
-  <br /><br />
+             <br /><br />
              Text by Natalya Serkova
              <br /><br /><br /><br /><br /><br />
            </div>
@@ -121,28 +128,109 @@ $(function(){
           <iframe src="https://www.youtube.com/embed/26G3ta5UjTs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div id="mainphotos"style="display:none;">
-          *TBA*
-          <!-- <img src="bsimage/poster-print.png" />
-          <img src="bsimage/allpic/1.jpg" />
-          <img src="bsimage/allpic/2.jpg" />
-          <img src="bsimage/allpic/3.jpg" />
-          <img src="bsimage/allpic/4.jpg" />
-          <img src="bsimage/allpic/5.jpg" />
-          <img src="bsimage/allpic/6.jpg" />
-          <img src="bsimage/allpic/7.jpg" />
-          <img src="bsimage/allpic/8.jpg" />
-          <img src="bsimage/allpic/9.jpg" />
-          <img src="bsimage/allpic/10.jpg" />
-          <img src="bsimage/allpic/11.jpg" />
-          <img src="bsimage/allpic/12.jpg" />
-          <img src="bsimage/allpic/13.jpg" />
-          <img src="bsimage/allpic/14.jpg" />
-          <img src="bsimage/allpic/15.jpg" />
-          <img src="bsimage/allpic/16.jpg" />
-          <img src="bsimage/allpic/17.jpg" />
-          <img src="bsimage/allpic/19.jpg" />
-          <img src="bsimage/allpic/20.jpg" />
-          <img src="bsimage/allpic/21.jpg" /> -->
+          <ul id="submenu">
+            <li class="subtitle" id="imgleak">image leaks</li>
+            <li class="subtitle" id="installation">installation</li>
+            <li class="subtitle" id="works">works</li>
+          </ul>
+          <div class="photoscontainer">
+            <div id="photosimgleak" style="display:none;">
+              <img title="Afra Eisma" src="ghimage/imgleak/Afra Eisma .jpg" />
+              <img title="Bastian Visch" src="ghimage/imgleak/Bastian Visch.jpg" />
+              <img title="Bob Demper" src="ghimage/imgleak/Bob Demper .jpg" />
+              <img title="Catherine Schwartz" src="ghimage/imgleak/Catherine Schwartz .jpg" />
+              <img title="Dimitrie Luca Gora" src="ghimage/imgleak/Dimitrie Luca Gora .jpg" />
+              <img title="El Pelele" src="ghimage/imgleak/El Pelele .jpg" />
+              <img title="Emir Karyo" src="ghimage/imgleak/Emir Karyo .jpg" />
+              <img title="Helmi Nieminen" src="ghimage/imgleak/Helmi Nieminen .jpg" />
+              <img title="Ian Bruner" src="ghimage/imgleak/Ian Bruner.jpg" />
+              <img title="Jan Wojda" src="ghimage/imgleak/Jan Wojda .jpg" />
+              <img title="Johanna Blank" src="ghimage/imgleak/Johanna Blank.jpg" />
+              <img title="Justin Oritz" src="ghimage/imgleak/Justin Oritz .jpg" />
+              <img title="Justin Oritz" src="ghimage/imgleak/Justin Oritz.jpg" />
+              <img title="Luca Florian" src="ghimage/imgleak/Luca Florian .jpg" />
+              <img title="Marnix Van Uum" src="ghimage/imgleak/Marnix Van Uum .jpg" />
+              <img title="Mattia Papp" src="ghimage/imgleak/Mattia Papp .jpg" />
+              <img title="Megan Mehta" src="ghimage/imgleak/Megan Mehta .jpg" />
+              <img title="Mette Rasmussen" src="ghimage/imgleak/Mette Rasmussen .jpg" />
+              <img title="Mi Kafchi" src="ghimage/imgleak/Mi Kafchin .jpg" />
+              <img title="Nanhee Kimh" src="ghimage/imgleak/Nanhee Kim .jpg" />
+              <img title="Nefololoh" src="ghimage/imgleak/Nefololo.jpg" />
+              <img title="Philip Hingeh" src="ghimage/imgleak/Philip Hinge.jpg" />
+              <img title="Rosa Zangenberg" src="ghimage/imgleak/Rosa Zangenberg .jpg" />
+              <img title="Sara Blosseville (1)" src="ghimage/imgleak/Sara Blosseville (1).jpg" />
+              <img title="Sara Blosseville" src="ghimage/imgleak/Sara Blosseville.jpg" />
+              <img title="Siggi Sekirah" src="ghimage/imgleak/Siggi Sekira .jpg" />
+              <img title="Suyoung Yang (1)" src="ghimage/imgleak/Suyoung Yang (1).png" />
+              <img title="Suyoung Yangh" src="ghimage/imgleak/Suyoung Yang.png" />
+              <img title="Tea Strazicic" src="ghimage/imgleak/Tea Strazicic.jpg" />
+              <img title="Victor Gogly" src="ghimage/imgleak/Victor Gogly .jpg" />
+              <img title="Victor Gogly" src="ghimage/imgleak/Victor Gogly.jpg" />
+              <img title="Vitaly Bezpalov" src="ghimage/imgleak/Vitaly Bezpalov .png" />
+              <img title="Vitaly Bezpalov (1)" src="ghimage/imgleak/Vitaly Bezpalov (1).png" />
+              <img title="Zhao Laozhi" src="ghimage/imgleak/Zhao Laozhi .jpg" />
+              <img title="Zhao Laozhi" src="ghimage/imgleak/Zhao Laozhi.jpg" />
+            </div>
+            <div id="photosinstallation" style="display:none;">
+              <img src="ghimage/installation/CG Animation by Emir Karyo & Jan Wojda.png" />
+              <img src="ghimage/installation/CG Animation by Emir Karyo & Jan Wojda (1).png" />
+              <img src="ghimage/installation/CG Animation by Emir Karyo & Jan Wojda (2).png" />
+              <img src="ghimage/installation/CG Animation by Emir Karyo & Jan Wojda (3).png" />
+              <img src="ghimage/installation/CG Animation by Emir Karyo & Jan Wojda (4).png" />
+              <img src="ghimage/installation/installation view.jpg" />
+              <img src="ghimage/installation/installation view (1).jpg" />
+              <img src="ghimage/installation/installation view (2).jpg" />
+              <img src="ghimage/installation/installation view (3).jpg" />
+              <img src="ghimage/installation/installation view (4).jpg" />
+              <img src="ghimage/installation/installation view (5).jpg" />
+              <img src="ghimage/installation/installation view (6).jpg" />
+              <img src="ghimage/installation/installation view (7).jpg" />
+              <img src="ghimage/installation/installation view (8).jpg" />
+              <img src="ghimage/installation/installation view (9).jpg" />
+              <img src="ghimage/installation/installation view (10).jpg" />
+              <img src="ghimage/installation/installation view (11).jpg" />
+              <img src="ghimage/installation/Tunnel Easter egg.jpeg" />
+              <img src="ghimage/installation/Tunnel Easter egg2.jpeg" />
+            </div>
+            <div id="photosworks" style="display:none;">
+              <img title="Afra Marciel" src="ghimage/works/Afra Marciel.jpeg" />
+              <img title="Bastian Visch" src="ghimage/works/Bastian Visch.jpg" />
+              <img title="Bob Demperl" src="ghimage/works/Bob Demper.png" />
+              <img title="Dimitrie Gora" src="ghimage/works/Dimitrie Gora.jpeg" />
+              <img title="Ecaterina Vrana" src="ghimage/works/Ecaterina Vrana.jpeg" />
+              <img title="El Pelele" src="ghimage/works/El Pelele.png" />
+              <img title="El Pelele" src="ghimage/works/El Pelele(1).png" />
+              <img title="Emir Karyo" src="ghimage/works/Emir Karyo.jpg" />
+              <img title="Helmi Nieminen" src="ghimage/works/Helmi Nieminen.jpg" />
+              <img title="Ian Bruner" src="ghimage/works/Ian Bruner.jpeg" />
+              <img title="Ian Bruner" src="ghimage/works/Ian Bruner.png" />
+              <img title="Jan Wojda" src="ghimage/works/Jan Wojda.jpg" />
+              <img title="Johanna Blank" src="ghimage/works/Johanna Blank.jpeg" />
+              <img title="Johanna Blank" src="ghimage/works/Johanna Blank(1).jpeg" />
+              <img title="Justin Ortiz" src="ghimage/works/Justin-Ortiz-.png" />
+              <img title="Luca Florian" src="ghimage/works/Luca Florian.jpg" />
+              <img title="Luca Florian" src="ghimage/works/Luca Florian(1).jpg" />
+              <img title="Marnix van Uum" src="ghimage/works/Marnix van Uum.jpg" />
+              <img title="Marnix van Uum" src="ghimage/works/Marnix van Uum(1).jpg" />
+              <img title="Mattia Papp" src="ghimage/works/Mattia Papp.jpg" />
+              <img title="Mattia Papp" src="ghimage/works/Mattia Papp(1).jpg" />
+              <img title="Mette Rasmussen" src="ghimage/works/Mette Rasmussen.JPG" />
+              <img title="Mi Kafkin" src="ghimage/works/Mi Kafkin.jpg" />
+              <img title="Nanhee Kim" src="ghimage/works/Nanhee Kim.png" />
+              <img title="Nefojxj" src="ghimage/works/Nefojxj.jpeg" />
+              <img title="Philip Hinge" src="ghimage/works/Philip Hinge.jpg" />
+              <img title="qlvwowvlp" src="ghimage/works/qlvwowvlp.JPG" />
+              <img title="qlvwowvlp" src="ghimage/works/qlvwowvlp(1).JPG" />
+              <img title="Rosa Zangenberg" src="ghimage/works/Rosa Zangenberg.jpeg" />
+              <img title="Siggi Sekira" src="ghimage/works/Siggi Sekira.jpg" />
+              <img title="Siggi Sekira" src="ghimage/works/Siggi Sekira(2).jpg" />
+              <img title="Tea Strazicic" src="ghimage/works/Tea Strazicic.png" />
+              <img title="Kexin Hao" src="ghimage/works/Kexin Hao.png" />
+            </div>
+          </div>
+
+
+
         </div>
       </div>
 

@@ -72,6 +72,29 @@ ul#menu >.title{
 ul#menu >.external{
   float: right;
 }
+ul#submenu {
+  position: fixed;
+  z-index: 999;
+  text-align: center;
+  width: 100%;
+  list-style-type: none;
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+ul#submenu > li{
+  background-color: white;
+  -moz-box-shadow:    inset 0 0 10px #000000;
+  -webkit-box-shadow: inset 0 0 10px #000000;
+  box-shadow:         inset 0 0 10px #000000;
+  padding:1vw;
+  font-size: 4vh;
+}
+ul#submenu >li:hover {
+  font-style: italic;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
 
 .mainbox{
   order: 2;
@@ -185,6 +208,10 @@ ul#menu >.external{
     justify-content: flex-start;
   }
   ul#menu >li{
+    height:100%;
+    font-size: 2vh;
+  }
+  ul#submenu >li{
     height:100%;
     font-size: 2vh;
   }
