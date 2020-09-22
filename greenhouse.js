@@ -20,4 +20,7 @@ $(document).ready(function(){
   $("#episode4").click(function(){
     location.href = "greenhouse.html";
   });
+  $("#episode5").click(function(){
+    location.href = "exmouth.html";
+  });
 });
