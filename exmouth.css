@@ -5,6 +5,9 @@
     position: relative;
     font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
 }
+text,tspan {
+  font-family: "OPTIAuroraGroteskNine" !important;
+}
 
 body{
     display: flex;
@@ -12,6 +15,14 @@ body{
     justify-content: flex-start;
     background-color: #439143;
 }
+
+body.changedBackground {
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  background-color: white !important;
+  /* background: linear-gradient(180deg, rgba(255,255,255,1) 50%, rgba(0,0,0,1) 100%); */
+}
+
 
 a{
   text-decoration: none;
@@ -105,6 +116,7 @@ ul#submenu >li:hover {
 }
 
 .mainbox{
+
   order: 2;
   flex-basis:95vh;
   overflow: scroll;
@@ -176,10 +188,31 @@ ul#submenu >li:hover {
   width:100%;
 }
 
-#mainphotos img{
-  display:block;
-  width:100%;
+#mainphotos {
+  width: 80vw;
+  height: 100%;
+  position: relative;
+  /* background-color: white; */
+
 }
+
+#mainphotos .insertContainer {
+  position: relative;
+  /* max-height: 200vh;
+  min-height: 100%; */
+  width: 100vw;
+  height: 100vh;
+  overflow: scroll;
+}
+#mainphotos .container {
+
+  max-height: 200vh;
+  /* overflow-y: hidden; */
+}
+#mainphotos canvas {
+
+}
+
 .imggrid {
   height: 100%;
   display: grid;
@@ -262,9 +295,31 @@ ul#submenu >li:hover {
   -moz-box-shadow:    inset 0 0 10px #000000;
   -webkit-box-shadow: inset 0 0 10px #000000;
   box-shadow:         inset 0 0 10px #000000;
+
 }
 #caption: hover{
   font-style: italic;
+}
+#caption_ex{
+  font-family: 'Libre Baskerville', serif;
+  text-align: center;
+  font-size: 4vh;
+  background-color: white;
+  mix-blend-mode: color-burn;
+  /* -moz-box-shadow:    inset 0 0 10px #000000;
+  -webkit-box-shadow: inset 0 0 10px #000000;
+  box-shadow:         inset 0 0 10px #000000; */
+  box-shadow: inset 0 -10px 10px -10px #000000;
+}
+#caption_ex: hover{
+  font-style: italic;
+}
+
+.container #caption_ex {
+  /* -moz-box-shadow: inset 0 -10px 10px -10px #000000 !important;
+  -webkit-box-shadow: inset 0 -10px 10px -10px #000000 !important;
+  box-shadow: inset 0 -10px 10px -10px #000000 !important; */
+  /* width:100%; */
 }
 
 @media only screen and (max-width: 800px) {

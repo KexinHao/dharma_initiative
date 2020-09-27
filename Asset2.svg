@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="841.89" height="43.97" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.89 43.97">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 42px;
+        font-family: OPTIAuroraGroteskNine;
+      }
+      .cls-2 {
+        letter-spacing: -0.05em;
+      }
+      .cls-3 {
+        letter-spacing: -0.05em;
+      }
+    </style>
+  </defs>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <text class="cls-1" transform="translate(0 40.11)">
+        <tspan class="cls-2">P</tspan>
+        <tspan x="23.44" y="0">ool
+        </tspan>
+        <tspan class="cls-3" x="91.05" y="0">P</tspan>
+        <tspan x="114.49" y="0">ortal</tspan>
+      </text>
+    </g>
+  </g>
+</svg>
