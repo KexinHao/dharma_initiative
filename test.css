@@ -41,7 +41,7 @@ nav {
 }
 @media only screen and (max-width: 800px) {
   nav {
-    right:-40vw;
+    right:-65vw;
     min-width: 600px;
   }
   nav ul li:nth-child(4) {
