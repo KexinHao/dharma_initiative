@@ -32,17 +32,17 @@ body {
 }
 nav {
   min-width: 700px;
-  width: 50%;
+  width: 60%;
   z-index: 1;
   position: fixed;
-  top: 10vh;
-  right:-15vw;
+  top: 15vh;
+  right:-20vw;
   mix-blend-mode: color-burn;
 }
 @media only screen and (max-width: 800px) {
   nav {
     right:-40vw;
-    min-width: 500px;
+    min-width: 600px;
   }
   nav ul li:nth-child(4) {
     margin-bottom: 0 !important;

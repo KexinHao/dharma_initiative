@@ -32,26 +32,26 @@ const imagesLevel = document.querySelectorAll(".images")
 // };
 
 document.querySelector(".insertContainer").addEventListener("scroll", function(){
-	if (this.scrollTop > imagesLevel[1].offsetTop &&this.scrollTop < imagesLevel[1].offsetTop*2 && fired===false) {
+	if (this.scrollTop > imagesLevel[1].offsetTop-300 &&this.scrollTop < imagesLevel[1].offsetTop*2 && fired===false) {
 		// alert("fi<!--  -->re");
 		document.querySelector(".transform1 ").classList.add("translate-transform1")
 		document.querySelector(".transform2 ").classList.add("translate-transform2")
 		fired = true;
 
   }
-	if (this.scrollTop < imagesLevel[1].offsetTop || this.scrollTop >imagesLevel[1].offsetTop*2) {
+	if (this.scrollTop < imagesLevel[1].offsetTop-300 || this.scrollTop >imagesLevel[1].offsetTop*2) {
 		document.querySelector(".transform1 ").classList.remove("translate-transform1")
 		document.querySelector(".transform2 ").classList.remove("translate-transform2")
 		fired = false ;
 	}
 
-	if (this.scrollTop > imagesLevel[1].offsetTop &&this.scrollTop <imagesLevel[1].offsetTop*2) {
+	if (this.scrollTop > imagesLevel[1].offsetTop-300 &&this.scrollTop <imagesLevel[1].offsetTop*2) {
 
 		// alert("works")
 		level.classList.remove("highlighted")
 		level2.classList.add("highlighted")
 
-	} else if (this.scrollTop < imagesLevel[1].offsetTop) {
+	} else if (this.scrollTop < imagesLevel[1].offsetTop-300) {
 		level.classList.add("highlighted")
 		level2.classList.remove("highlighted")
 	} else if (this.scrollTop >imagesLevel[1].offsetTop*2){
