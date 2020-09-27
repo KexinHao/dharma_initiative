@@ -14,6 +14,90 @@
 <script>
 
 $(function(){
+  var isSafari = !!navigator.userAgent.match(/safari/i) && !navigator.userAgent.match(/chrome/i) && typeof document.body.style.webkitFilter !== "undefined" && !window.chrome;;
+
+  // alert(isSafari)
+
+  if (isSafari==true) {
+    $("#mainphotos img").css("mix-blend-mode", "normal")
+    $("#mainphotos .container").css("max-height", "auto")
+    $("#mainphotos .container").css("min-height", "300vh")
+    $("#mainphotos img").hover(function(){
+      $(this).css("transform", "scale(1)");
+      }, function(){
+      $(this).css("transform", "scale(1)");
+    });
+    let level = document.getElementById("level")
+  	let level2 = document.getElementById("level2")
+  	let fired = false;
+
+  	const imagesLevel = document.querySelectorAll(".images")
+
+
+
+  	document.querySelector(".insertContainer").addEventListener("scroll", function(){
+  		if (this.scrollTop > imagesLevel[1].offsetTop-300 &&this.scrollTop < imagesLevel[1].offsetTop*2 && fired===false) {
+  			// alert("fi<!--  -->re");
+  			document.querySelector(".transform1 ").classList.add("translate-transform1")
+  			document.querySelector(".transform2 ").classList.add("translate-transform2")
+  			fired = true;
+
+  	  }
+  		if (this.scrollTop < imagesLevel[1].offsetTop-300 || this.scrollTop >imagesLevel[1].offsetTop*2) {
+  			document.querySelector(".transform1 ").classList.remove("translate-transform1")
+  			document.querySelector(".transform2 ").classList.remove("translate-transform2")
+  			fired = false ;
+  		}
+
+  		if (this.scrollTop > imagesLevel[1].offsetTop-300 &&this.scrollTop <imagesLevel[1].offsetTop*2) {
+
+  			// alert("works")
+  			level.classList.remove("highlighted")
+  			level2.classList.add("highlighted")
+
+  		} else if (this.scrollTop < imagesLevel[1].offsetTop-300) {
+  			level.classList.add("highlighted")
+  			level2.classList.remove("highlighted")
+  		} else if (this.scrollTop >imagesLevel[1].offsetTop*2){
+  			level.classList.remove("highlighted")
+  			level2.classList.remove("highlighted")
+  		}
+  	}, true)
+
+
+  	const levels = document.querySelectorAll("#nav ul li")
+
+
+  	levels.forEach((item, i) => {
+  		item.addEventListener("click", function () {
+  			// alert(i+1);
+  			if(i == 0) {
+  				// alert(i);
+  				imagesLevel[0].scrollIntoView({ block: 'start',  behavior: 'smooth', inline: "start" });
+  				// scroll({
+  			  //   top: 0,
+  			  //   behavior: "smooth"
+  			  // });
+  				// scroll({
+  			  //   top: 0,
+  			  //   behavior: "smooth"
+  			  // });
+  			}
+  			else if(i==1) {
+  				console.log(imagesLevel[1])
+  				imagesLevel[1].scrollIntoView({ block: 'start',  behavior: 'smooth',inline: "start" });
+
+  				// scroll({
+  			  //   top: imagesLevel[1].offsetTop,
+  			  //   behavior: "smooth"
+  			  // });
+  			}
+
+  		})
+  		// item.addEventListener("click", clickHandler(i))
+  	});
+  }
+
 
 
 
@@ -45,6 +129,15 @@ $(function(){
 
        if($(this).attr('id')=="photos") {
          document.body.classList.add("changedBackground");
+         // if(isSafari ==false) {
+
+           $('.mainbox').style.overflow="hidden";
+           move();
+           	update();
+           	input.oninput = update;
+         // } else {
+         //   alert("all but safari")
+         // }
          // $('.mainbox').style.overflow="hidden";
          // move();
          	// update();
@@ -74,9 +167,14 @@ $(function(){
 
       if ($("#mainphotos").is(":visible")) {
         document.body.classList.add("changedBackground");
-        move();
-      	update();
-      	input.oninput = update;
+        // if(isSafari ==false) {
+          move();
+        	update();
+        	input.oninput = update;
+        // } else {
+        //
+        // }
+
           // alert('Element is visible');
       } else {
         return;
