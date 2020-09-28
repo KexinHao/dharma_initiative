@@ -32,17 +32,18 @@ body {
 }
 nav {
   min-width: 700px;
+  max-width: 900px;
   width: 60%;
   z-index: 1;
   position: fixed;
   top: 15vh;
-  right:-20vw;
+  right:-18vw;
   mix-blend-mode: color-burn;
 }
 @media only screen and (max-width: 800px) {
   nav {
-    right:-65vw;
-    min-width: 600px;
+    right:-40vw;
+    min-width: 500px;
   }
   nav ul li:nth-child(4) {
     margin-bottom: 0 !important;
@@ -69,23 +70,25 @@ nav ul li {
 nav ul li text.transform1 {
   /* transition-delay: 1s; */
   transition: transform .01s .8s;
-  transform: translate(47px, 40.11px) scale(8.02, 1);
+  /* transform: translate(47px, 40.11px) scale(8.02, 1); */
+  transform: translate(119.99px, 40.11px) scale(8.02, 1);
   /* fill: white; */
 }
 nav ul li text.transform2 {
   transition: transform .01s .8s;
-  transform: translate(251.42px, 40.11px) ;
+  /* transform: translate(251.42px, 40.11px)  */;
+  transform: translate(324.42px, 40.11px) ;
 
   /* fill: white; */
 }
 nav ul li:hover text.transform1 {
-  transform: translate(52px, 40.11px) scale(1, 1);
+  transform: translate(120px, 40.11px) scale(1, 1);
   /* transform: scale(1); */
   /* fill: yellow; */
 
 }
 nav ul li:hover text.transform2 {
-  transform: translate(78px, 40.11px) scale(1, 1);
+  transform: translate(148px, 40.11px) scale(1, 1);
   /* transform: scale(1); */
   /* fill: yellow; */
 
@@ -93,11 +96,11 @@ nav ul li:hover text.transform2 {
 
 .translate-transform1 {
   transition: transform .01s .8s;
-  transform: translate(52px, 40.11px) scale(1, 1) !important;
+  transform: translate(120px, 40.11px) scale(1, 1) !important;
 }
 .translate-transform2 {
   transition: transform .01s .8s;
-  transform: translate(78px, 40.11px) scale(1, 1) !important;
+  transform: translate(148px, 40.11px) scale(1, 1) !important;
 }
 
 nav ul li:nth-child(1):hover,
@@ -108,24 +111,24 @@ nav ul li:nth-child(2):hover {
 }
 
 nav ul li:nth-child(2) {
-  /* margin-bottom: 50px; */
+  margin-top: -5px;
 }
 nav ul li.highlighted {
   opacity:1;
 }
 
+nav ul li:nth-child(3) {
+  margin-top: -55px;
+}
 nav ul li:nth-child(4) {
-  margin-bottom: -80px;
+  margin-top:-10px;
 }
-nav ul li:nth-child(6) {
-  margin-top:-7px;
+nav ul li:nth-child(5) {
+  margin-top: -10px;
 }
-nav ul li:nth-child(7) {
-  margin-top: 2px;
-}
-nav ul li:nth-child(8) {
+/* nav ul li:nth-child(8) {
   margin-top:-5px;
-}
+} */
 
 
 /* LOGO */

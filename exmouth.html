@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,152 +12,153 @@
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="exmouth.js"></script>
-<script>
+  <script>
+    $(function() {
+      var isSafari = !!navigator.userAgent.match(/safari/i) && !navigator.userAgent.match(/chrome/i) && typeof document.body.style.webkitFilter !== "undefined" && !window.chrome;;
 
-$(function(){
-  var isSafari = !!navigator.userAgent.match(/safari/i) && !navigator.userAgent.match(/chrome/i) && typeof document.body.style.webkitFilter !== "undefined" && !window.chrome;;
+      // alert(isSafari)
 
-  // alert(isSafari)
+      if (isSafari == true) {
+        $("#mainphotos img").css("mix-blend-mode", "normal")
+        $("#mainphotos .container").css("max-height", "auto")
+        $("#mainphotos .container").css("min-height", "300vh")
+        document.querySelector(".transform1 ").classList.add("translate-transform1")
+        document.querySelector(".transform2 ").classList.add("translate-transform2")
+        $("#mainphotos img").hover(function() {
+          $(this).css("transform", "scale(1)");
+        }, function() {
+          $(this).css("transform", "scale(1)");
+        });
+        let level = document.getElementById("level")
+        let level2 = document.getElementById("level2")
+        let fired = false;
 
-  if (isSafari==true) {
-    $("#mainphotos img").css("mix-blend-mode", "normal")
-    $("#mainphotos .container").css("max-height", "auto")
-    $("#mainphotos .container").css("min-height", "300vh")
-    $("#mainphotos img").hover(function(){
-      $(this).css("transform", "scale(1)");
-      }, function(){
-      $(this).css("transform", "scale(1)");
-    });
-    let level = document.getElementById("level")
-  	let level2 = document.getElementById("level2")
-  	let fired = false;
-
-  	const imagesLevel = document.querySelectorAll(".images")
-
-
-
-  	document.querySelector(".insertContainer").addEventListener("scroll", function(){
-  		if (this.scrollTop > imagesLevel[1].offsetTop-300 &&this.scrollTop < imagesLevel[1].offsetTop*2 && fired===false) {
-  			// alert("fi<!--  -->re");
-  			document.querySelector(".transform1 ").classList.add("translate-transform1")
-  			document.querySelector(".transform2 ").classList.add("translate-transform2")
-  			fired = true;
-
-  	  }
-  		if (this.scrollTop < imagesLevel[1].offsetTop-300 || this.scrollTop >imagesLevel[1].offsetTop*2) {
-  			document.querySelector(".transform1 ").classList.remove("translate-transform1")
-  			document.querySelector(".transform2 ").classList.remove("translate-transform2")
-  			fired = false ;
-  		}
-
-  		if (this.scrollTop > imagesLevel[1].offsetTop-300 &&this.scrollTop <imagesLevel[1].offsetTop*2) {
-
-  			// alert("works")
-  			level.classList.remove("highlighted")
-  			level2.classList.add("highlighted")
-
-  		} else if (this.scrollTop < imagesLevel[1].offsetTop-300) {
-  			level.classList.add("highlighted")
-  			level2.classList.remove("highlighted")
-  		} else if (this.scrollTop >imagesLevel[1].offsetTop*2){
-  			level.classList.remove("highlighted")
-  			level2.classList.remove("highlighted")
-  		}
-  	}, true)
-
-
-  	const levels = document.querySelectorAll("#nav ul li")
-
-
-  	levels.forEach((item, i) => {
-  		item.addEventListener("click", function () {
-  			// alert(i+1);
-  			if(i == 0) {
-  				// alert(i);
-  				imagesLevel[0].scrollIntoView({ block: 'start',  behavior: 'smooth', inline: "start" });
-  				// scroll({
-  			  //   top: 0,
-  			  //   behavior: "smooth"
-  			  // });
-  				// scroll({
-  			  //   top: 0,
-  			  //   behavior: "smooth"
-  			  // });
-  			}
-  			else if(i==1) {
-  				console.log(imagesLevel[1])
-  				imagesLevel[1].scrollIntoView({ block: 'start',  behavior: 'smooth',inline: "start" });
-
-  				// scroll({
-  			  //   top: imagesLevel[1].offsetTop,
-  			  //   behavior: "smooth"
-  			  // });
-  			}
-
-  		})
-  		// item.addEventListener("click", clickHandler(i))
-  	});
-  }
+        const imagesLevel = document.querySelectorAll(".images")
 
 
 
+        document.querySelector(".insertContainer").addEventListener("scroll", function(){
+      		if (this.scrollTop < imagesLevel[1].offsetTop*2 && fired===false) {
+      			// alert("fi<!--  -->re");
+      			document.querySelector(".transform1 ").classList.add("translate-transform1")
+      			document.querySelector(".transform2 ").classList.add("translate-transform2")
+      			fired = true;
+
+      	  }
+      		if (this.scrollTop >imagesLevel[1].offsetTop*2) {
+      			document.querySelector(".transform1 ").classList.remove("translate-transform1")
+      			document.querySelector(".transform2 ").classList.remove("translate-transform2")
+      			fired = false ;
+      		}
+
+      		if (this.scrollTop > imagesLevel[1].offsetTop-300 &&this.scrollTop <imagesLevel[1].offsetTop*2) {
+
+      			// alert("works")
+      			// level.classList.remove("highlighted")
+      			level2.classList.add("highlighted")
+
+      		} else if (this.scrollTop < imagesLevel[1].offsetTop-300) {
+      			level2.classList.add("highlighted")
+      			// level2.classList.remove("highlighted")
+      		} else if (this.scrollTop >imagesLevel[1].offsetTop*2){
+      			// level.classList.remove("highlighted")
+      			level2.classList.remove("highlighted")
+      		}
+      	}, true)
 
 
-  // if($('#mainphotos')) {
-  //   // alert(document.querySelector("#mainphotos").style.display=="block")
-  //   if ($("#mainphotos").is(":visible")) {
-  //     document.body.classList.add("changedBackground");
-  //       // alert('Element is visible');
-  //   }
-  //   // if(document.querySelector("#mainphotos").style.display==="block") {
-  //   //   // alert("on")
-  //   //   document.body.classList.add("changedBackground");
-  //   //
-  //   //   // move();
-  //   // 	// update();
-  //   // 	// input.oninput = update;
-  //   // }
-  //
-  // }
-  $('#mobilebutton').click(function(){
-    $('.episodes').toggle();
-      // window.location.hash = target;
-    });
-   $('.title').click(function(){
-       $('#main' + $(this).attr('id')).show();
-       $('.mainbox > div').not('#main' + $(this).attr('id')).hide();
-       window.location.hash = $(this).attr('id');
+      	const levels = document.querySelectorAll("#nav ul li")
 
-       if($(this).attr('id')=="photos") {
-         document.body.classList.add("changedBackground");
-         // if(isSafari ==false) {
 
-           $('.mainbox').style.overflow="hidden";
-           move();
-           	update();
-           	input.oninput = update;
-         // } else {
-         //   alert("all but safari")
-         // }
-         // $('.mainbox').style.overflow="hidden";
-         // move();
-         	// update();
-         	// input.oninput = update;
-       } else {
-         // document.body.classList.remove("changedBackground");
-       }
+      	levels.forEach((item, i) => {
+      		item.addEventListener("click", function () {
+      			// alert(i+1);
+      			if(i == 0) {
+      				// alert(i);
+      				imagesLevel[0].scrollIntoView({ block: 'start',  behavior: 'smooth', inline:"start" });
+      				// scroll({
+      			  //   top: 0,
+      			  //   behavior: "smooth"
+      			  // });
+      				// scroll({
+      			  //   top: 0,
+      			  //   behavior: "smooth"
+      			  // });
+      			}
+      			// else if(i==1) {
+      			// 	console.log(imagesLevel[1])
+      			// 	imagesLevel[1].scrollIntoView({ block: 'start',  behavior: 'smooth' });
+            //
+      			// 	// scroll({
+      			//   //   top: imagesLevel[1].offsetTop,
+      			//   //   behavior: "smooth"
+      			//   // });
+      			// }
+
+      		})
+      		// item.addEventListener("click", clickHandler(i))
+      	});
+      }
+
+
+
+
+
+      // if($('#mainphotos')) {
+      //   // alert(document.querySelector("#mainphotos").style.display=="block")
+      //   if ($("#mainphotos").is(":visible")) {
+      //     document.body.classList.add("changedBackground");
+      //       // alert('Element is visible');
+      //   }
+      //   // if(document.querySelector("#mainphotos").style.display==="block") {
+      //   //   // alert("on")
+      //   //   document.body.classList.add("changedBackground");
+      //   //
+      //   //   // move();
+      //   // 	// update();
+      //   // 	// input.oninput = update;
+      //   // }
+      //
+      // }
+      $('#mobilebutton').click(function() {
+        $('.episodes').toggle();
+        // window.location.hash = target;
+      });
+      $('.title').click(function() {
+        $('#main' + $(this).attr('id')).show();
+        $('.mainbox > div').not('#main' + $(this).attr('id')).hide();
+        window.location.hash = $(this).attr('id');
+
+        if ($(this).attr('id') == "photos") {
+          document.body.classList.add("changedBackground");
+          // if(isSafari ==false) {
+
+          $('.mainbox').style.overflow = "hidden";
+          move();
+          update();
+          input.oninput = update;
+          // } else {
+          //   alert("all but safari")
+          // }
+          // $('.mainbox').style.overflow="hidden";
+          // move();
+          // update();
+          // input.oninput = update;
+        } else {
+          // document.body.classList.remove("changedBackground");
+        }
       });
 
       // if($(this).attr('id')=="photos") {
       //   alert("photos")
       // }
-   $('.subtitle').click(function(){
-       $('#photos' + $(this).attr('id')).show();
-       $('.photoscontainer > div').not('#photos' + $(this).attr('id')).hide();
-       // window.location.hash = $(this).attr('id');
+      $('.subtitle').click(function() {
+        $('#photos' + $(this).attr('id')).show();
+        $('.photoscontainer > div').not('#photos' + $(this).attr('id')).hide();
+        // window.location.hash = $(this).attr('id');
       });
 
-      if(window.location.hash) {
+      if (window.location.hash) {
         var hash = window.location.hash.substring(1);
         // alert (hash);
         $("#main" + hash).show();
@@ -168,21 +170,22 @@ $(function(){
       if ($("#mainphotos").is(":visible")) {
         document.body.classList.add("changedBackground");
         // if(isSafari ==false) {
-          move();
-        	update();
-        	input.oninput = update;
+        move();
+        update();
+        input.oninput = update;
         // } else {
         //
         // }
 
-          // alert('Element is visible');
+        // alert('Element is visible');
       } else {
         return;
       }
 
-   })
+    })
   </script>
 </head>
+
 <body>
 
   <div id="mobilebutton">
@@ -190,31 +193,31 @@ $(function(){
   </div>
 
   <ul class="episodes">
-      <li id="episode1">E1<span>: Tunnel</span></li>
-      <li id="episode2">E2<span>: Dunes</span></li>
-      <li id="episode3">E3<span>: Birdsong</span></li>
-      <li id="episode4">E4<span>: Greenhouse</span></li>
-      <li id="episode5">E5<span>: Exmouth</span></li>
+    <li id="episode1">E1<span>: Tunnel</span></li>
+    <li id="episode2">E2<span>: Dunes</span></li>
+    <li id="episode3">E3<span>: Birdsong</span></li>
+    <li id="episode4">E4<span>: Greenhouse</span></li>
+    <li id="episode5">E5<span>: Exmouth</span></li>
   </ul>
 
 
-   <div class="content">
+  <div class="content">
 
-     <ul id="menu">
-         <li class="title" id="about">about</li>
-         <li class="title" id="text">text</li>
-         <li class="title" id="video">video</li>
-         <li class="title" id="photos">photos</li>
-         <li class="external" id="instagram">Instagram</li>
-         <li class="external" id="soundcloud">SoundCloud</li>
-         <li class="external" id="home">home</li>
-     </ul>
+    <ul id="menu">
+      <li class="title" id="about">about</li>
+      <li class="title" id="text">text</li>
+      <li class="title" id="video">video</li>
+      <li class="title" id="photos">photos</li>
+      <li class="external" id="instagram">Instagram</li>
+      <li class="external" id="soundcloud">SoundCloud</li>
+      <li class="external" id="home">home</li>
+    </ul>
 
-      <div class="mainbox">
-        <div id="mainabout" style="display:none;">
-            <img src="emimage/poster_exmouth.png" />
-            <br /><br /><br /><br /><br /><br /><br /><br />
-            <!-- <div id="abouttx">
+    <div class="mainbox">
+      <div id="mainabout" style="display:none;">
+        <img src="emimage/poster_exmouth.png" />
+        <br /><br /><br /><br /><br /><br /><br /><br />
+        <!-- <div id="abouttx">
               <br /><br /><br /><br />
               EPISODE 4: “Greenhouse”, curated by <span id="italic">Dharma Initiatives</span> &amp; hosted by<span id="italic"> Light-Harvesting Complex</span> at Vantaa, Finland<br /><br /><br />
               Text by <span id="italic">Natalya Serkova</span><br />
@@ -234,21 +237,21 @@ $(function(){
               Voices by <span id="italic">smarton &amp; carton</span>
               <br /><br /><br /><br />
             </div> -->
-            <div id="aboutus">
-              <p>
-                Dharma Initiatives is a collective experimental project, developed in a decentralized multi-linear exhibition format, online and offline.
-                Born out of playing with the medium of art documentation we are longing for uninhabited/unlived spaces.
-                The aim of the project is to re-think traditional values of exhibiting/experiencing contemporary art and to dismantle hierarchies by mixing curating with Cinematography, Animation, Graphic Design, Photography and Sound.
-                Our name comes from “The Dharma Initiative”, also written DHARMA (Department of Heuristics and Research on Material Applications), a fictional research project featured in the tv series “Lost”.
-              </p>
-              <p>
-                <!-- Our team is: Christian Roncea (Founder), Marc Solomon (Video-Editing), Kexin Hao (Web Design), Christian Thomsen (Sound Design) & in.finit (Sound Design & FX), Emir Karyo (Graphic Design & VFX), Jan Wojda (VFX), Matas Buckus (Logo Design).
+        <div id="aboutus">
+          <p>
+            Dharma Initiatives is a collective experimental project, developed in a decentralized multi-linear exhibition format, online and offline.
+            Born out of playing with the medium of art documentation we are longing for uninhabited/unlived spaces.
+            The aim of the project is to re-think traditional values of exhibiting/experiencing contemporary art and to dismantle hierarchies by mixing curating with Cinematography, Animation, Graphic Design, Photography and Sound.
+            Our name comes from “The Dharma Initiative”, also written DHARMA (Department of Heuristics and Research on Material Applications), a fictional research project featured in the tv series “Lost”.
+          </p>
+          <p>
+            <!-- Our team is: Christian Roncea (Founder), Marc Solomon (Video-Editing), Kexin Hao (Web Design), Christian Thomsen (Sound Design) & in.finit (Sound Design & FX), Emir Karyo (Graphic Design & VFX), Jan Wojda (VFX), Matas Buckus (Logo Design).
                 <br /><br /> -->
-                For any inquiries, you can reach to us by <a href="mailto:dharmainitiatives815@gmail.com" target="_blank">e-mail</a> or by dm <a href="https://www.instagram.com/dharma_initiatives/" target="_blank">here</a>.
-              </p>
-            </div>
+            For any inquiries, you can reach to us by <a href="mailto:dharmainitiatives815@gmail.com" target="_blank">e-mail</a> or by dm <a href="https://www.instagram.com/dharma_initiatives/" target="_blank">here</a>.
+          </p>
         </div>
-        <!-- <div id="maintext" style="display:none;">
+      </div>
+      <!-- <div id="maintext" style="display:none;">
            <img src="ghimage/ghtext.png" />
            <div id="credit">
              text by Natalya Serkova, designed by Matas Buckus
@@ -270,108 +273,270 @@ $(function(){
            </div>
 
         </div> -->
-        <div id="mainvideo">
-          <iframe src="https://www.youtube.com/embed/7Ai6dyTHEos" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
+      <div id="mainvideo">
+        <iframe src="https://www.youtube.com/embed/7Ai6dyTHEos" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
 
 
 
-        <div id="mainphotos" style="display:none;">
-          <div class="insertContainer">
-            <nav id="nav">
-              <ul>
-                <li id="level" class="highlighted">
-                  <!-- <object data="Asset2.svg" type="image/svg+xml"></object> -->
-                  <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.89 43.97">
-                    <defs>
-                      <style>
-                        .cls-1 {
-                          font-size: 42px;
-                          font-family: OPTIAuroraGroteskNine;
-                        }
+      <div id="mainphotos" style="display:none;">
+        <div class="insertContainer">
+          <nav id="nav">
+            <ul>
+              <!-- <li id="level" class="highlighted">
+                <object data="Asset2.svg" type="image/svg+xml"></object>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.89 43.97">
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        font-size: 42px;
+                        font-family: OPTIAuroraGroteskNine;
+                      }
 
-                        .cls-2 {
-                          letter-spacing: -0.05em;
-                        }
+                      .cls-2 {
+                        letter-spacing: -0.05em;
+                      }
 
-                        .cls-3 {
-                          letter-spacing: -0.05em;
-                        }
-                      </style>
-                    </defs>
-                    <g id="Layer_2" data-name="Layer 2">
-                      <g id="Layer_1-2" data-name="Layer 1">
-                        <text class="cls-1" transform="translate(0 40.11)">
-                          <tspan class="cls-2">P</tspan>
-                          <tspan x="23.44" y="0">ool </tspan>
-                          <tspan class="cls-3" x="91.05" y="0">P</tspan>
-                          <tspan x="114.49" y="0">ortal</tspan>
-                        </text></g>
+                      .cls-3 {
+                        letter-spacing: -0.05em;
+                      }
+                    </style>
+                  </defs>
+                  <g id="Layer_2" data-name="Layer 2">
+                    <g id="Layer_1-2" data-name="Layer 1">
+                      <text class="cls-1" transform="translate(0 40.11)">
+                        <tspan class="cls-2">P</tspan>
+                        <tspan x="23.44" y="0">ool </tspan>
+                        <tspan class="cls-3" x="91.05" y="0">P</tspan>
+                        <tspan x="114.49" y="0">ortal</tspan>
+                      </text></g>
+                  </g>
+                </svg>
+              </li> -->
+
+              <!-- <li id="level2" class="">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.89 43.97">
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        font-size: 42px;
+                        font-family: OPTIAuroraGroteskNine;
+                      }
+
+                      .cls-2 {
+                        letter-spacing: -0.1em;
+                      }
+
+                      .cls-3 {
+                        letter-spacing: -0.05em;
+                      }
+                    </style>
+                  </defs>
+                  <g id="Layer_2" data-name="Layer 2">
+                    <g id="Layer_1-2" data-name="Layer 1">
+                      <text class="cls-1" transform="translate(0 40.11)">B<tspan class="cls-2" x="25.54" y="0">U</tspan></text>
+
+                      <text class="cls-1 transform1" transform="">N</text>
+                      <text class="cls-1 transform2" transform="">
+                        <tspan xml:space="preserve">KER </tspan>
+                        <tspan class="cls-3" x="89.04" y="0">P</tspan>
+                        <tspan x="112.48" y="0">ortal</tspan>
+                      </text>
                     </g>
-                  </svg>
-                </li>
-
-                <li id="level2" class="">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.89 43.97">
-                    <defs>
-                      <style>
-                        .cls-1 {
-                          font-size: 42px;
-                          font-family: OPTIAuroraGroteskNine;
-                        }
-
-                        .cls-2 {
-                          letter-spacing: -0.1em;
-                        }
-
-                        .cls-3 {
-                          letter-spacing: -0.05em;
-                        }
-                      </style>
-                    </defs>
-                    <g id="Layer_2" data-name="Layer 2">
-                      <g id="Layer_1-2" data-name="Layer 1">
-                        <text class="cls-1" transform="translate(0 40.11)">B<tspan class="cls-2" x="25.54" y="0">U</tspan></text>
-
-                        <text class="cls-1 transform1" transform="">N</text>
-                        <text class="cls-1 transform2"
-                          transform="">
-                          <tspan xml:space="preserve">KER </tspan>
-                          <tspan class="cls-3" x="89.04" y="0">P</tspan>
-                          <tspan x="112.48" y="0">ortal</tspan>
-                        </text>
-                      </g>
+                  </g>
+                </svg>
+              </li> -->
+              <li id="level2" class="highlighted">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.89 46.88">
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        font-size: 42px;
+                        font-family: OPTIAuroraGroteskNine;
+                      }
+                    </style>
+                  </defs>
+                  <g id="Layer_2" data-name="Layer 2">
+                    <g id="Layer_1-2" data-name="Layer 1">
+                      <text class="cls-1" transform="translate(0 40.11)">ENTRA</text>
+                      <text class="cls-1 transform1" transform="translate(119.99 40.11) scale(8.02 1)">N</text>
+                      <text class="cls-1 transform2" transform="translate(324.42 40.11)">CE</text>
                     </g>
-                  </svg>
-                </li>
+                  </g>
+                </svg>
+              </li>
+              <li >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.89 46.88">
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        font-size: 42px;
+                        font-family: OPTIAuroraGroteskNine;
+                      }
+                    </style>
+                  </defs>
+                  <g id="Layer_2" data-name="Layer 2">
+                    <g id="Layer_1-2" data-name="Layer 1"><text class="cls-1" transform="translate(157.63 40.11) scale(1.08 1)">S</text><text class="cls-1" transform="translate(198.35 43.01)">afe House</text></g>
+                  </g>
+                </svg>
+              </li>
+              <li >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.89 174.95">
+                  <defs>
+                    <style>
+                      .cls-1,
+                      .cls-2,
+                      .cls-3 {
+                        font-size: 42px;
+                        font-family: OPTIAuroraGroteskNine;
+                      }
+                      .cls-2 {
+                        letter-spacing: -0.16em;
+                      }
+                      .cls-3 {
+                        letter-spacing: 0.54em;
+                      }
+                    </style>
+                  </defs>
+                  <g id="Layer_2" data-name="Layer 2">
+                    <g id="Layer_1-2" data-name="Layer 1">
+                      <text class="cls-1" transform="translate(0 159.58)">P</text>
+                      <text class="cls-2" transform="translate(184.3 67.57) rotate(-105.14) scale(1 3.98)">i</text>
+                      <text class="cls-1" transform="translate(190 159.58)">n</text>
+                      <text class="cls-3" transform="matrix(0.36, 0.93, -0.93, 0.36, 214.99, 135.95)">e</text>
+                      <text class="cls-1" transform="translate(261.35 159.58) scale(1.06 1)">a</text>
+                      <text class="cls-1" transform="translate(286.44 159.58)">l Researches</text>
+                    </g>
+                  </g>
+                </svg>
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.89 43.97">
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        font-size: 42px;
+                        font-family: OPTIAuroraGroteskNine;
+                      }
+                    </style>
+                  </defs>
+                  <g id="Layer_2" data-name="Layer 2">
+                    <g id="Layer_1-2" data-name="Layer 1"><text class="cls-1" transform="translate(0 40.11)">Cabinet</text></g>
+                  </g>
+                </svg>
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.89 59.76">
+                  <defs>
+                    <style>
+                      .cls-1,
+                      .cls-3 {
+                        font-size: 42px;
+                        font-family: OPTIAuroraGroteskNine;
+                      }
 
-              </ul>
+                      .cls-2 {
+                        letter-spacing: 4.17em;
+                      }
+
+                      .cls-3 {
+                        letter-spacing: 0.49em;
+                      }
+                    </style>
+                  </defs>
+                  <g id="Layer_2" data-name="Layer 2">
+                    <g id="Layer_1-2" data-name="Layer 1"><text class="cls-1" transform="translate(0 50.82)">Scr</text><text class="cls-1" transform="translate(72.66 50.82) scale(1.18 1.2)">a</text><text class="cls-1" transform="translate(100.58 50.82)">p
+                        <tspan class="cls-2" x="23.65" y="0"> </tspan>
+                        <tspan x="206.56" y="3.65">B</tspan>
+                        <tspan x="232.09" y="0">o</tspan>
+                      </text><text class="cls-1" transform="translate(356.4 50.82) scale(1.07 0.7)">o</text><text class="cls-3" transform="matrix(0.8, -0.6, 0.6, 0.8, 406.2, 54.1)">k</text>
+                      <path
+                        d="M419.75,44.71A83.75,83.75,0,0,0,409.14,33l-1.08,3.09,8.35,11.1-6.51,4.89L385.56,19.75l6.51-4.9,10.27,13.66c-.14-4.85-1.37-7.6-3.69-11.2l6.55-4.92c2.3,3,4.7,7.66,5.21,11.23a26.29,26.29,0,0,1,7.83,6c2,2.26,6.84,8.43,8.09,10.17L427.73,0H383.59V59.76h44.14l-1.4-20Z" />
+                    </g>
+                  </g>
+                </svg>
+              </li>
+              <!-- <li id="level2" class="">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.89 43.97">
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        font-size: 42px;
+                        font-family: OPTIAuroraGroteskNine;
+                      }
+
+                      .cls-2 {
+                        letter-spacing: -0.1em;
+                      }
+
+                      .cls-3 {
+                        letter-spacing: -0.05em;
+                      }
+                    </style>
+                  </defs>
+                  <g id="Layer_2" data-name="Layer 2">
+                    <g id="Layer_1-2" data-name="Layer 1">
+                      <text class="cls-1" transform="translate(0 40.11)">B<tspan class="cls-2" x="25.54" y="0">U</tspan></text>
+
+                      <text class="cls-1 transform1" transform="">N</text>
+                      <text class="cls-1 transform2" transform="">
+                        <tspan xml:space="preserve">KER </tspan>
+                        <tspan class="cls-3" x="89.04" y="0">P</tspan>
+                        <tspan x="112.48" y="0">ortal</tspan>
+                      </text>
+                    </g>
+                  </g>
+                </svg>
+              </li> -->
+              <!-- <li id="level2" class="">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.89 62.82">
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        font-size: 60px;
+                        font-family: OPTIAuroraGroteskNine;
+                      }
+                    </style>
+                  </defs>
+                  <g id="Layer_2" data-name="Layer 2">
+                    <g id="Layer_1-2" data-name="Layer 1">
+                      <text class="cls-1" transform="translate(0 57.3)">ENTRA</text>
+                      <text class="cls-1 transform1" transform="translate(171.42 57.3) scale(8.02 1)">N</text>
+                      <text class="cls-1 transform2"
+                        transform="translate(463.45 57.3)">CE</text></g>
+                  </g>
+                </svg>
+              </li> -->
+
+            </ul>
 
 
 
-            </nav>
+          </nav>
 
-            <div class="container">
-              <input id="input" type=text value=90032389>
+          <div class="container">
+            <input id="input" type=text value=90032389>
 
 
-              <canvas id="canvas"></canvas>
-              <div id="pushUp" class="images">
-                <img class="blend-mode" src="img/1Entrance/BunkerPortal/1.JPG" alt="">
-                <img src="img/1Entrance/BunkerPortal/2.JPG" alt="">
-                <img src="img/1Entrance/BunkerPortal/3.JPG" alt="">
-                <img src="img/1Entrance/BunkerPortal/4.JPG" alt="">
-                <img src="img/1Entrance/BunkerPortal/5.JPG" alt="">
-              </div>
+            <canvas id="canvas"></canvas>
+            <div id="pushUp" class="images">
+              <img class="blend-mode" src="img/1Entrance/BunkerPortal/1.JPG" alt="">
+              <img src="img/1Entrance/BunkerPortal/2.JPG" alt="">
+              <img src="img/1Entrance/BunkerPortal/3.JPG" alt="">
+              <img src="img/1Entrance/BunkerPortal/4.JPG" alt="">
+              <img src="img/1Entrance/BunkerPortal/5.JPG" alt="">
+            </div>
 
-              <div class="images">
-                <img src="img/1Entrance/PoolPortal(WaitingRoom)/1.JPG" alt="">
-                <img src="img/1Entrance/PoolPortal(WaitingRoom)/2.JPG" alt="">
-                <img src="img/1Entrance/PoolPortal(WaitingRoom)/3.JPG" alt="">
-              </div>
-              <a href="" target="_blank"><p id="caption_ex">Bodhi Wind⇡</p></a>
+            <div class="images">
+              <img src="img/1Entrance/PoolPortal(WaitingRoom)/1.JPG" alt="">
+              <img src="img/1Entrance/PoolPortal(WaitingRoom)/2.JPG" alt="">
+              <img src="img/1Entrance/PoolPortal(WaitingRoom)/3.JPG" alt="">
+            </div>
+            <a href="" target="_blank">
+              <p id="caption_ex">Bodhi Wind⇡</p>
+            </a>
 
-              <!-- <div class="images">
+            <!-- <div class="images">
                 <img src="img/2SafeHouse/InstallShots/1.JPG" alt="">
                 <img src="img/2SafeHouse/InstallShots/2.JPG" alt="">
                 <img src="img/2SafeHouse/InstallShots/3.jpg" alt="">
@@ -389,14 +554,14 @@ $(function(){
                 <img src="img/2SafeHouse/InstallShots/15.JPG" alt="">
                 <img src="img/2SafeHouse/InstallShots/16.jpg" alt="">
               </div> -->
-            </div>
           </div>
-
         </div>
-      </div>
 
-     </div>
-     <script src="test.js" charset="utf-8"></script>
+      </div>
+    </div>
+
+  </div>
+  <script src="test.js" charset="utf-8"></script>
 </body>
 
 </html>
@@ -532,18 +697,6 @@ $(function(){
     </g>
   </svg>
 </li> -->
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

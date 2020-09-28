@@ -28,14 +28,14 @@
 
 
 	document.querySelector(".insertContainer").addEventListener("scroll", function(){
-		if (this.scrollTop > imagesLevel[1].offsetTop-300 &&this.scrollTop < imagesLevel[1].offsetTop*2 && fired===false) {
+		if (this.scrollTop < imagesLevel[1].offsetTop*2 && fired===false) {
 			// alert("fi<!--  -->re");
 			document.querySelector(".transform1 ").classList.add("translate-transform1")
 			document.querySelector(".transform2 ").classList.add("translate-transform2")
 			fired = true;
 
 	  }
-		if (this.scrollTop < imagesLevel[1].offsetTop-300 || this.scrollTop >imagesLevel[1].offsetTop*2) {
+		if (this.scrollTop >imagesLevel[1].offsetTop*2) {
 			document.querySelector(".transform1 ").classList.remove("translate-transform1")
 			document.querySelector(".transform2 ").classList.remove("translate-transform2")
 			fired = false ;
@@ -48,8 +48,8 @@
 			level2.classList.add("highlighted")
 
 		} else if (this.scrollTop < imagesLevel[1].offsetTop-300) {
-			level.classList.add("highlighted")
-			level2.classList.remove("highlighted")
+			level2.classList.add("highlighted")
+			// level2.classList.remove("highlighted")
 		} else if (this.scrollTop >imagesLevel[1].offsetTop*2){
 			level.classList.remove("highlighted")
 			level2.classList.remove("highlighted")
@@ -65,7 +65,7 @@
 			// alert(i+1);
 			if(i == 0) {
 				// alert(i);
-				imagesLevel[0].scrollIntoView({ block: 'start',  behavior: 'smooth' });
+				imagesLevel[0].scrollIntoView({ behavior: 'smooth', inline:"start" });
 				// scroll({
 			  //   top: 0,
 			  //   behavior: "smooth"
@@ -76,8 +76,8 @@
 			  // });
 			}
 			else if(i==1) {
-				console.log(imagesLevel[1])
-				imagesLevel[1].scrollIntoView({ block: 'start',  behavior: 'smooth' });
+				// console.log(imagesLevel[1])
+				// imagesLevel[1].scrollIntoView({ block: 'start',  behavior: 'smooth' });
 
 				// scroll({
 			  //   top: imagesLevel[1].offsetTop,
