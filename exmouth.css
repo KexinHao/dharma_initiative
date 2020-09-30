@@ -206,7 +206,7 @@ ul#submenu >li:hover {
 }
 #mainphotos .container {
 
-  max-height: 200vh;
+  min-height: 800vh;
   /* overflow-y: hidden; */
 }
 #mainphotos canvas {

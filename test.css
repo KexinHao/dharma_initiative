@@ -112,12 +112,14 @@ nav ul li:nth-child(2):hover {
 
 nav ul li:nth-child(2) {
   margin-top: -5px;
+  z-index: 20;
 }
 nav ul li.highlighted {
   opacity:1;
 }
 
 nav ul li:nth-child(3) {
+  z-index: -1;
   margin-top: -55px;
 }
 nav ul li:nth-child(4) {
@@ -147,6 +149,11 @@ nav ul li:nth-child(5) {
 
 
 /* CONTAINER */
+
+
+.name-artists {
+
+}
 
 .container {
   z-index: 0;
@@ -194,11 +201,46 @@ canvas {
   mix-blend-mode: normal;
   transform: scale(0.7);
 }
+
+/* #mainphotos .name-artists:hover {
+
+  mix-blend-mode: normal;
+  z-index: 30;
+
+} */
 #mainphotos .images {
+  margin-right: 50vw !important;
   display: flex;
   flex-direction: row;
 
 }
-#mainphotos #pushUp {
+#mainphotos .images {
+  min-height: 50vh;
+}
+
+/* #mainphotos #pushUp {
   margin-top: -30px !important;
+} */
+
+.name-artists {
+  /* height: 9vh; */
+  width: 100%;
+  text-align: center;
+  display: flex;
+  /* flex-direction: row; */
+}
+.name-artists a {
+  /* height: 9vh; */
+  width: 100%;
+  text-align: center;
+
+}
+
+.section-artist {
+  display: flex;
+  flex-direction: column;
+}
+.artist-images {
+  display: flex;
+  flex-direction: row;
 }

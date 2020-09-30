@@ -37,7 +37,7 @@
 
 
 
-        document.querySelector(".insertContainer").addEventListener("scroll", function(){
+      	document.querySelector(".insertContainer").addEventListener("scroll", function(){
       		if (this.scrollTop < imagesLevel[1].offsetTop*2 && fired===false) {
       			// alert("fi<!--  -->re");
       			document.querySelector(".transform1 ").classList.add("translate-transform1")
@@ -51,18 +51,18 @@
       			fired = false ;
       		}
 
-      		if (this.scrollTop > imagesLevel[1].offsetTop-300 &&this.scrollTop <imagesLevel[1].offsetTop*2) {
+      		if (this.scrollTop > imagesLevel[2].offsetTop-300 && this.scrollTop <imagesLevel[4].offsetTop + imagesLevel[1].offsetTop) {
 
       			// alert("works")
-      			// level.classList.remove("highlighted")
-      			level2.classList.add("highlighted")
-
-      		} else if (this.scrollTop < imagesLevel[1].offsetTop-300) {
-      			level2.classList.add("highlighted")
-      			// level2.classList.remove("highlighted")
-      		} else if (this.scrollTop >imagesLevel[1].offsetTop*2){
-      			// level.classList.remove("highlighted")
+      			level3.classList.add("highlighted")
       			level2.classList.remove("highlighted")
+
+      		} else if (this.scrollTop < imagesLevel[2].offsetTop-300) {
+      			level2.classList.add("highlighted")
+      			level3.classList.remove("highlighted")
+      		} else if (this.scrollTop >imagesLevel[4].offsetTop){
+      			level2.classList.remove("highlighted")
+      			level3.classList.remove("highlighted")
       		}
       	}, true)
 
@@ -82,6 +82,15 @@
       			  // });
       				// scroll({
       			  //   top: 0,
+      			  //   behavior: "smooth"
+      			  // });
+      			}
+            else if(i==1) {
+      				// console.log(imagesLevel[1])
+      				imagesLevel[2].scrollIntoView({ block: 'start', behavior: 'smooth', inline:"start" });
+
+      				// scroll({
+      			  //   top: imagesLevel[1].offsetTop,
       			  //   behavior: "smooth"
       			  // });
       			}
@@ -205,7 +214,7 @@
 
     <ul id="menu">
       <li class="title" id="about">about</li>
-      <li class="title" id="text">text</li>
+      <!-- <li class="title" id="text">text</li> -->
       <li class="title" id="video">video</li>
       <li class="title" id="photos">photos</li>
       <li class="external" id="instagram">Instagram</li>
@@ -365,7 +374,7 @@
                   </g>
                 </svg>
               </li>
-              <li >
+              <li id="level3">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.89 46.88">
                   <defs>
                     <style>
@@ -532,9 +541,187 @@
               <img src="img/1Entrance/PoolPortal(WaitingRoom)/2.JPG" alt="">
               <img src="img/1Entrance/PoolPortal(WaitingRoom)/3.JPG" alt="">
             </div>
-            <a href="" target="_blank">
-              <p id="caption_ex">Bodhi Wind⇡</p>
-            </a>
+            <div style="">
+              <a href="" target="_blank" style="display: block;">
+                <p id="caption_ex">Bodhi Wind⇡</p>
+              </a>
+            </div>
+            <div id="pushUp" class="images">
+              <div class="section-artist">
+                <div class="artist-images">
+                  <img class="blend-mode" src="img/2SafeHouse/Works/1.JPG" alt="">
+                  <img src="img/2SafeHouse/Works/2.JPG" alt="">
+                </div>
+
+                <div class="name-artists" style="">
+                  <a href="" target="_blank" style="display: block;">
+                    <p id="caption_ex">Bora Akinciturk⇡</p>
+                  </a>
+                </div>
+
+              </div>
+              <div class="section-artist">
+                <div class="artist-images">
+                  <img class="" src="img/2SafeHouse/Works/3.JPG" alt="">
+                  <img src="img/2SafeHouse/Works/4.JPG" alt="">
+                </div>
+
+                <div class="name-artists" style="">
+                  <a href="" target="_blank" style="display: block;">
+                    <p id="caption_ex">Isabelle Adams⇡</p>
+                  </a>
+                </div>
+              </div>
+              <div class="section-artist">
+                <div class="artist-images">
+                  <img class="" src="img/2SafeHouse/Works/5.JPG" alt="">
+                  <img src="img/2SafeHouse/Works/6.JPG" alt="">
+                </div>
+
+                <div class="name-artists" style="">
+                  <a href="" target="_blank" style="display: block;">
+                    <p id="caption_ex">Matas Buckus⇡</p>
+                  </a>
+                </div>
+              </div>
+              <div class="section-artist">
+                <div class="artist-images">
+                  <img class="" src="img/2SafeHouse/Works/7.JPG" alt="">
+                  <img src="img/2SafeHouse/Works/8.JPG" alt="">
+                </div>
+
+                <div class="name-artists" style="">
+                  <a href="" target="_blank" style="display: block;">
+                    <p id="caption_ex">Omsk Social Club⇡</p>
+                  </a>
+                </div>
+              </div>
+              <div class="section-artist">
+                <div class="artist-images">
+                  <img class="" src="img/2SafeHouse/Works/9.JPG" alt="">
+                  <img src="img/2SafeHouse/Works/10.JPG" alt="">
+                </div>
+
+                <div class="name-artists" style="">
+                  <a href="" target="_blank" style="display: block;">
+                    <p id="caption_ex">Rinella Alfonso⇡</p>
+                  </a>
+                </div>
+              </div>
+              <!-- <img src="img/2SafeHouse/Works/3.JPG" alt="">
+              <img src="img/2SafeHouse/Works/4.JPG" alt="">
+              <img src="img/2SafeHouse/Works/5.JPG" alt="">
+              <img src="img/2SafeHouse/Works/6.JPG" alt=""> -->
+              <!-- <img src="img/2SafeHouse/Works/7.JPG" alt="">
+              <img src="img/2SafeHouse/Works/8.JPG" alt="">
+              <img src="img/2SafeHouse/Works/9.JPG" alt="">
+              <img src="img/2SafeHouse/Works/10.JPG" alt=""> -->
+            </div>
+            <!-- <div class="name-artists" style="">
+              <a href="" target="_blank" style="display: block;">
+                <p id="caption_ex">Bora Akinciturk⇡</p>
+              </a>
+              <a href="" target="_blank" style="display: block;">
+                <p id="caption_ex">Bodhi Wind⇡</p>
+              </a>
+            </div> -->
+
+            <div id="pushUp" class="images">
+              <img class="blend-mode" src="img/2SafeHouse/Scenery/1.JPG" alt="">
+              <img src="img/2SafeHouse/Scenery/2.JPG" alt="">
+              <img src="img/2SafeHouse/Scenery/3.JPG" alt="">
+              <img src="img/2SafeHouse/Scenery/4.JPG" alt="">
+              <img src="img/2SafeHouse/Scenery/5.JPG" alt="">
+
+            </div>
+            <div id="pushUp" class="images">
+              <div class="section-artist">
+                <div class="artist-images">
+                  <img class="" src="img/2SafeHouse/InstallShots/1.JPG" alt="">
+                  <img src="img/2SafeHouse/InstallShots/2.JPG" alt="">
+                </div>
+
+                <div class="name-artists" style="">
+                  <a href="" target="_blank" style="display: block;">
+                    <p id="caption_ex">Bora Akinciturk⇡</p>
+                  </a>
+                </div>
+              </div>
+              <div class="section-artist">
+                <div class="artist-images">
+                  <img class="" src="img/2SafeHouse/InstallShots/3.jpg" alt="">
+                  <img src="img/2SafeHouse/InstallShots/4.jpg" alt="">
+                </div>
+
+                <div class="name-artists" style="">
+                  <a href="" target="_blank" style="display: block;">
+                    <p id="caption_ex">Matas Buckus⇡</p>
+                  </a>
+                </div>
+              </div>
+              <div class="section-artist">
+                <div class="artist-images">
+                  <img class="" src="img/2SafeHouse/InstallShots/5.JPG" alt="">
+                  <img src="img/2SafeHouse/InstallShots/6.jpg" alt="">
+                  <img src="img/2SafeHouse/InstallShots/7.JPG" alt="">
+                </div>
+
+                <div class="name-artists" style="">
+                  <a href="" target="_blank" style="display: block;">
+                    <p id="caption_ex">Omsk Social Club⇡</p>
+                  </a>
+                </div>
+              </div>
+              <div class="section-artist">
+                <div class="artist-images">
+                  <img class="" src="img/2SafeHouse/InstallShots/8.JPG" alt="">
+                  <img src="img/2SafeHouse/InstallShots/9.jpg" alt="">
+                  <img src="img/2SafeHouse/InstallShots/10.jpg" alt="">
+                  <img src="img/2SafeHouse/InstallShots/11.jpg" alt="">
+                </div>
+
+                <div class="name-artists" style="">
+                  <a href="" target="_blank" style="display: block;">
+                    <p id="caption_ex">Rinella Alfonso⇡</p>
+                  </a>
+                </div>
+              </div>
+              <img src="img/2SafeHouse/InstallShots/12.JPG" alt="">
+              <div class="section-artist">
+                <div class="artist-images">
+                  <img class="" src="img/2SafeHouse/InstallShots/13.JPG" alt="">
+                  <img src="img/2SafeHouse/InstallShots/14.JPG" alt="">
+                  <img src="img/2SafeHouse/InstallShots/15.JPG" alt="">
+                  <img src="img/2SafeHouse/InstallShots/16.jpg" alt="">
+                </div>
+
+                <div class="name-artists" style="">
+                  <a href="" target="_blank" style="display: block;">
+                    <p id="caption_ex">Isabelle Adams⇡</p>
+                  </a>
+                </div>
+              </div>
+              <!-- <img class="blend-mode" src="img/2SafeHouse/InstallShots/1.JPG" alt="">
+              <img src="img/2SafeHouse/InstallShots/2.JPG" alt=""> -->
+              <!-- <img src="img/2SafeHouse/InstallShots/3.jpg" alt="">
+              <img src="img/2SafeHouse/InstallShots/4.jpg" alt=""> -->
+              <!-- <img src="img/2SafeHouse/InstallShots/5.JPG" alt="">
+              <img src="img/2SafeHouse/InstallShots/6.jpg" alt=""> -->
+              <!-- <img src="img/2SafeHouse/InstallShots/7.JPG" alt="">
+              <img src="img/2SafeHouse/InstallShots/8.JPG" alt="">
+              <img src="img/2SafeHouse/InstallShots/9.jpg" alt="">
+              <img src="img/2SafeHouse/InstallShots/10.jpg" alt="">
+              <img src="img/2SafeHouse/InstallShots/11.jpg" alt=""> -->
+
+              <!-- <img src="img/2SafeHouse/InstallShots/13.JPG" alt="">
+              <img src="img/2SafeHouse/InstallShots/14.JPG" alt="">
+              <img src="img/2SafeHouse/InstallShots/15.JPG" alt="">
+              <img src="img/2SafeHouse/InstallShots/16.jpg" alt=""> -->
+              <div  style="display:block; height:100%; width: 500px;"  alt="">
+                <img width="500" src="img/empty.png" alt="">
+
+            </div>
+
 
             <!-- <div class="images">
                 <img src="img/2SafeHouse/InstallShots/1.JPG" alt="">
@@ -555,7 +742,11 @@
                 <img src="img/2SafeHouse/InstallShots/16.jpg" alt="">
               </div> -->
           </div>
+          <div class="images">
+
+          </div>
         </div>
+
 
       </div>
     </div>

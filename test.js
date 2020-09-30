@@ -13,18 +13,31 @@
 // alert(isSafari)
 //
 // if(isSafari ===false) {
+
+
 	const canvas = document.getElementById('canvas');
 	let input = document.getElementById('input');
 	const ctx = canvas.getContext('2d');
 	let navigation = document.getElementById("nav")
 
 	// let valueScroll = 100+"px"
-	let level = document.getElementById("level")
+	// let level = document.getElementById("level")
 	let level2 = document.getElementById("level2")
+	let level3 = document.getElementById("level3")
 	let fired = false;
 
 	const imagesLevel = document.querySelectorAll(".images")
 
+
+
+
+		if ($('#photos')) {
+			$(".section-artist .artist-images img").hover(function() {
+				$('.name-artists').css('zIndex','-1')
+				$(this).parent().siblings('.name-artists').css('zIndex','30');
+				// $(this).siblings().css('position','relative');
+			})
+		}
 
 
 	document.querySelector(".insertContainer").addEventListener("scroll", function(){
@@ -41,18 +54,18 @@
 			fired = false ;
 		}
 
-		if (this.scrollTop > imagesLevel[1].offsetTop-300 &&this.scrollTop <imagesLevel[1].offsetTop*2) {
+		if (this.scrollTop > imagesLevel[2].offsetTop-300 && this.scrollTop <imagesLevel[4].offsetTop + imagesLevel[1].offsetTop) {
 
 			// alert("works")
-			level.classList.remove("highlighted")
-			level2.classList.add("highlighted")
-
-		} else if (this.scrollTop < imagesLevel[1].offsetTop-300) {
-			level2.classList.add("highlighted")
-			// level2.classList.remove("highlighted")
-		} else if (this.scrollTop >imagesLevel[1].offsetTop*2){
-			level.classList.remove("highlighted")
+			level3.classList.add("highlighted")
 			level2.classList.remove("highlighted")
+
+		} else if (this.scrollTop < imagesLevel[2].offsetTop-300) {
+			level2.classList.add("highlighted")
+			level3.classList.remove("highlighted")
+		} else if (this.scrollTop >imagesLevel[4].offsetTop){
+			level2.classList.remove("highlighted")
+			level3.classList.remove("highlighted")
 		}
 	}, true)
 
@@ -65,7 +78,7 @@
 			// alert(i+1);
 			if(i == 0) {
 				// alert(i);
-				imagesLevel[0].scrollIntoView({ behavior: 'smooth', inline:"start" });
+				imagesLevel[0].scrollIntoView({ block: 'start', behavior: 'smooth', inline:"start" });
 				// scroll({
 			  //   top: 0,
 			  //   behavior: "smooth"
@@ -77,7 +90,7 @@
 			}
 			else if(i==1) {
 				// console.log(imagesLevel[1])
-				// imagesLevel[1].scrollIntoView({ block: 'start',  behavior: 'smooth' });
+				imagesLevel[2].scrollIntoView({ block: 'start', behavior: 'smooth', inline:"start" });
 
 				// scroll({
 			  //   top: imagesLevel[1].offsetTop,
@@ -121,7 +134,7 @@
 
 
 		function change() {
-			if (input.value > 887570260646934643447331273312596933846447331259693373543698140232874500619768489156911231237123872198372718937123789217392312371298738912738273733125969337354369814023287450061976848915691123123712387219837271893712378921739231237129873891273827382782738273827384643791273987) {
+			if (input.value > 8875702606469346434473312733125969338464473312596933735436981402328745006197684891569112312371238721983727189371237892173923123712987389127382737331259693373543698140232874500619768489156911231237123831237123872198384891569112312371238312377721983727189837271893712378921739239389217392331437123789217392312387) {
 				clearInterval(idVar)
 			}
 			else {
