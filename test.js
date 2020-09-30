@@ -129,7 +129,7 @@
 	function move() {
 		var elem = document.getElementById("moveBar");
 		var width = 0;
-		var idVar = setInterval(change, 100);
+		var idVar = setInterval(change, 250);
 		let randomNumber = 2
 
 
