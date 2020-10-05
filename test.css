@@ -104,7 +104,9 @@ nav ul li:hover text.transform2 {
 }
 
 nav ul li:nth-child(1):hover,
-nav ul li:nth-child(2):hover {
+nav ul li:nth-child(2):hover,
+nav ul li:nth-child(3):hover
+ {
   /* mix-blend-mode: normal; */
   opacity: 1;
   cursor: pointer;
@@ -119,7 +121,7 @@ nav ul li.highlighted {
 }
 
 nav ul li:nth-child(3) {
-  z-index: -1;
+  z-index: 1;
   margin-top: -55px;
 }
 nav ul li:nth-child(4) {
@@ -192,13 +194,17 @@ canvas {
 
 }
 #mainphotos img {
-  mix-blend-mode: screen;
+  /* mix-blend-mode: screen; */
   height: 80vh;
 
 }
+#mainphotos img.blended {
+  mix-blend-mode: screen;
 
-#mainphotos img:hover {
-  mix-blend-mode: normal;
+}
+
+#mainphotos img.blended:hover {
+  mix-blend-mode: normal !important;
   transform: scale(0.7);
 }
 

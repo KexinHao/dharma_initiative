@@ -24,12 +24,9 @@
 	// let level = document.getElementById("level")
 	let level2 = document.getElementById("level2")
 	let level3 = document.getElementById("level3")
-	let level4 = document.getElementById("level4")
 	let fired = false;
 
 	const imagesLevel = document.querySelectorAll(".images")
-	let sectionLevel = document.querySelectorAll(".lev")
-	let sectionLevelArray = Array.from(sectionLevel)
 
 
 
@@ -42,132 +39,66 @@
 				// $(this).siblings().css('position','relative');
 			})
 
+			//this function runs every time you are scrolling
 
+			/* Every time the window is scrolled ... */
+			$(".insertContainer").scroll( function(){
+
+				let bottom_of_window = $(".insertContainer").scrollTop() + $(".insertContainer").height();
+				// console.log(bottom_of_window);
+				document.querySelectorAll("#element").forEach((item, i) => {
+					// console.log(i + ": " + (item));
+
+				});
+
+
+			    // /* Check the location of each desired element */
+			    // $('#element').each( function(i){
+					//
+			    //     let bottom_of_object = $(this).offset().top + $(this).outerHeight();
+					// 		// console.log($(this));
+					//
+					//
+			    //     /* If the object is completely visible in the window, fade it in */
+			    //     if( bottom_of_window > bottom_of_object ){
+					//
+			    //         $(this).css('mix-blend-mode','screen');
+			    //         $(this).css('opacity','0.2');
+					//
+			    //     }
+					//
+			    // });
+
+			});
 		}
 
-		let innerCounter1 = 0;
-		let innerCounter2 = 0;
-		let innerCounter3 = 0;
-		let innerCounter4 = 0;
 
 	document.querySelector(".insertContainer").addEventListener("scroll", function(){
-		//1 block
 		if (this.scrollTop < imagesLevel[1].offsetTop*2 && fired===false) {
 			// alert("fi<!--  -->re");
 			document.querySelector(".transform1 ").classList.add("translate-transform1")
 			document.querySelector(".transform2 ").classList.add("translate-transform2")
 			fired = true;
 
-
-
 	  }
-		//2 block
 		if (this.scrollTop >imagesLevel[1].offsetTop*2) {
 			document.querySelector(".transform1 ").classList.remove("translate-transform1")
 			document.querySelector(".transform2 ").classList.remove("translate-transform2")
 			fired = false ;
 		}
 
+		if (this.scrollTop > imagesLevel[2].offsetTop-300 && this.scrollTop <imagesLevel[4].offsetTop + imagesLevel[1].offsetTop) {
 
-		//section #1
-
-		if (this.scrollTop < imagesLevel[2].offsetTop-300) {
-			level2.classList.add("highlighted")
-			level3.classList.remove("highlighted")
-
-			innerCounter2 = 0;
-			if (innerCounter1==0) {
-				$(".lev").next().find( "img" ).removeClass("blended")
-				if($("#lev-1").next().find( "img" ).css("mix-blend-mode") !== "screen") {
-					console.log("aaa");
-					$("#lev-1").next().find( "img" ).addClass("blended")
-
-				}
-				if($("#lev-2").next().find( "img" ).css("mix-blend-mode") !== "screen") {
-					// console.log("aaa");
-					$("#lev-2").next().find( "img" ).addClass("blended")
-
-				}
-				innerCounter1++;
-			}
-
-
-
-
-
-		}
-		//section #2
-		else if (this.scrollTop > imagesLevel[2].offsetTop-300 && this.scrollTop <imagesLevel[4].offsetTop + 300) {
+			// alert("works")
 			level3.classList.add("highlighted")
 			level2.classList.remove("highlighted")
-			level4.classList.remove("highlighted")
 
-			innerCounter1 = 0;
-			innerCounter3 = 0;
-			// innerCounter2 = 0;
-			if (innerCounter2==0) {
-				$(".lev").next().find( "img" ).removeClass("blended")
-
-				if($("#lev-3").next().find( "img" ).css("mix-blend-mode") !== "screen") {
-					console.log("aaa");
-					$("#lev-2").next().find( "img" ).addClass("blended")
-					$("#lev-3").next().find( "img" ).addClass("blended")
-					$("#lev-4").next().find( "img" ).addClass("blended")
-					$("#lev-5").next().find( "img" ).addClass("blended")
-
-				}
-
-				innerCounter2++;
-			}
-
-
-		}
-		//section #3
-		else if (this.scrollTop >imagesLevel[4].offsetTop && this.scrollTop <imagesLevel[6].offsetTop){
-			innerCounter2 = 0;
-			innerCounter4 = 0;
+		} else if (this.scrollTop < imagesLevel[2].offsetTop-300) {
+			level2.classList.add("highlighted")
+			level3.classList.remove("highlighted")
+		} else if (this.scrollTop >imagesLevel[4].offsetTop){
 			level2.classList.remove("highlighted")
 			level3.classList.remove("highlighted")
-			level4.classList.add("highlighted")
-			if (innerCounter3==0) {
-				$(".lev").next().find( "img" ).removeClass("blended")
-
-				if($("#lev-6").next().find( "img" ).css("mix-blend-mode") !== "screen") {
-
-					console.log("aaa");
-					$("#lev-5").next().find( "img" ).addClass("blended")
-					$("#lev-6").next().find( "img" ).addClass("blended")
-					$("#lev-7").next().find( "img" ).addClass("blended")
-
-				}
-
-				innerCounter3++;
-			}
-		}
-		else if (this.scrollTop >imagesLevel[6].offsetTop &&this.scrollTop <imagesLevel[8].offsetTop+300){
-			level4.classList.add("highlighted")
-			innerCounter3 = 0;
-
-			if (innerCounter4==0) {
-				$(".lev").next().find( "img" ).removeClass("blended")
-
-				if($("#lev-8").next().find( "img" ).css("mix-blend-mode") !== "screen") {
-
-					console.log("aaa");
-					$("#lev-7").next().find( "img" ).addClass("blended")
-					$("#lev-8").next().find( "img" ).addClass("blended")
-					$("#lev-9").next().find( "img" ).addClass("blended")
-
-				}
-
-				innerCounter4++;
-			}
-		}
-		else if (this.scrollTop >imagesLevel[8].offsetTop-300){
-
-			level4.classList.remove("highlighted")
-			// level5.classList.remove("highlighted")
-			// alert("ups")
 		}
 	}, true)
 
@@ -193,14 +124,6 @@
 			else if(i==1) {
 				// console.log(imagesLevel[1])
 				imagesLevel[2].scrollIntoView({ block: 'start', behavior: 'smooth', inline:"start" });
-
-				// scroll({
-			  //   top: imagesLevel[1].offsetTop,
-			  //   behavior: "smooth"
-			  // });
-			} else if(i==2) {
-				// console.log(imagesLevel[1])
-				imagesLevel[5].scrollIntoView({ block: 'start', behavior: 'smooth', inline:"start" });
 
 				// scroll({
 			  //   top: imagesLevel[1].offsetTop,

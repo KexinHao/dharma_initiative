@@ -29,84 +29,98 @@
         }, function() {
           $(this).css("transform", "scale(1)");
         });
-        let level = document.getElementById("level")
+        // let level = document.getElementById("level")
         let level2 = document.getElementById("level2")
+        let level3 = document.getElementById("level3")
+        let level4 = document.getElementById("level4")
         let fired = false;
 
         const imagesLevel = document.querySelectorAll(".images")
 
 
 
-      	document.querySelector(".insertContainer").addEventListener("scroll", function(){
-      		if (this.scrollTop < imagesLevel[1].offsetTop*2 && fired===false) {
-      			// alert("fi<!--  -->re");
-      			document.querySelector(".transform1 ").classList.add("translate-transform1")
-      			document.querySelector(".transform2 ").classList.add("translate-transform2")
-      			fired = true;
+        document.querySelector(".insertContainer").addEventListener("scroll", function() {
+          if (this.scrollTop < imagesLevel[1].offsetTop * 2 && fired === false) {
+            // alert("fi<!--  -->re");
+            document.querySelector(".transform1 ").classList.add("translate-transform1")
+            document.querySelector(".transform2 ").classList.add("translate-transform2")
+            fired = true;
 
-      	  }
-      		if (this.scrollTop >imagesLevel[1].offsetTop*2) {
-      			document.querySelector(".transform1 ").classList.remove("translate-transform1")
-      			document.querySelector(".transform2 ").classList.remove("translate-transform2")
-      			fired = false ;
-      		}
+          }
+          if (this.scrollTop > imagesLevel[1].offsetTop * 2) {
+            document.querySelector(".transform1 ").classList.remove("translate-transform1")
+            document.querySelector(".transform2 ").classList.remove("translate-transform2")
+            fired = false;
+          }
 
-      		if (this.scrollTop > imagesLevel[2].offsetTop-300 && this.scrollTop <imagesLevel[4].offsetTop + imagesLevel[1].offsetTop) {
+          if (this.scrollTop < imagesLevel[2].offsetTop - 300) {
+            level2.classList.add("highlighted")
+            level3.classList.remove("highlighted")
 
-      			// alert("works")
-      			level3.classList.add("highlighted")
-      			level2.classList.remove("highlighted")
+          } else if (this.scrollTop > imagesLevel[2].offsetTop - 300 && this.scrollTop < imagesLevel[4].offsetTop + imagesLevel[1].offsetTop) {
 
-      		} else if (this.scrollTop < imagesLevel[2].offsetTop-300) {
-      			level2.classList.add("highlighted")
-      			level3.classList.remove("highlighted")
-      		} else if (this.scrollTop >imagesLevel[4].offsetTop){
-      			level2.classList.remove("highlighted")
-      			level3.classList.remove("highlighted")
-      		}
-      	}, true)
+            // alert("works")
+            level3.classList.add("highlighted")
+            level2.classList.remove("highlighted")
+            level4.classList.remove("highlighted")
 
-
-      	const levels = document.querySelectorAll("#nav ul li")
+          } else if (this.scrollTop >imagesLevel[4].offsetTop && this.scrollTop <imagesLevel[6].offsetTop) {
+            level2.classList.remove("highlighted")
+            level3.classList.remove("highlighted")
+            level4.classList.add("highlighted")
+          }
+        }, true)
 
 
-      	levels.forEach((item, i) => {
-      		item.addEventListener("click", function () {
-      			// alert(i+1);
-      			if(i == 0) {
-      				// alert(i);
-      				imagesLevel[0].scrollIntoView({ block: 'start',  behavior: 'smooth', inline:"start" });
-      				// scroll({
-      			  //   top: 0,
-      			  //   behavior: "smooth"
-      			  // });
-      				// scroll({
-      			  //   top: 0,
-      			  //   behavior: "smooth"
-      			  // });
-      			}
-            else if(i==1) {
-      				// console.log(imagesLevel[1])
-      				imagesLevel[2].scrollIntoView({ block: 'start', behavior: 'smooth', inline:"start" });
+        const levels = document.querySelectorAll("#nav ul li")
 
-      				// scroll({
-      			  //   top: imagesLevel[1].offsetTop,
-      			  //   behavior: "smooth"
-      			  // });
-      			}
-      			// else if(i==1) {
-      			// 	console.log(imagesLevel[1])
-      			// 	imagesLevel[1].scrollIntoView({ block: 'start',  behavior: 'smooth' });
+
+        levels.forEach((item, i) => {
+          item.addEventListener("click", function() {
+            // alert(i+1);
+            if (i == 0) {
+              // alert(i);
+              imagesLevel[0].scrollIntoView({
+                block: 'start',
+                behavior: 'smooth',
+                inline: "start"
+              });
+              // scroll({
+              //   top: 0,
+              //   behavior: "smooth"
+              // });
+              // scroll({
+              //   top: 0,
+              //   behavior: "smooth"
+              // });
+            } else if (i == 1) {
+              // console.log(imagesLevel[1])
+              imagesLevel[2].scrollIntoView({
+                block: 'start',
+                behavior: 'smooth',
+                inline: "start"
+              });
+            } else if (i == 2) {
+              // console.log(imagesLevel[1])
+              imagesLevel[5].scrollIntoView({
+                block: 'start',
+                behavior: 'smooth',
+                inline: "start"
+              });
+            }
+            // else if(i==1) {
+            // 	console.log(imagesLevel[1])
+            // 	imagesLevel[1].scrollIntoView({ block: 'start',  behavior: 'smooth' });
             //
-      			// 	// scroll({
-      			//   //   top: imagesLevel[1].offsetTop,
-      			//   //   behavior: "smooth"
-      			//   // });
-      			// }
+            // 	// scroll({
+            //   //   top: imagesLevel[1].offsetTop,
+            //   //   behavior: "smooth"
+            //   // });
+            // }
 
-      		})
-      		// item.addEventListener("click", clickHandler(i))
-      	});
+          })
+          // item.addEventListener("click", clickHandler(i))
+        });
       }
 
 
@@ -226,26 +240,7 @@
       <div id="mainabout" style="display:none;">
         <img src="emimage/poster_exmouth.png" />
         <br /><br /><br /><br /><br /><br /><br /><br />
-        <!-- <div id="abouttx">
-              <br /><br /><br /><br />
-              EPISODE 4: “Greenhouse”, curated by <span id="italic">Dharma Initiatives</span> &amp; hosted by<span id="italic"> Light-Harvesting Complex</span> at Vantaa, Finland<br /><br /><br />
-              Text by <span id="italic">Natalya Serkova</span><br />
-              Photography by <span id="italic">Light-Harvesting Complex (Sara Blosseville & Victor Gogly)</span>
-              With contributions from:
-              <span id="italic">
-                Afra Eisma, Bastian Visch, Bob Demper, Catherine Schwartz, Dimitrie Luca Gora, Ecaterina Vrana, El Pelele, Emir Karyo, Helmi Nieminen, Ian Bruner, Jan Wojda, Johanna Blank, Justin Oritz, Kexin Hao, Luca Florian, Marnix Van Uum, Mattia Papp, Megan Mehta, Mette Rasmussen, Hortensia Mi Kafchin, Nanhee Kim, Nefololo, Philip Hinge, Rosa Zangenberg, Sara Blosseville, Siggi Sekira, Suyoung Yang, Tea Strazicic, Victor Gogly, Vitaly Bezpalov, Zhao Laozhi
-              </span> <br /><br /><br />
-              Credits<br /><br />
-              Video by <span id="italic">Light-Harvesting Complex &amp; Dharma Initiatives</span><br />
-              Cg Animation by <span id="italic">Emir Karyo &amp; Jan Wojda</span><br />
-              Graphic Design by <span id="italic">Matas Buckus</span><br />
-              Sound by <span id="italic">in.finit &amp; MengHan</span><br />
-              Web Design by <span id="italic">Kexin Hao</span><br />
-              Editing by <span id="italic">Christian Roncea &amp; Marc Solomon</span><br />
-              Digital Frame by <span id="italic">Marie Komatsu</span><br />
-              Voices by <span id="italic">smarton &amp; carton</span>
-              <br /><br /><br /><br />
-            </div> -->
+
         <div id="aboutus">
           <p>
             Dharma Initiatives is a collective experimental project, developed in a decentralized multi-linear exhibition format, online and offline.
@@ -254,34 +249,12 @@
             Our name comes from “The Dharma Initiative”, also written DHARMA (Department of Heuristics and Research on Material Applications), a fictional research project featured in the tv series “Lost”.
           </p>
           <p>
-            <!-- Our team is: Christian Roncea (Founder), Marc Solomon (Video-Editing), Kexin Hao (Web Design), Christian Thomsen (Sound Design) & in.finit (Sound Design & FX), Emir Karyo (Graphic Design & VFX), Jan Wojda (VFX), Matas Buckus (Logo Design).
-                <br /><br /> -->
+
             For any inquiries, you can reach to us by <a href="mailto:dharmainitiatives815@gmail.com" target="_blank">e-mail</a> or by dm <a href="https://www.instagram.com/dharma_initiatives/" target="_blank">here</a>.
           </p>
         </div>
       </div>
-      <!-- <div id="maintext" style="display:none;">
-           <img src="ghimage/ghtext.png" />
-           <div id="credit">
-             text by Natalya Serkova, designed by Matas Buckus
-           </div>
-           <div id="poem">
-             <br /><br /><br /><br /><br /><br />
-             * / **/ 20**  Day *th of the Experiment
-             <br /><br /><br /><br />
 
-
-             Woke up early today with loud and weird sounds. We had already got used to whistling and whispering during the night (unlike us, they don't need sleep, and they are active at any time of day), but these sounds were different. First we heard some intermittent clapping, then the sound of air jet suction (we call it the suction sound, we've heard it 3 times already, see records from */*, **/* and **/**. All 3 times before this sound appeared only in the afternoon, between 4pm and 8pm). Then we heard something that sounded like screaming, it's hard to describe what it sounded like. To be more precise, the sound resembled something between the screaming of a child and the squealing of a dog, we heard such a sound for the first time. This scream was then repeated 8 times within an hour (at 5:05, 5:15, 5:18, 5:26, 5:43, 5:48, 5:52, 5:55am). Identify a pattern in the frequency of the scream (underlined). When we went outside at 6:10am, we made sure that the leaking occurred in the usual way. However, by 8:45am, the expiries at points 3, 16, 25 and 40 had already increased dramatically (important (underlined): in pairs of 3-25 and 16-40 the points are at the same distance from each other; this may be due to (understand how (underlined)) the situation with pairs of points 8-12, 3-18 and 25-27 that changed their state last week, see record from */**). We observed pairs 3-25 and 16-40 during the day and suspect that they were the ones who made the loudest sounds in the morning. The observation will continue until the points (presumably) change their state.
-              <br /><br />
-             A contact with C. is still not yet established. However, the experiment that has taken us all last week yielded some results. In two places (near points 13 and 33) shallow funnels were formed in the ground, and this morning chicken eggs were found in them. We found that the eggs were fresh and had been laid presumably two days ago. They were removed from the funnels and placed under surveillance. If they are fertilized (not yet clear) and chickens hatch from them, we will take blood and saliva samples. We suggest that this may be a one-way message from C. We plan to try sending a return message in the near future, but it is still unclear what exactly we need to put in the funnels so that the message can be sent and reach the intended recipient (also (underlined): we need to set the time of day, with an accuracy of 5 minutes when the message should be placed in the funnels). Set the observation of points 13 and 33. It is assumed that their characteristics can provide additional information about the funnels (for a detailed table of characteristics of these points, see the tab 12, the table is replenished).
-              <br /><br />
-             Except for the morning sounds, the day passed without any incidents. With **/** we are planning a new experiment under the working title "Horizon" (for a detailed description of the experiment, see records from */*). Today we have discovered that we are lacking several ingredients for it: iron sulphate(II), sunflower grains and a whisk. Tomorrow we plan to follow them to the centre of the village. Also today the infrared camera got trashed, we may have to buy some elements to replace in it. Overall, the mood is cheerful, the weather is good. At night they promise rain with thunderstorms, we will have to cover all the points with plastic (checked the amount of remaining covering, it should be enough).
-             <br /><br />
-             Text by Natalya Serkova
-             <br /><br /><br /><br /><br /><br />
-           </div>
-
-        </div> -->
       <div id="mainvideo">
         <iframe src="https://www.youtube.com/embed/7Ai6dyTHEos" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
@@ -292,69 +265,7 @@
         <div class="insertContainer">
           <nav id="nav">
             <ul>
-              <!-- <li id="level" class="highlighted">
-                <object data="Asset2.svg" type="image/svg+xml"></object>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.89 43.97">
-                  <defs>
-                    <style>
-                      .cls-1 {
-                        font-size: 42px;
-                        font-family: OPTIAuroraGroteskNine;
-                      }
 
-                      .cls-2 {
-                        letter-spacing: -0.05em;
-                      }
-
-                      .cls-3 {
-                        letter-spacing: -0.05em;
-                      }
-                    </style>
-                  </defs>
-                  <g id="Layer_2" data-name="Layer 2">
-                    <g id="Layer_1-2" data-name="Layer 1">
-                      <text class="cls-1" transform="translate(0 40.11)">
-                        <tspan class="cls-2">P</tspan>
-                        <tspan x="23.44" y="0">ool </tspan>
-                        <tspan class="cls-3" x="91.05" y="0">P</tspan>
-                        <tspan x="114.49" y="0">ortal</tspan>
-                      </text></g>
-                  </g>
-                </svg>
-              </li> -->
-
-              <!-- <li id="level2" class="">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.89 43.97">
-                  <defs>
-                    <style>
-                      .cls-1 {
-                        font-size: 42px;
-                        font-family: OPTIAuroraGroteskNine;
-                      }
-
-                      .cls-2 {
-                        letter-spacing: -0.1em;
-                      }
-
-                      .cls-3 {
-                        letter-spacing: -0.05em;
-                      }
-                    </style>
-                  </defs>
-                  <g id="Layer_2" data-name="Layer 2">
-                    <g id="Layer_1-2" data-name="Layer 1">
-                      <text class="cls-1" transform="translate(0 40.11)">B<tspan class="cls-2" x="25.54" y="0">U</tspan></text>
-
-                      <text class="cls-1 transform1" transform="">N</text>
-                      <text class="cls-1 transform2" transform="">
-                        <tspan xml:space="preserve">KER </tspan>
-                        <tspan class="cls-3" x="89.04" y="0">P</tspan>
-                        <tspan x="112.48" y="0">ortal</tspan>
-                      </text>
-                    </g>
-                  </g>
-                </svg>
-              </li> -->
               <li id="level2" class="highlighted">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.89 46.88">
                   <defs>
@@ -389,7 +300,7 @@
                   </g>
                 </svg>
               </li>
-              <li >
+              <li id="level4">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.89 174.95">
                   <defs>
                     <style>
@@ -399,9 +310,11 @@
                         font-size: 42px;
                         font-family: OPTIAuroraGroteskNine;
                       }
+
                       .cls-2 {
                         letter-spacing: -0.16em;
                       }
+
                       .cls-3 {
                         letter-spacing: 0.54em;
                       }
@@ -454,7 +367,8 @@
                     </style>
                   </defs>
                   <g id="Layer_2" data-name="Layer 2">
-                    <g id="Layer_1-2" data-name="Layer 1"><text class="cls-1" transform="translate(0 50.82)">Scr</text><text class="cls-1" transform="translate(72.66 50.82) scale(1.18 1.2)">a</text><text class="cls-1" transform="translate(100.58 50.82)">p
+                    <g id="Layer_1-2" data-name="Layer 1"><text class="cls-1" transform="translate(0 50.82)">Scr</text><text class="cls-1" transform="translate(72.66 50.82) scale(1.18 1.2)">a</text><text class="cls-1"
+                        transform="translate(100.58 50.82)">p
                         <tspan class="cls-2" x="23.65" y="0"> </tspan>
                         <tspan x="206.56" y="3.65">B</tspan>
                         <tspan x="232.09" y="0">o</tspan>
@@ -465,57 +379,7 @@
                   </g>
                 </svg>
               </li>
-              <!-- <li id="level2" class="">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.89 43.97">
-                  <defs>
-                    <style>
-                      .cls-1 {
-                        font-size: 42px;
-                        font-family: OPTIAuroraGroteskNine;
-                      }
 
-                      .cls-2 {
-                        letter-spacing: -0.1em;
-                      }
-
-                      .cls-3 {
-                        letter-spacing: -0.05em;
-                      }
-                    </style>
-                  </defs>
-                  <g id="Layer_2" data-name="Layer 2">
-                    <g id="Layer_1-2" data-name="Layer 1">
-                      <text class="cls-1" transform="translate(0 40.11)">B<tspan class="cls-2" x="25.54" y="0">U</tspan></text>
-
-                      <text class="cls-1 transform1" transform="">N</text>
-                      <text class="cls-1 transform2" transform="">
-                        <tspan xml:space="preserve">KER </tspan>
-                        <tspan class="cls-3" x="89.04" y="0">P</tspan>
-                        <tspan x="112.48" y="0">ortal</tspan>
-                      </text>
-                    </g>
-                  </g>
-                </svg>
-              </li> -->
-              <!-- <li id="level2" class="">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.89 62.82">
-                  <defs>
-                    <style>
-                      .cls-1 {
-                        font-size: 60px;
-                        font-family: OPTIAuroraGroteskNine;
-                      }
-                    </style>
-                  </defs>
-                  <g id="Layer_2" data-name="Layer 2">
-                    <g id="Layer_1-2" data-name="Layer 1">
-                      <text class="cls-1" transform="translate(0 57.3)">ENTRA</text>
-                      <text class="cls-1 transform1" transform="translate(171.42 57.3) scale(8.02 1)">N</text>
-                      <text class="cls-1 transform2"
-                        transform="translate(463.45 57.3)">CE</text></g>
-                  </g>
-                </svg>
-              </li> -->
 
             </ul>
 
@@ -528,29 +392,36 @@
 
 
             <canvas id="canvas"></canvas>
+
+
+            <div class="lev" id="lev-1"></div>
             <div id="pushUp" class="images">
-              <img class="blend-mode" src="img/1Entrance/BunkerPortal/1.JPG" alt="">
-              <img src="img/1Entrance/BunkerPortal/2.JPG" alt="">
-              <img src="img/1Entrance/BunkerPortal/3.JPG" alt="">
-              <img src="img/1Entrance/BunkerPortal/4.JPG" alt="">
-              <img src="img/1Entrance/BunkerPortal/5.JPG" alt="">
+              <img id="element" class="blend-mode" src="img/1Entrance/BunkerPortal/1.JPG" alt="">
+              <img id="element" src="img/1Entrance/BunkerPortal/2.JPG" alt="">
+              <img id="element" src="img/1Entrance/BunkerPortal/3.JPG" alt="">
+              <img id="element" src="img/1Entrance/BunkerPortal/4.JPG" alt="">
+              <img id="element" src="img/1Entrance/BunkerPortal/5.JPG" alt="">
             </div>
 
+
+            <div class="lev" id="lev-2"></div>
             <div class="images">
-              <img src="img/1Entrance/PoolPortal(WaitingRoom)/1.JPG" alt="">
-              <img src="img/1Entrance/PoolPortal(WaitingRoom)/2.JPG" alt="">
-              <img src="img/1Entrance/PoolPortal(WaitingRoom)/3.JPG" alt="">
+              <img id="element" src="img/1Entrance/PoolPortal(WaitingRoom)/1.JPG" alt="">
+              <img id="element" src="img/1Entrance/PoolPortal(WaitingRoom)/2.JPG" alt="">
+              <img id="element" src="img/1Entrance/PoolPortal(WaitingRoom)/3.JPG" alt="">
             </div>
             <div style="">
               <a href="" target="_blank" style="display: block;">
                 <p id="caption_ex">Bodhi Wind⇡</p>
               </a>
             </div>
+
+            <div class="lev" id="lev-3"></div>
             <div id="pushUp" class="images">
               <div class="section-artist">
                 <div class="artist-images">
-                  <img class="blend-mode" src="img/2SafeHouse/Works/1.JPG" alt="">
-                  <img src="img/2SafeHouse/Works/2.JPG" alt="">
+                  <img id="element" class="blend-mode" src="img/2SafeHouse/Works/1.JPG" alt="">
+                  <img id="element" src="img/2SafeHouse/Works/2.JPG" alt="">
                 </div>
 
                 <div class="name-artists" style="">
@@ -562,8 +433,8 @@
               </div>
               <div class="section-artist">
                 <div class="artist-images">
-                  <img class="" src="img/2SafeHouse/Works/3.JPG" alt="">
-                  <img src="img/2SafeHouse/Works/4.JPG" alt="">
+                  <img id="element" class="" src="img/2SafeHouse/Works/3.JPG" alt="">
+                  <img id="element" src="img/2SafeHouse/Works/4.JPG" alt="">
                 </div>
 
                 <div class="name-artists" style="">
@@ -574,8 +445,8 @@
               </div>
               <div class="section-artist">
                 <div class="artist-images">
-                  <img class="" src="img/2SafeHouse/Works/5.JPG" alt="">
-                  <img src="img/2SafeHouse/Works/6.JPG" alt="">
+                  <img id="element" class="" src="img/2SafeHouse/Works/5.JPG" alt="">
+                  <img id="element" src="img/2SafeHouse/Works/6.JPG" alt="">
                 </div>
 
                 <div class="name-artists" style="">
@@ -586,8 +457,8 @@
               </div>
               <div class="section-artist">
                 <div class="artist-images">
-                  <img class="" src="img/2SafeHouse/Works/7.JPG" alt="">
-                  <img src="img/2SafeHouse/Works/8.JPG" alt="">
+                  <img id="element" class="" src="img/2SafeHouse/Works/7.JPG" alt="">
+                  <img id="element" src="img/2SafeHouse/Works/8.JPG" alt="">
                 </div>
 
                 <div class="name-artists" style="">
@@ -598,8 +469,8 @@
               </div>
               <div class="section-artist">
                 <div class="artist-images">
-                  <img class="" src="img/2SafeHouse/Works/9.JPG" alt="">
-                  <img src="img/2SafeHouse/Works/10.JPG" alt="">
+                  <img id="element" class="" src="img/2SafeHouse/Works/9.JPG" alt="">
+                  <img id="element" src="img/2SafeHouse/Works/10.JPG" alt="">
                 </div>
 
                 <div class="name-artists" style="">
@@ -608,37 +479,24 @@
                   </a>
                 </div>
               </div>
-              <!-- <img src="img/2SafeHouse/Works/3.JPG" alt="">
-              <img src="img/2SafeHouse/Works/4.JPG" alt="">
-              <img src="img/2SafeHouse/Works/5.JPG" alt="">
-              <img src="img/2SafeHouse/Works/6.JPG" alt=""> -->
-              <!-- <img src="img/2SafeHouse/Works/7.JPG" alt="">
-              <img src="img/2SafeHouse/Works/8.JPG" alt="">
-              <img src="img/2SafeHouse/Works/9.JPG" alt="">
-              <img src="img/2SafeHouse/Works/10.JPG" alt=""> -->
-            </div>
-            <!-- <div class="name-artists" style="">
-              <a href="" target="_blank" style="display: block;">
-                <p id="caption_ex">Bora Akinciturk⇡</p>
-              </a>
-              <a href="" target="_blank" style="display: block;">
-                <p id="caption_ex">Bodhi Wind⇡</p>
-              </a>
-            </div> -->
 
+            </div>
+
+            <div class="lev" id="lev-4"></div>
             <div id="pushUp" class="images">
-              <img class="blend-mode" src="img/2SafeHouse/Scenery/1.JPG" alt="">
-              <img src="img/2SafeHouse/Scenery/2.JPG" alt="">
-              <img src="img/2SafeHouse/Scenery/3.JPG" alt="">
-              <img src="img/2SafeHouse/Scenery/4.JPG" alt="">
-              <img src="img/2SafeHouse/Scenery/5.JPG" alt="">
+              <img id="element" class="blend-mode" src="img/2SafeHouse/Scenery/1.JPG" alt="">
+              <img id="element" src="img/2SafeHouse/Scenery/2.JPG" alt="">
+              <img id="element" src="img/2SafeHouse/Scenery/3.JPG" alt="">
+              <img id="element" src="img/2SafeHouse/Scenery/4.JPG" alt="">
+              <img id="element" src="img/2SafeHouse/Scenery/5.JPG" alt="">
 
             </div>
+            <div class="lev" id="lev-5"></div>
             <div id="pushUp" class="images">
               <div class="section-artist">
                 <div class="artist-images">
-                  <img class="" src="img/2SafeHouse/InstallShots/1.JPG" alt="">
-                  <img src="img/2SafeHouse/InstallShots/2.JPG" alt="">
+                  <img id="element" class="" src="img/2SafeHouse/InstallShots/1.JPG" alt="">
+                  <img id="element" src="img/2SafeHouse/InstallShots/2.JPG" alt="">
                 </div>
 
                 <div class="name-artists" style="">
@@ -649,8 +507,8 @@
               </div>
               <div class="section-artist">
                 <div class="artist-images">
-                  <img class="" src="img/2SafeHouse/InstallShots/3.jpg" alt="">
-                  <img src="img/2SafeHouse/InstallShots/4.jpg" alt="">
+                  <img id="element" class="" src="img/2SafeHouse/InstallShots/3.jpg" alt="">
+                  <img id="element" src="img/2SafeHouse/InstallShots/4.jpg" alt="">
                 </div>
 
                 <div class="name-artists" style="">
@@ -661,9 +519,9 @@
               </div>
               <div class="section-artist">
                 <div class="artist-images">
-                  <img class="" src="img/2SafeHouse/InstallShots/5.JPG" alt="">
-                  <img src="img/2SafeHouse/InstallShots/6.jpg" alt="">
-                  <img src="img/2SafeHouse/InstallShots/7.JPG" alt="">
+                  <img id="element" class="" src="img/2SafeHouse/InstallShots/5.JPG" alt="">
+                  <img id="element" src="img/2SafeHouse/InstallShots/6.jpg" alt="">
+                  <img id="element" src="img/2SafeHouse/InstallShots/7.JPG" alt="">
                 </div>
 
                 <div class="name-artists" style="">
@@ -674,10 +532,10 @@
               </div>
               <div class="section-artist">
                 <div class="artist-images">
-                  <img class="" src="img/2SafeHouse/InstallShots/8.JPG" alt="">
-                  <img src="img/2SafeHouse/InstallShots/9.jpg" alt="">
-                  <img src="img/2SafeHouse/InstallShots/10.jpg" alt="">
-                  <img src="img/2SafeHouse/InstallShots/11.jpg" alt="">
+                  <img id="element" class="" src="img/2SafeHouse/InstallShots/8.JPG" alt="">
+                  <img id="element" src="img/2SafeHouse/InstallShots/9.jpg" alt="">
+                  <img id="element" src="img/2SafeHouse/InstallShots/10.jpg" alt="">
+                  <img id="element" src="img/2SafeHouse/InstallShots/11.jpg" alt="">
                 </div>
 
                 <div class="name-artists" style="">
@@ -686,13 +544,13 @@
                   </a>
                 </div>
               </div>
-              <img src="img/2SafeHouse/InstallShots/12.JPG" alt="">
+              <img id="element" src="img/2SafeHouse/InstallShots/12.JPG" alt="">
               <div class="section-artist">
                 <div class="artist-images">
-                  <img class="" src="img/2SafeHouse/InstallShots/13.JPG" alt="">
-                  <img src="img/2SafeHouse/InstallShots/14.JPG" alt="">
-                  <img src="img/2SafeHouse/InstallShots/15.JPG" alt="">
-                  <img src="img/2SafeHouse/InstallShots/16.jpg" alt="">
+                  <img id="element" class="" src="img/2SafeHouse/InstallShots/13.JPG" alt="">
+                  <img id="element" src="img/2SafeHouse/InstallShots/14.JPG" alt="">
+                  <img id="element" src="img/2SafeHouse/InstallShots/15.JPG" alt="">
+                  <img id="element" src="img/2SafeHouse/InstallShots/16.jpg" alt="">
                 </div>
 
                 <div class="name-artists" style="">
@@ -701,356 +559,134 @@
                   </a>
                 </div>
               </div>
-              <!-- <img class="blend-mode" src="img/2SafeHouse/InstallShots/1.JPG" alt="">
-              <img src="img/2SafeHouse/InstallShots/2.JPG" alt=""> -->
-              <!-- <img src="img/2SafeHouse/InstallShots/3.jpg" alt="">
-              <img src="img/2SafeHouse/InstallShots/4.jpg" alt=""> -->
-              <!-- <img src="img/2SafeHouse/InstallShots/5.JPG" alt="">
-              <img src="img/2SafeHouse/InstallShots/6.jpg" alt=""> -->
-              <!-- <img src="img/2SafeHouse/InstallShots/7.JPG" alt="">
-              <img src="img/2SafeHouse/InstallShots/8.JPG" alt="">
-              <img src="img/2SafeHouse/InstallShots/9.jpg" alt="">
-              <img src="img/2SafeHouse/InstallShots/10.jpg" alt="">
-              <img src="img/2SafeHouse/InstallShots/11.jpg" alt=""> -->
 
-              <!-- <img src="img/2SafeHouse/InstallShots/13.JPG" alt="">
-              <img src="img/2SafeHouse/InstallShots/14.JPG" alt="">
-              <img src="img/2SafeHouse/InstallShots/15.JPG" alt="">
-              <img src="img/2SafeHouse/InstallShots/16.jpg" alt=""> -->
-              <div  style="display:block; height:100%; width: 500px;"  alt="">
-                <img width="500" src="img/empty.png" alt="">
+              <div style="display:block; height:100%; width: 500px;" alt="">
+                <img id="element" width="500" src="img/empty.png" alt="">
+
+              </div>
+
 
             </div>
+            <div class="lev" id="lev-6"></div>
+            <div class="images">
+              <div class="section-artist">
+                <div class="artist-images">
+                  <img id="element" src="img/3PinealResearches/bedroom/1.JPG" alt="">
+                  <img id="element" src="img/3PinealResearches/bedroom/2.JPG" alt="">
+                  <img id="element" src="img/3PinealResearches/bedroom/3.JPG" alt="">
+                  <img id="element" src="img/3PinealResearches/bedroom/4.JPG" alt="">
+                  <img id="element" src="img/3PinealResearches/bedroom/5.JPG" alt="">
+                  <img id="element" src="img/3PinealResearches/bedroom/6.JPG" alt="">
+                  <img id="element" src="img/3PinealResearches/bedroom/7.JPG" alt="">
+                  <img id="element" src="img/3PinealResearches/bedroom/8.JPG" alt="">
+                  <img id="element" src="img/3PinealResearches/bedroom/9.JPG" alt="">
+                  <img id="element" src="img/3PinealResearches/bedroom/10.JPG" alt="">
+                  <img id="element" src="img/3PinealResearches/bedroom/11.JPG" alt="">
+                  <img id="element" src="img/3PinealResearches/bedroom/12.JPG" alt="">
+                  <img id="element" src="img/3PinealResearches/bedroom/13.JPG" alt="">
+                  <img id="element" src="img/3PinealResearches/bedroom/14.JPG" alt="">
+                  <img id="element" src="img/3PinealResearches/bedroom/15.JPG" alt="">
+                  <img id="element" src="img/3PinealResearches/bedroom/16.JPG" alt="">
+                  <img id="element" src="img/3PinealResearches/bedroom/17.JPG" alt="">
+                  <img id="element" src="img/3PinealResearches/bedroom/18.JPG" alt="">
+                  <img id="element" src="img/3PinealResearches/bedroom/19.JPG" alt="">
+                  <img id="element" src="img/3PinealResearches/bedroom/20.JPG" alt="">
+                  <img id="element" src="img/3PinealResearches/bedroom/21.JPG" alt="">
+                  <img id="element" src="img/3PinealResearches/bedroom/22.JPG" alt="">
+                  <img id="element" src="img/3PinealResearches/bedroom/23.JPG" alt="">
+                </div>
+
+                <div class="name-artists" style="">
+                  <a href="" target="_blank" style="display: block;">
+                    <p id="caption_ex">with contributions from Bodhi Wind, Alister Lebeau, Anna Zemánková , Torre Alain, Valerie You, Ava Phen, Rasheed Mirza⇡ &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                      with contributions from Bodhi Wind, Alister Lebeau, Anna Zemánková , Torre Alain, Valerie You, Ava Phen, Rasheed Mirza⇡</p>
+                  </a>
+                </div>
 
 
-            <!-- <div class="images">
-                <img src="img/2SafeHouse/InstallShots/1.JPG" alt="">
-                <img src="img/2SafeHouse/InstallShots/2.JPG" alt="">
-                <img src="img/2SafeHouse/InstallShots/3.jpg" alt="">
-                <img src="img/2SafeHouse/InstallShots/4.jpg" alt="">
-                <img src="img/2SafeHouse/InstallShots/5.JPG" alt="">
-                <img src="img/2SafeHouse/InstallShots/6.jpg" alt="">
-                <img src="img/2SafeHouse/InstallShots/7.JPG" alt="">
-                <img src="img/2SafeHouse/InstallShots/8.JPG" alt="">
-                <img src="img/2SafeHouse/InstallShots/9.jpg" alt="">
-                <img src="img/2SafeHouse/InstallShots/10.jpg" alt="">
-                <img src="img/2SafeHouse/InstallShots/11.jpg" alt="">
-                <img src="img/2SafeHouse/InstallShots/12.JPG" alt="">
-                <img src="img/2SafeHouse/InstallShots/13.JPG" alt="">
-                <img src="img/2SafeHouse/InstallShots/14.JPG" alt="">
-                <img src="img/2SafeHouse/InstallShots/15.JPG" alt="">
-                <img src="img/2SafeHouse/InstallShots/16.jpg" alt="">
-              </div> -->
+              </div>
+
+
+            </div>
+            <div class="lev" id="lev-7"></div>
+            <div class="images">
+              <div class="section-artist">
+                <div class="artist-images">
+                  <img id="element" src="img/3PinealResearches/meditationCorner/1.JPG" alt="">
+                  <img id="element" src="img/3PinealResearches/meditationCorner/2.JPG" alt="">
+                  <img id="element" src="img/3PinealResearches/meditationCorner/3.JPG" alt="">
+                  <img id="element" src="img/3PinealResearches/meditationCorner/4.JPG" alt="">
+                  <img id="element" src="img/3PinealResearches/meditationCorner/5.JPG" alt="">
+                </div>
+                <div class="name-artists" style="">
+                  <a href="" target="_blank" style="display: block;">
+                    <p id="caption_ex">with contributions from Bodhi Wind, Alister Lebeau, Anna Zemánková , Torre Alain, Valerie You, Ava Phen, Rasheed Mirza⇡ </p>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="lev" id="lev-8"></div>
+            <div class="images">
+              <div class="section-artist">
+                <div class="artist-images">
+                  <img id="element" src="img/3PinealResearches/pinealShrine/1.JPG" alt="">
+                  <img id="element" src="img/3PinealResearches/pinealShrine/2.JPG" alt="">
+                  <img id="element" src="img/3PinealResearches/pinealShrine/3.JPG" alt="">
+                  <img id="element" src="img/3PinealResearches/pinealShrine/4.JPG" alt="">
+                  <img id="element" src="img/3PinealResearches/pinealShrine/5.JPG" alt="">
+                  <img id="element" src="img/3PinealResearches/pinealShrine/6.JPG" alt="">
+                  <img id="element" src="img/3PinealResearches/pinealShrine/7.JPG" alt="">
+                  <img id="element" src="img/3PinealResearches/pinealShrine/8.JPG" alt="">
+                  <img id="element" src="img/3PinealResearches/pinealShrine/9.JPG" alt="">
+                  <img id="element" src="img/3PinealResearches/pinealShrine/10.JPG" alt="">
+                  <img id="element" src="img/3PinealResearches/pinealShrine/11.JPG" alt="">
+                </div>
+                <div class="name-artists" style="">
+                  <a href="" target="_blank" style="display: block;">
+                    <p id="caption_ex">with contributions from Bodhi Wind, Alister Lebeau, Anna Zemánková , Torre Alain, Valerie You, Ava Phen, Rasheed Mirza⇡ </p>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="lev" id="lev-9"></div>
+            <div class="images">
+              <div class="section-artist">
+                <div class="artist-images">
+                  <img id="element" src="img/3PinealResearches/plantRoom/1.jpeg" alt="">
+                  <img id="element" src="img/3PinealResearches/plantRoom/2.jpeg" alt="">
+                  <img id="element" src="img/3PinealResearches/plantRoom/3.jpeg" alt="">
+                  <img id="element" src="img/3PinealResearches/plantRoom/4.jpeg" alt="">
+                  <img id="element" src="img/3PinealResearches/plantRoom/5.jpeg" alt="">
+                  <img id="element" src="img/3PinealResearches/plantRoom/6.jpeg" alt="">
+                  <img id="element" src="img/3PinealResearches/plantRoom/7.jpeg" alt="">
+                  <img id="element" src="img/3PinealResearches/plantRoom/8.jpeg" alt="">
+                  <img id="element" src="img/3PinealResearches/plantRoom/9.jpeg" alt="">
+                  <img id="element" src="img/3PinealResearches/plantRoom/10.jpeg" alt="">
+                  <img id="element" src="img/3PinealResearches/plantRoom/11.jpeg" alt="">
+                </div>
+                <div class="name-artists" style="">
+                  <a href="" target="_blank" style="display: block;">
+                    <p id="caption_ex">with contributions from Bodhi Wind, Alister Lebeau, Anna Zemánková , Torre Alain, Valerie You, Ava Phen, Rasheed Mirza⇡ </p>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="images"></div>
           </div>
-          <div class="images">
+          <!-- end of .container -->
 
-          </div>
+
         </div>
-
-
       </div>
-    </div>
 
-  </div>
-  <script src="test.js" charset="utf-8"></script>
+    </div>
+    <script src="test.js" charset="utf-8"></script>
 </body>
 
 </html>
-
-<!-- <li >
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.89 46.88">
-    <defs>
-      <style>
-        .cls-1 {
-          font-size: 42px;
-          font-family: OPTIAuroraGroteskNine;
-        }
-      </style>
-    </defs>
-    <g id="Layer_2" data-name="Layer 2">
-      <g id="Layer_1-2" data-name="Layer 1"><text class="cls-1" transform="translate(157.63 40.11) scale(1.08 1)">M</text><text class="cls-1" transform="translate(198.35 43.01)">editation Corner</text></g>
-    </g>
-  </svg>
-</li>
-<li>
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.89 43.97">
-    <defs>
-      <style>
-        .cls-1 {
-          font-size: 42px;
-          font-family: OPTIAuroraGroteskNine;
-        }
-
-        .cls-2 {
-          letter-spacing: -0.03em;
-        }
-      </style>
-    </defs>
-    <g id="Layer_2" data-name="Layer 2">
-      <g id="Layer_1-2" data-name="Layer 1"><text class="cls-1" transform="translate(0 40.11)">
-          <tspan class="cls-2">P</tspan>
-          <tspan x="24.11" y="0">lantroom</tspan>
-        </text></g>
-    </g>
-  </svg>
-</li>
-<li>
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.89 174.95">
-    <defs>
-      <style>
-        .cls-1,
-        .cls-3,
-        .cls-4 {
-          font-size: 42px;
-          font-family: OPTIAuroraGroteskNine;
-        }
-
-        .cls-2 {
-          letter-spacing: -0.03em;
-        }
-
-        .cls-3 {
-          letter-spacing: 0.54em;
-        }
-
-        .cls-4 {
-          letter-spacing: -0.16em;
-        }
-      </style>
-    </defs>
-    <g id="Layer_2" data-name="Layer 2">
-      <g id="Layer_1-2" data-name="Layer 1"><text class="cls-1" transform="translate(0 159.58)">
-          <tspan class="cls-2">P</tspan>
-          <tspan x="24.11" y="0">in</tspan>
-        </text><text class="cls-3" transform="translate(61.36 135.95) rotate(68.99)">e</text><text class="cls-1" transform="translate(107.72 159.58) scale(1.06 1)">a</text><text class="cls-1" transform="translate(132.82 159.58)">l
-          Shr</text><text class="cls-4" transform="matrix(-0.26, -0.97, 3.84, -1.04, 384.1, 67.57)">i</text><text class="cls-1" transform="translate(389.8 159.58)">ne</text></g>
-    </g>
-  </svg>
-</li>
-<li>
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.89 43.97">
-    <defs>
-      <style>
-        .cls-1 {
-          font-size: 42px;
-          font-family: OPTIAuroraGroteskNine;
-        }
-      </style>
-    </defs>
-    <g id="Layer_2" data-name="Layer 2">
-      <g id="Layer_1-2" data-name="Layer 1"><text class="cls-1" transform="translate(0 40.11)">Bedroom</text></g>
-    </g>
-  </svg>
-</li>
-<li>
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.89 43.97">
-    <defs>
-      <style>
-        .cls-1 {
-          font-size: 42px;
-          font-family: OPTIAuroraGroteskNine;
-        }
-      </style>
-    </defs>
-    <g id="Layer_2" data-name="Layer 2">
-      <g id="Layer_1-2" data-name="Layer 1"><text class="cls-1" transform="translate(0 40.11)">Cabinet</text></g>
-    </g>
-  </svg>
-</li>
-<li>
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.89 59.76">
-    <defs>
-      <style>
-        .cls-1,
-        .cls-3 {
-          font-size: 42px;
-          font-family: OPTIAuroraGroteskNine;
-        }
-
-        .cls-2 {
-          letter-spacing: 4.17em;
-        }
-
-        .cls-3 {
-          letter-spacing: 0.49em;
-        }
-      </style>
-    </defs>
-    <g id="Layer_2" data-name="Layer 2">
-      <g id="Layer_1-2" data-name="Layer 1"><text class="cls-1" transform="translate(0 50.82)">Scr</text><text class="cls-1" transform="translate(72.66 50.82) scale(1.18 1.2)">a</text><text class="cls-1" transform="translate(100.58 50.82)">p
-          <tspan class="cls-2" x="23.65" y="0"> </tspan>
-          <tspan x="206.56" y="3.65">B</tspan>
-          <tspan x="232.09" y="0">o</tspan>
-        </text><text class="cls-1" transform="translate(356.4 50.82) scale(1.07 0.7)">o</text><text class="cls-3" transform="matrix(0.8, -0.6, 0.6, 0.8, 406.2, 54.1)">k</text>
-        <path
-          d="M419.75,44.71A83.75,83.75,0,0,0,409.14,33l-1.08,3.09,8.35,11.1-6.51,4.89L385.56,19.75l6.51-4.9,10.27,13.66c-.14-4.85-1.37-7.6-3.69-11.2l6.55-4.92c2.3,3,4.7,7.66,5.21,11.23a26.29,26.29,0,0,1,7.83,6c2,2.26,6.84,8.43,8.09,10.17L427.73,0H383.59V59.76h44.14l-1.4-20Z" />
-      </g>
-    </g>
-  </svg>
-</li> -->
-
-
-
-
-
-
-
-
-
-
-<!-- <ul id="submenu">
-  <li class="subtitle" id="imgleak">image leaks</li>
-  <li class="subtitle" id="installation">installation</li>
-  <li class="subtitle" id="works">Easter Eggs</li>
-</ul>
-<div class="photoscontainer">
-  <div id="photosimgleak" style="display:none;">
-    <img title="Afra Eisma" src="ghimage/imgleak/Afra Eisma .jpeg" />
-    <a href="https://www.instagram.com/aframarciel/" target="_blank"><p id="caption">Afra Eisma⇡</p></a>
-    <img title="Bastian Visch" src="ghimage/imgleak/Bastian Visch.jpg" />
-    <a href="https://www.instagram.com/bastianvisch/" target="_blank"><p id="caption">Bastian Visch⇡</p></a>
-    <img title="Bob Demper" src="ghimage/imgleak/Bob Demper .jpeg" />
-    <a href="https://www.instagram.com/demperbob/" target="_blank"><p id="caption">Bob Demper⇡</p></a>
-    <img title="Catherine Schwartz" src="ghimage/imgleak/Catherine Schwartz .jpeg" />
-    <a href="https://www.instagram.com/if_le_fric/" target="_blank"><p id="caption">Catherine Schwartz⇡</p></a>
-    <img title="Dimitrie Luca Gora" src="ghimage/imgleak/Dimitrie Luca Gora .jpeg" />
-    <a href="https://www.instagram.com/dimitriegora/" target="_blank"><p id="caption">Dimitrie Luca Gora⇡</p></a>
-    <img title="Ecaterina Vrana " src="ghimage/imgleak/Ecaterina Vrana.jpeg" />
-    <a href="https://www.instagram.com/ecaterinavrana/" target="_blank"><p id="caption">Ecaterina Vrana⇡</p></a>
-    <img title="El Pelele" src="ghimage/imgleak/El Pelele .jpeg" />
-    <a href="https://www.instagram.com/elpelele.elpelele/" target="_blank"><p id="caption">El Pelele⇡</p></a>
-    <img title="Emir Karyo" src="ghimage/imgleak/Emir Karyo .jpeg" />
-    <a href="https://www.instagram.com/safkan.tehlike/" target="_blank"><p id="caption">Emir Karyo⇡</p></a>
-    <img title="Helmi Nieminen" src="ghimage/imgleak/Helmi Nieminen .jpeg" />
-    <a href="https://www.instagram.com/your_bff200/" target="_blank"><p id="caption">Helmi Nieminen⇡</p></a>
-    <img title="Ian Bruner" src="ghimage/imgleak/Ian Bruner.jpeg" />
-    <a href="https://www.instagram.com/ideath_/" target="_blank"><p id="caption">Ian Bruner⇡</p></a>
-    <img title="Jan Wojda" src="ghimage/imgleak/Jan Wojda.jpeg" />
-    <a href="https://www.instagram.com/phone2drop/" target="_blank"><p id="caption">Jan Wodja⇡</p></a>
-    <img title="Johanna Blank" src="ghimage/imgleak/Johanna Blank.jpeg" />
-    <a href="https://www.instagram.com/johannablank/" target="_blank"><p id="caption">Johanna Blank⇡</p></a>
-    <img title="Justin Oritz" src="ghimage/imgleak/Justin Oritz .jpeg" />
-    <a href="https://www.instagram.com/jortiz_____/" target="_blank"><p id="caption">Justin Oritz⇡</p></a>
-    <img title="Justin Oritz" src="ghimage/imgleak/Justin Oritz.jpeg" />
-    <a href="https://www.instagram.com/aframarciel/" target="_blank"><p id="caption">Justin Oritz⇡</p></a>
-    <img title="Luca Florian" src="ghimage/imgleak/Luca Florian .jpeg" />
-    <a href="https://www.instagram.com/1ucaflorian/" target="_blank"><p id="caption">Luca Florian⇡</p></a>
-    <img title="Marnix Van Uum" src="ghimage/imgleak/Marnix Van Uum .jpeg" />
-    <a href="https://www.instagram.com/marnixvanuum/" target="_blank"><p id="caption">Marnix Van Uum⇡</p></a>
-    <img title="Mattia Papp" src="ghimage/imgleak/Mattia Papp.jpeg" />
-    <a href="https://www.instagram.com/mattiappp/" target="_blank"><p id="caption">Mattia Papp⇡</p></a>
-    <img title="Megan Mehta" src="ghimage/imgleak/Megan Mehta .jpeg" />
-    <a href="https://www.instagram.com/badenergy_daayan/" target="_blank"><p id="caption">Megan Mehta⇡</p></a>
-    <img title="Mette Rasmussen" src="ghimage/imgleak/Mette Rasmussen .jpeg" />
-    <a href="https://www.instagram.com/pizza_lacrimosa/" target="_blank"><p id="caption">Mette Rasmussen⇡</p></a>
-    <img title="Mi Kafchi" src="ghimage/imgleak/Mi Kafchin .jpg" />
-    <a href="https://www.instagram.com/mikafchin/" target="_blank"><p id="caption">Mi Kafchin⇡</p></a>
-    <img title="Nanhee Kim" src="ghimage/imgleak/Nanhee Kim .jpeg" />
-    <a href="https://www.instagram.com/nanheykim/" target="_blank"><p id="caption">Nanhee Kim⇡</p></a>
-    <img title="Nefololo" src="ghimage/imgleak/Nefololo .jpeg" />
-    <a href="https://www.instagram.com/nefojxj/" target="_blank"><p id="caption">Nefololo⇡</p></a>
-    <img title="Philip Hinge" src="ghimage/imgleak/Philip Hinge .jpeg" />
-    <a href="https://www.instagram.com/philip_hinge/" target="_blank"><p id="caption">Philip Hinge⇡</p></a>
-    <img title="Rosa Zangenberg" src="ghimage/imgleak/Rosa Zangenberg .jpeg" />
-    <a href="https://www.instagram.com/rosamz/" target="_blank"><p id="caption">Rosa Zangenberg⇡</p></a>
-    <img title="Sara Blosseville (1)" src="ghimage/imgleak/Sara Blosseville.jpeg" />
-    <a href="https://www.instagram.com/gueule2raie/" target="_blank"><p id="caption">Sara Blosseville⇡</p></a>
-    <img title="Sara Blosseville" src="ghimage/imgleak/Sara Blosseville.jpg" />
-    <a href="https://www.instagram.com/gueule2raie/" target="_blank"><p id="caption">Sara Blosseville⇡</p></a>
-    <img title="Siggi Sekirah" src="ghimage/imgleak/Siggi Sekira .jpeg" />
-    <a href="https://www.instagram.com/si__xs/" target="_blank"><p id="caption">Siggi Sekira⇡</p></a>
-    <img title="Suyoung Yang (1)" src="ghimage/imgleak/Suyoung Yang.jpeg" />
-    <a href="https://www.instagram.com/gumamaster/" target="_blank"><p id="caption">Suyoung Yang⇡</p></a>
-    <img title="Suyoung Yang" src="ghimage/imgleak/Suyoung Yang2.jpeg" />
-    <a href="https://www.instagram.com/gumamaster/" target="_blank"><p id="caption">Suyoung Yang⇡</p></a>
-    <img title="Tea Strazicic" src="ghimage/imgleak/Tea Strazicic.jpeg" />
-    <a href="https://www.instagram.com/flufflord/" target="_blank"><p id="caption">Tea Strazicic⇡</p></a>
-    <img title="Victor Gogly" src="ghimage/imgleak/Victor Gogly 1.jpeg" />
-    <a href="https://www.instagram.com/victor_gogly/" target="_blank"><p id="caption">Victor Gogly⇡</p></a>
-    <img title="Victor Gogly" src="ghimage/imgleak/Victor Gogly.jpeg" />
-    <a href="https://www.instagram.com/victor_gogly/" target="_blank"><p id="caption">Victor Gogly⇡</p></a>
-    <img title="Vitaly Bezpalov" src="ghimage/imgleak/Vitaly Bezpalov 2.jpeg" />
-    <a href="https://www.instagram.com/vitalybezpalov/" target="_blank"><p id="caption">Vitaly Bezpalov⇡</p></a>
-    <img title="Vitaly Bezpalov (1)" src="ghimage/imgleak/Vitaly Bezpalov.jpeg" />
-    <a href="https://www.instagram.com/vitalybezpalov/" target="_blank"><p id="caption">Vitaly Bezpalov⇡</p></a>
-    <img title="Vitaly Bezpalov (1)" src="ghimage/imgleak/Vitaly Bezpalov3.jpeg" />
-    <a href="https://www.instagram.com/vitalybezpalov/" target="_blank"><p id="caption">Vitaly Bezpalov⇡</p></a>
-    <img title="Zhao Laozhi" src="ghimage/imgleak/Zhao Laozhi 4.jpg" />
-    <a href="https://www.instagram.com/qlvwowvlp/" target="_blank"><p id="caption">Zhao Laozhi⇡</p></a>
-    <img title="Zhao Laozhi" src="ghimage/imgleak/Zhao Laozhi3.jpg" />
-    <a href="https://www.instagram.com/qlvwowvlp/" target="_blank"><p id="caption">Zhao Laozhi⇡</p></a>
-    <img title="Kexin Hao" src="ghimage/imgleak/Kexin Hao.png" />
-    <a href="https://www.instagram.com/kexin_hao/" target="_blank"><p id="caption">Kexin Hao⇡</p></a>
-  </div>
-  <div id="photosinstallation" style="display:none;">
-    <img src="ghimage/installation/1.jpeg" />
-    <p id="caption">CG Animation by Emir Karyo & Jan Wojda⇡</p>
-    <img src="ghimage/installation/2.jpeg" />
-    <p id="caption">CG Animation by Emir Karyo & Jan Wojda⇡</p>
-    <img src="ghimage/installation/3.jpeg" />
-    <p id="caption">CG Animation by Emir Karyo & Jan Wojda, 3d scan contributed by Suyoung Yang⇡</p>
-    <img src="ghimage/installation/4.jpeg" />
-    <p id="caption">CG Animation by Emir Karyo & Jan Wojda, with images by Siggi Sekira, Mattia Papp, Rosa Zangenberg, Zhao Laozhi⇡</p>
-    <img src="ghimage/installation/5.jpeg" />
-    <p id="caption">CG Animation by Emir Karyo & Jan Wojda, with images by Siggi Sekira, Mattia Papp, Rosa Zangenberg, Mette Rasmussen, Nefololo⇡</p>
-    <img src="ghimage/installation/6.jpeg" />
-    <p id="caption">Victor Gogly⇡</p>
-    <img src="ghimage/installation/7.jpeg" />
-    <p id="caption">Installation View⇡</p>
-    <img src="ghimage/installation/8.jpeg" />
-    <p id="caption">Installation View⇡</p>
-    <img src="ghimage/installation/9.jpeg" />
-    <p id="caption">El Pelele⇡</p>
-    <img src="ghimage/installation/10.jpeg" />
-    <p id="caption">Ecaterina Vrana, Philip Hinge, Nefololo⇡</p>
-    <img src="ghimage/installation/11.jpeg" />
-    <p id="caption">Mattia Papp, Victor Gogly⇡</p>
-    <img src="ghimage/installation/12.jpeg" />
-    <p id="caption">Hortensia Mi Kafchin⇡</p>
-    <img src="ghimage/installation/13.jpeg" />
-    <p id="caption">Helmi Nieminen, Zhao Laozhi⇡</p>
-    <img src="ghimage/installation/14.jpeg" />
-    <p id="caption">Installation View⇡</p>
-    <img src="ghimage/installation/15.jpeg" />
-    <p id="caption">Installation View⇡</p>
-    <img src="ghimage/installation/16.jpeg" />
-    <p id="caption">Installation View⇡</p>
-    <img src="ghimage/installation/17.jpeg" />
-    <p id="caption">Installation View⇡</p>
-    <img src="ghimage/installation/18.jpeg" />
-    <p id="caption">Installation View⇡</p>
-    <img src="ghimage/installation/19.jpeg" />
-    <p id="caption">Justin Oritz, Nanhee Kim, Marnix Van Uum⇡</p>
-  </div>
-  <div id="photosworks" style="display:none;">
-    <div class="imggrid">
-      <div class="gif"><img src="ghimage/works/gif.gif" /></div>
-      <div class="img1"><img src="ghimage/works/Tea Strazicic.jpg" /></div>
-      <div class="img2"><img src="ghimage/works/Justin Ortiz .jpg" /></div>
-      <div class="img3"><img src="ghimage/works/Emir Karyo.jpg" /></div>
-      <div class="img4"><img src="ghimage/works/Mattia Papp.jpg" /></div>
-      <div class="img5"><img src="ghimage/works/Mette Rasmussen.jpg" /></div>
-      <div class="img6"><img src="ghimage/works/Zhao Laozhi.jpg" /></div>
-      <div class="img7"><img src="ghimage/works/Bob Demper.jpg" /></div>
-      <div class="img10"><img src="ghimage/works/Dimitrie Gora.jpg" /></div>
-      <div class="img8"><img src="ghimage/works/Hortensia Mi Kafchin.jpg" /></div>
-      <div class="img9"><img src="ghimage/works/Johanna Blank.jpg" /></div>
-      <div class="img12"><img src="ghimage/works/El Pelele.jpg" /></div>
-      <div class="img13"><img src="ghimage/works/Luca Florian.jpg" /></div>
-      <div class="img11"><img src="ghimage/works/Marnix van Uum.jpg" /></div>
-      <div class="img14"><img src="ghimage/works/Ian Bruner.jpg" /></div>
-      <div class="img15"><img src="ghimage/works/Megan Mehta.jpg" /></div>
-      <div class="img16"><img src="ghimage/works/Jan Wojda.jpg" /></div>
-      <div class="img17"><img src="ghimage/works/Nefololo.jpg" /></div>
-      <div class="img18"><img src="ghimage/works/Afra Marciel.jpg" /></div>
-      <div class="img19"><img src="ghimage/works/ Helmi Nieminen.jpg" /></div>
-      <div class="img20"><img src="ghimage/works/Nanhee Kim.jpg" /></div>
-      <div class="img21"><img src="ghimage/works/Philip Hinge.jpg" /></div>
-      <div class="img22"><img src="ghimage/works/Ecaterina Vrana.jpg" /></div>
-      <div class="img23"><img src="ghimage/works/Bastian Visch.jpg" /></div>
-      <div class="img24"><img src="ghimage/works/Rosa Zangenberg.jpg" /></div>
-      <div class="img25"><img src="ghimage/works/Siggi Sekira.jpg" /></div>
-    </div>
-    <iframe src="https://www.youtube.com/embed/c10czj3dNlw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  </div>
-</div> -->

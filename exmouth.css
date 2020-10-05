@@ -9,6 +9,16 @@ text,tspan {
   font-family: "OPTIAuroraGroteskNine" !important;
 }
 
+#caption_ex_gen {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+/* #caption_ex span{
+
+  font-family: "OPTIAuroraGroteskNine" !important;
+} */
+
 body{
     display: flex;
     flex-direction:row;
@@ -206,7 +216,7 @@ ul#submenu >li:hover {
 }
 #mainphotos .container {
 
-  min-height: 800vh;
+  min-height: 1000vh;
   /* overflow-y: hidden; */
 }
 #mainphotos canvas {
@@ -300,7 +310,7 @@ ul#submenu >li:hover {
 #caption: hover{
   font-style: italic;
 }
-#caption_ex{
+#caption_ex {
   font-family: 'Libre Baskerville', serif;
   text-align: center;
   font-size: 4vh;
@@ -311,6 +321,8 @@ ul#submenu >li:hover {
   box-shadow:         inset 0 0 10px #000000; */
   box-shadow: inset 0 -10px 10px -10px #000000;
 }
+
+
 #caption_ex: hover{
   font-style: italic;
 }
