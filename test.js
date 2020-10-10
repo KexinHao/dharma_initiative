@@ -53,7 +53,6 @@
 		let innerCounter4 = 0;
 
 		let innerCounter5 = 0;
-		let innerCounter6 = 0;
 
 	document.querySelector(".insertContainer").addEventListener("scroll", function(){
 		//1 block
@@ -178,7 +177,6 @@
 		else if (this.scrollTop >imagesLevel[8].offsetTop-300 && this.scrollTop <imagesLevel[9].offsetTop+300){
 
 			innerCounter4 = 0;
-			innerCounter6 = 0;
 
 
 			if (innerCounter5==0) {
@@ -206,22 +204,7 @@
 			// alert("ups")
 		} else if (this.scrollTop >imagesLevel[9].offsetTop+300 && this.scrollTop <imagesLevel[11].offsetTop+300){
 
-			innerCounter5 = 0;
 
-
-			if (innerCounter6==0) {
-				$(".lev").next().find( "img" ).removeClass("blended")
-
-				if($("#lev-10").next().find( "img" ).css("mix-blend-mode") !== "screen") {
-
-					console.log("aaa");
-					$("#lev-11").next().find( "img" ).addClass("blended")
-					$("#lev-12").next().find( "img" ).addClass("blended")
-
-				}
-
-				innerCounter6++;
-			}
 
 			// level4.classList.remove("highlighted")
 			level6.classList.add("highlighted")

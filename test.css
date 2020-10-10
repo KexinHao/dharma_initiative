@@ -205,10 +205,14 @@ canvas {
   mix-blend-mode: normal !important;
   /* transform: scale(0.7); */
 }
-#mainphotos img.blended:not(.scrap):hover {
-  mix-blend-mode: normal !important;
+#mainphotos img.blended:hover {
+  /* mix-blend-mode: normal !important; */
   transform: scale(0.7);
 }
+/* #mainphotos img.blended:not(.scrap):hover {
+  mix-blend-mode: normal !important;
+  transform: scale(0.7);
+} */
 
 /* #mainphotos .name-artists:hover {
 
