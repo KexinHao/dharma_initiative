@@ -25,6 +25,8 @@
 	let level2 = document.getElementById("level2")
 	let level3 = document.getElementById("level3")
 	let level4 = document.getElementById("level4")
+	let level5 = document.getElementById("level5")
+	let level6 = document.getElementById("level6")
 	let fired = false;
 
 	const imagesLevel = document.querySelectorAll(".images")
@@ -49,6 +51,9 @@
 		let innerCounter2 = 0;
 		let innerCounter3 = 0;
 		let innerCounter4 = 0;
+
+		let innerCounter5 = 0;
+		let innerCounter6 = 0;
 
 	document.querySelector(".insertContainer").addEventListener("scroll", function(){
 		//1 block
@@ -144,9 +149,15 @@
 				innerCounter3++;
 			}
 		}
+
 		else if (this.scrollTop >imagesLevel[6].offsetTop &&this.scrollTop <imagesLevel[8].offsetTop+300){
 			level4.classList.add("highlighted")
+			level5.classList.remove("highlighted")
+			level3.classList.remove("highlighted")
+
 			innerCounter3 = 0;
+			innerCounter5 = 0;
+
 
 			if (innerCounter4==0) {
 				$(".lev").next().find( "img" ).removeClass("blended")
@@ -157,15 +168,72 @@
 					$("#lev-7").next().find( "img" ).addClass("blended")
 					$("#lev-8").next().find( "img" ).addClass("blended")
 					$("#lev-9").next().find( "img" ).addClass("blended")
+					$("#lev-10").next().find( "img" ).addClass("blended")
 
 				}
 
 				innerCounter4++;
 			}
 		}
-		else if (this.scrollTop >imagesLevel[8].offsetTop-300){
+		else if (this.scrollTop >imagesLevel[8].offsetTop-300 && this.scrollTop <imagesLevel[9].offsetTop+300){
+
+			innerCounter4 = 0;
+			innerCounter6 = 0;
+
+
+			if (innerCounter5==0) {
+				$(".lev").next().find( "img" ).removeClass("blended")
+
+				if($("#lev-10").next().find( "img" ).css("mix-blend-mode") !== "screen") {
+
+					console.log("aaa");
+					$("#lev-9").next().find( "img" ).addClass("blended")
+					$("#lev-10").next().find( "img" ).addClass("blended")
+					$("#lev-11").next().find( "img" ).addClass("blended")
+
+
+				}
+
+				innerCounter5++;
+			}
+
+
 
 			level4.classList.remove("highlighted")
+			level6.classList.remove("highlighted")
+			level5.classList.add("highlighted")
+			// level5.classList.remove("highlighted")
+			// alert("ups")
+		} else if (this.scrollTop >imagesLevel[9].offsetTop+300 && this.scrollTop <imagesLevel[11].offsetTop+300){
+
+			innerCounter5 = 0;
+
+
+			if (innerCounter6==0) {
+				$(".lev").next().find( "img" ).removeClass("blended")
+
+				if($("#lev-10").next().find( "img" ).css("mix-blend-mode") !== "screen") {
+
+					console.log("aaa");
+					$("#lev-11").next().find( "img" ).addClass("blended")
+					$("#lev-12").next().find( "img" ).addClass("blended")
+
+				}
+
+				innerCounter6++;
+			}
+
+			// level4.classList.remove("highlighted")
+			level6.classList.add("highlighted")
+			level5.classList.remove("highlighted")
+			// level5.classList.add("highlighted")
+			// level5.classList.remove("highlighted")
+			// alert("ups")
+		} else if (this.scrollTop >imagesLevel[11].offsetTop+300 ){
+
+			// level4.classList.remove("highlighted")
+			level6.classList.remove("highlighted")
+			// level5.classList.add("highlighted")
 			// level5.classList.remove("highlighted")
 			// alert("ups")
 		}
@@ -181,31 +249,24 @@
 			if(i == 0) {
 				// alert(i);
 				imagesLevel[0].scrollIntoView({ block: 'start', behavior: 'smooth', inline:"start" });
-				// scroll({
-			  //   top: 0,
-			  //   behavior: "smooth"
-			  // });
-				// scroll({
-			  //   top: 0,
-			  //   behavior: "smooth"
-			  // });
+
 			}
 			else if(i==1) {
 				// console.log(imagesLevel[1])
 				imagesLevel[2].scrollIntoView({ block: 'start', behavior: 'smooth', inline:"start" });
 
-				// scroll({
-			  //   top: imagesLevel[1].offsetTop,
-			  //   behavior: "smooth"
-			  // });
 			} else if(i==2) {
 				// console.log(imagesLevel[1])
 				imagesLevel[5].scrollIntoView({ block: 'start', behavior: 'smooth', inline:"start" });
 
-				// scroll({
-			  //   top: imagesLevel[1].offsetTop,
-			  //   behavior: "smooth"
-			  // });
+			} else if(i==3) {
+				// console.log(imagesLevel[1])
+				imagesLevel[9].scrollIntoView({ block: 'start', behavior: 'smooth', inline:"start" });
+
+			} else if(i==4) {
+				// console.log(imagesLevel[1])
+				imagesLevel[10].scrollIntoView({ block: 'start', behavior: 'smooth', inline:"start" });
+
 			}
 
 		})

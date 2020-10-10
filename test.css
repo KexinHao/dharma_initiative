@@ -103,9 +103,7 @@ nav ul li:hover text.transform2 {
   transform: translate(148px, 40.11px) scale(1, 1) !important;
 }
 
-nav ul li:nth-child(1):hover,
-nav ul li:nth-child(2):hover,
-nav ul li:nth-child(3):hover
+nav ul li:hover
  {
   /* mix-blend-mode: normal; */
   opacity: 1;
@@ -204,6 +202,10 @@ canvas {
 }
 
 #mainphotos img.blended:hover {
+  mix-blend-mode: normal !important;
+  /* transform: scale(0.7); */
+}
+#mainphotos img.blended:not(.scrap):hover {
   mix-blend-mode: normal !important;
   transform: scale(0.7);
 }
