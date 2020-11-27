@@ -18,6 +18,17 @@ body {
 
 }
 
+.cls-2:hover,.cls-3:hover  {
+  /* fill: blue !important; */
+  cursor: pointer;
+
+
+}
+.cls-1:hover {
+  fill: blue !important;
+  cursor: pointer;
+}
+
 .nav {
   width: 100%;
   background-color: white;
@@ -59,6 +70,9 @@ section.graphic-one {
 .credit-group {
   height: 100%;
   display: flex;
+}
+.credit-group svg {
+ width: 90%;
 }
 .credit-group img {
   width: 90%;
