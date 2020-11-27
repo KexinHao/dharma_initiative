@@ -13,6 +13,7 @@ body {
   background-image: url("morning/bgg.jpg");
 }
 
+
 .bg-page {
   width:100%;
   position: absolute;
@@ -23,6 +24,9 @@ body {
 }
 
 .cls-1, .cls-2, .cls-3 {
+  font-family: "CalvinAndHobbesNormal" !important;
+}
+text,tspan {
   font-family: "CalvinAndHobbesNormal" !important;
 }
 
