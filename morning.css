@@ -1,3 +1,7 @@
+@@font-face {
+  font-family: 'CalvinAndHobbesNormal';
+  src: url('morning/CalvinAndHobbesNormal.otf') format("otf");
+}
 * {
   margin: 0;
   padding: 0;
