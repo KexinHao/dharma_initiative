@@ -18,6 +18,10 @@ body {
 
 }
 
+.cls-1, .cls-2, .cls-3 {
+  font-family: "CalvinAndHobbesNormal" !important;
+}
+
 .cls-2:hover,.cls-3:hover  {
   /* fill: blue !important; */
   cursor: pointer;
