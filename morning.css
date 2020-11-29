@@ -397,8 +397,8 @@ section.video-section{
   margin-bottom: 10vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 0.5fr 0.5fr 1fr 0.5fr 0.5fr 0.5fr 1fr 0.5fr 0.5fr 0.5fr 0.5fr 1.5fr;
-  gap: 1%;
+  grid-template-rows: 1fr 1fr 0.5fr 0.5fr 1fr 0.5fr 0.5fr 0.5fr 1fr 0.5fr 0.5fr 0.5fr 0.5fr .1fr;
+  gap: 0%;
   grid-template-areas:
     "v1 v2"
     "v3 v4"
