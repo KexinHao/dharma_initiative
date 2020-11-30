@@ -397,19 +397,22 @@ section.video-section{
   margin-bottom: 10vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 0.5fr 0.5fr 1fr 0.5fr 0.5fr 0.5fr 1fr 0.5fr 0.5fr 0.5fr 0.5fr .1fr;
+  grid-template-rows: 0.5fr 1fr 0.5fr 0.5fr 0.5fr 1fr 0.5fr 0.5fr 0.2fr 1fr 0.5fr 0.5fr 0.5fr 0.5fr;
   gap: 0%;
   grid-template-areas:
-    "v1 v2"
+    "h14 h14"
+    /* "v1 v2" */
     "v3 v4"
     "h1 h1"
     "h2 h2"
+    "h13 h13"
     "v5 v6"
     "h3 h3"
     "h4 h4"
     "h5 h5"
     "v7 v8"
     "h6 h6"
+    "h12 h12"
     "h7 h7"
     "h8 h8"
     "h9 h9"
@@ -425,7 +428,7 @@ section.video-section{
     gap: 0%;
     margin-left: 2%;
     margin-right: 2%;
-    grid-template-rows: 1fr 1fr 0.5fr 0.5fr 1fr 0.5fr 0.5fr 0.5fr 1fr 0.5fr 0.5fr 0.5fr 0.5fr;
+    grid-template-rows: 0.5fr 1fr 0.5fr 0.5fr 0.5fr  1fr 0.5fr 0.5fr 1fr 0.3fr 0.4fr 0.5fr 0.5fr 0.5fr;
   }
 }
 /* .imggrid *:after {
@@ -434,8 +437,8 @@ section.video-section{
  top: 0;
  left: 0;
 } */
-.v1 { grid-area: v1; }
-.v2 { grid-area: v2; }
+/* .v1 { grid-area: v1; }
+.v2 { grid-area: v2; } */
 .v3 { grid-area: v3; }
 .v4 { grid-area: v4; }
 .h1 { grid-area: h1; }
@@ -452,6 +455,9 @@ section.video-section{
 .h8 { grid-area: h8; }
 .h9 { grid-area: h9; }
 .h10 { grid-area: h10; }
+.h12 { grid-area: h12; }
+.h13 { grid-area: h13; }
+.h14 { grid-area: h14; }
 
 #caption{
   background-color: #414042;
