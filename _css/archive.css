@@ -1,0 +1,355 @@
+@font-face {
+  font-family: "TT Norms Condensed Normal";
+  src: url("../_fonts/TT_Norms WOFF/TT Norms Std Condensed Normal.woff") format('woff'),
+       url("../_fonts/TT_Norms WOFF/TT Norms Std Condensed Normal.ttf") format('truetype');
+}
+@font-face {
+  font-family: "TT Norms Condensed Bold";
+  src: url("../_fonts/TT_Norms WOFF/TT Norms Std Condensed Bold.woff") format('woff'),
+       url("../_fonts/TT_Norms WOFF/TT Norms Std Condensed Bold.ttf") format('truetype');
+}
+@font-face {
+  font-family: "TT Norms Condensed Light";
+  src: url("../_fonts/TT_Norms WOFF/TT Norms Std Condensed Light.woff") format('woff'),
+       url("../_fonts/TT_Norms WOFF/TT Norms Std Condensed Light.ttf") format('truetype');
+}
+@font-face {
+  font-family: "TT Norms Condensed Light Italic";
+  src: url("../_fonts/TT_Norms WOFF/TT Norms Std Condensed Light Italic.woff") format('woff'),
+       url("../_fonts/TT_Norms WOFF/TT Norms Std Condensed Light Italic.ttf") format('truetype');
+}
+@font-face {
+  font-family: "TT Norms Condensed ExtraLight";
+  src: url("../_fonts/TT_Norms WOFF/TT Norms Std Condensed ExtraLight.woff") format('woff'),
+       url("../_fonts/TT_Norms WOFF/TT Norms Std Condensed ExtraLight.ttf") format('truetype');
+}
+@font-face {
+  font-family: "good times";
+  src: url("../_fonts/good times/good times rg.woff") format('woff'),
+       url("../_fonts/good times/good times rg.ttf") format('truetype');
+}
+@font-face {
+  font-family: "sniglet";
+  src: url("../_fonts/sniglet/Sniglet-Regular.woff") format('woff');
+}
+@font-face {
+  font-family: "ethnocentric";
+  src: url("../_fonts/ethnocentric/ethnocentric-rg.woff") format('woff');
+}
+@font-face {
+  font-family: "ethnocentric italic";
+  src: url("../_fonts/ethnocentric/ethnocentric-rg-it.woff") format('woff');
+}
+@font-face {
+  font-family: "eldorado italic";
+  src: url("../_fonts/eldorado/Eldorado-Italic.woff") format('woff');
+}
+@font-face {
+  font-family: "calvin";
+  src: url("../_fonts/calvin/CalvinAndHobbesNormal.woff") format('woff');
+}
+@font-face {
+  font-family: "fabrik";
+  src: url("../_fonts/fabrik/fabrik.woff") format('woff');
+}
+
+html {
+}
+
+body {
+  background: rgb(0,0,0);
+  margin:0;
+  overflow-x: hidden;
+}
+a{
+  list-style-type: none;
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  cursor: pointer;
+  color: rgb(74, 76, 255);
+}
+
+.topbar{
+  /* position: fixed; */
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color:#c9c9c9;
+  border:3px solid #ffffff;
+  border-style: outset;
+  font-size: 1.5rem;
+  font-family: 'TT Norms Condensed Bold', sans-serif;
+}
+.topbar > div{
+  padding: 1rem;
+  border-style: none ridge none none;
+  width:50%;
+  text-align: center;
+}
+.topbar > div:hover{
+  border-style:inset;
+}
+
+.txt-container{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: stretch;
+  overflow-x: hidden;
+}
+
+.whole-column{
+  padding: 2rem;
+  display: none;
+  background-color:#c9c9c9;
+  border:3px solid #ffffff;
+  border-style: outset;
+  font-size: 1.5rem;
+  font-family: 'TT Norms Condensed Light', sans-serif;
+}
+.whole-column > #whole-column-textcontainer{
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-start;
+}
+.whole-column > #whole-column-textcontainer>p1{
+  padding-left: 4rem;
+  padding-right: 1rem;
+  width:50%;
+  border: 3px;
+  border-style: none ridge none ridge;
+}
+.whole-column > #whole-column-textcontainer>p2{
+  margin-top: 0;
+  padding-left: 1rem;
+  width:50%;
+}
+.whole-column > #whole-column-textcontainer>p3{
+  padding-left: 4rem;
+  padding-right: 1rem;
+  width:100%;
+  border: 3px;
+  border-style: none ridge none ridge;
+}
+#italic-in-body{
+  font-family: "eldorado italic";
+}
+#odd-in-body{
+  font-family:"calvin";
+}
+.row-container{
+  position:relative;
+  width:100vw;
+  height:13vh;
+}
+.row{
+  position:absolute;
+  width:100vw;
+  height:13vh;
+  left:0;
+  top:0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content:flex-start;
+
+  background-color:#c9c9c9;
+  border:3px solid #ffffff;
+  border-style: outset;
+  transition: 0.5s;
+}
+
+.row:hover{
+  /* transform: translate(120%, 0); */
+  margin-left: 10%;
+  width:90%;
+  cursor: pointer;
+  border-style:inset;
+}
+
+.row > div {
+  text-align: center;
+  padding:10px;
+}
+/* .txt-container > div > div >p {
+  margin:10px;
+} */
+
+.left-column{
+  width:16%;
+  font-size: 2vw;
+  font-family: 'ethnocentric', sans-serif;
+}
+.nr-column{
+  width:10%;
+  border: 3px;
+  border-style: none ridge none none;
+  font-family: 'ethnocentric italic', sans-serif;
+  font-size: 4vw;
+}
+.middle-column{
+  width:74%;
+  border: 3px;
+  border-style: none ridge none none;
+  background-size:contain;
+  background-repeat:no-repeat;
+  background-position: center;
+}
+.right-column img{
+  display: block;
+  width:100%;
+}
+#ep7 > .middle-column{
+  font-size:2.5rem;
+}
+
+.footer {
+  /* position:fixed; */
+  z-index: 99;
+  /* bottom: 0;
+  left: 0;
+  right: 0; */
+  padding-top: 0rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: stretch;
+  align-items: stretch;
+  background-color:#c9c9c9;
+  border:3px solid #ffffff;
+  border-style: outset;
+  font-size: 1.5rem;
+  font-family: 'TT Norms Condensed Bold', sans-serif;
+}
+.footer > div{
+  padding: 1rem;
+  border-style: none ridge none none;
+  width:20%;
+  text-align: center;
+}
+.footer > div:hover{
+  border-style:inset;
+}
+.footer >#footer-credit{
+  width:20%;
+}
+
+
+
+
+
+@media screen and (max-width: 600px) {
+
+  .whole-column{
+    padding: 1rem;
+    display: none;
+    font-size: 1rem;
+    font-family: 'TT Norms Condensed Light', sans-serif;
+  }
+  .whole-column > #whole-column-textcontainer{
+    display: flex;
+    flex-direction: column;
+  }
+  .whole-column > #whole-column-textcontainer>p1{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width:100%;
+  }
+  .whole-column > #whole-column-textcontainer>p2{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-top: 1rem;
+    width:100%;
+  }
+  .whole-column > #whole-column-textcontainer>p3{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width:100%;
+  }
+
+  .row-container{
+    height:15vh;
+  }
+  .row{
+    position:absolute;
+    width:100vw;
+    height:15vh;
+    left:0;
+    top:0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content:flex-start;
+
+    background-color:#c9c9c9;
+    border:3px solid #ffffff;
+    border-style: outset;
+    transition: 0.5s;
+  }
+
+  .row:hover{
+    margin-left: 30%;
+    width:70%;
+    cursor: pointer;
+    border-style:inset;
+  }
+
+  .row > div {
+    text-align: center;
+    padding:10px;
+  }
+
+  .left-column{
+    display: none;
+  }
+  .nr-column{
+    width:10%;
+    border: 3px;
+    border-style: none ridge none none;
+    font-family: 'ethnocentric italic', sans-serif;
+    font-size: 5vw;
+  }
+  .middle-column{
+    width:74%;
+    border: 0;
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position: center;
+  }
+  .right-column img{
+    display: block;
+    width:100%;
+  }
+  #ep7 > .middle-column{
+    font-size:1.5rem;
+  }
+
+  .footer {
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-content: stretch;
+    align-items: stretch;
+    background-color:#c9c9c9;
+    border:3px solid #ffffff;
+    border-style: outset;
+    font-size: 1rem;
+    font-family: 'TT Norms Condensed Bold', sans-serif;
+  }
+  .footer > div{
+    padding: 0rem;
+    border-style: none ridge ridge none;
+    width:20%;
+    text-align: center;
+  }
+  .footer > div:hover{
+    border-style:inset;
+  }
+  .footer >#footer-credit{
+    width:100%;
+  }
+}

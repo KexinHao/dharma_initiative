@@ -86,6 +86,10 @@ li:hover {
   color: black;
   cursor: pointer;
 }
+li > a{
+  text-decoration: none;
+  color:white;
+}
 #title{
   font-style: italic;
 }

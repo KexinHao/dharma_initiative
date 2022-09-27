@@ -1,6 +1,6 @@
 $(document).ready(function(){
   $("#backhome").click(function(){
-    location.href = "birdsong.html";
+    location.href = "archive.html";
   });
   $("#instagram").click(function(){
     location.href = "https://www.instagram.com/dharma_initiatives/";
